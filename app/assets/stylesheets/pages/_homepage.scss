@@ -1,0 +1,167 @@
+.home-container{
+  display:flex;
+  height:96vh;
+}
+
+.home-btn-1{
+  display:flex;
+  flex-direction: column;
+  background-color: $pink;
+  border: solid black 1px;
+}
+
+.home-btn-2{
+  display:flex;
+  flex-direction: column-reverse;
+  background-color: $pink;
+  border: solid black 1px;
+}
+
+.login{
+  border: 0px;
+  background-color: $light-grey;
+  font-size: 26px;
+  font-weight: 300;
+  font-family: 'Inconsolata', monospace;
+  border-bottom: solid black 1px;
+  height: 60vh;
+  flex: 2;
+}
+.login:hover, .faq:hover, .signup:hover, .welcome-btn:hover{
+  background-color: $pink;
+  text-decoration: underline;
+}
+
+.login:active, .faq:active, .signup:active, .welcome-btn:active{
+  background-color: $pink;
+  text-decoration: underline;
+}
+
+.faq{
+  font-size: 26px;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 300;
+  background-color: $orange;
+  border: solid black 0px;
+  border-bottom: solid black 1px;
+  flex:1;
+}
+
+.signup{
+  font-size: 26px;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 300;
+  background-color: $grey;
+  border: solid black 0px;
+  flex: 2;
+}
+
+.flex-1{
+  flex:1;
+}
+.flex-13{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  flex:13;
+  padding-right: 30px;
+  padding-left: 30px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.welcome{
+  font-size: 98px;
+  font-family: 'Geneva', sans-serif;
+  color: $yellow;
+  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
+               0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
+  margin-top:0px;
+  margin-bottom: 0px;
+}
+
+.snacky{
+  font-size: 98px;
+  font-family: 'Gluten', sans-serif;
+  color: $yellow;
+  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
+               0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
+  margin-top:0px;
+  margin-bottom:20px;
+}
+
+.about{
+  background-color: $blue;
+  font-size: 30px;
+  border: solid black 1px;
+  border-radius: 82px;
+  padding: 21px 34px;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.welcome-btn{
+  background-color: $green;
+  font-size: 26px;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 300;
+  border: solid black 0px;
+  flex: 1;
+}
+.button-div{
+  display:flex;
+  justify-content: flex-end;
+}
+
+.sign-in-container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.width-100{
+  width: 100%;
+}
+
+.mb-25{
+  margin-bottom: 25px;
+}
+
+.forgot{
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.mb-0{
+  margin-bottom: 0px;
+}
+
+.form-submit-btn{
+  display:flex;
+  justify-content: center;
+  margin: 25px;
+}
+
+.sign-in-text{
+  font-size: 48px;
+  font-family: 'Geneva', sans-serif;
+  color: $yellow;
+  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
+               0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
+  margin-top:0px;
+  margin-bottom: 0px;
+  text-decoration: none;
+  margin-left: 30px;
+}
+
+.first-last-name{
+  display:flex;
+}
+
+.font-12{
+  font-size: 12px;
+}
+
+.ml-20{
+  margin-left: 20px;
+}

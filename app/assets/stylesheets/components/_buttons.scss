@@ -1,0 +1,58 @@
+.go-btn{
+  font-size: 20px;
+    font-family: 'Inconsolata', monospace;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 10px;
+    box-shadow: 2px 2px black;
+}
+.go-btn:hover{
+  box-shadow: 0px 0px black;
+  opacity: 75%;
+}
+
+.get-started-btn{
+  font-size: 26px;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 300;
+  background-color: $green;
+  border: solid black 1px;
+  border-radius: 20px;
+  box-shadow: 5px 5px black;
+  padding: 10px 15px;
+  margin-right: 10px;
+}
+.get-started-btn:hover{
+  box-shadow: none;
+  opacity: 75%;
+}
+
+.post-btn{
+  font-size: 22px;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 300;
+  background-color: $green;
+  border: solid black 1px;
+  border-radius: 30px;
+  box-shadow: 5px 5px black;
+  padding: 8px 15px;
+}
+
+.post-btn:hover{
+  box-shadow: none;
+  opacity: 75%;
+}
+
+.comment-delete-btn{
+  background: none;
+  border: none;
+  color: red;
+}
+
+.tag-delete-btn{
+  background: none;
+  border: none;
+  color: orange;
+  font-size: 14px;
+  padding: 0px;
+}

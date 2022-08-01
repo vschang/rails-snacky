@@ -1,0 +1,132 @@
+.form-container{
+  width:80vw;
+  margin: 0 auto;
+}
+.underline{
+  text-decoration: underline;
+}
+
+.form-text{
+  font-family: "Inconsolata", monospace;
+  font-size: 20px;
+  font-weight: bold;
+}
+.title{
+  width: 84%;
+}
+.stars{
+  width: 50px;
+}
+.review{
+  width: 97%;
+}
+.brand{
+  width: 90%;
+}
+.upload-text{
+  margin-left: 20px;
+}
+.title-input{
+  border-radius: 15px;
+  border: solid black 0.75px;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding: 8px;
+}
+
+.flex{
+  display:flex;
+}
+
+input[id="post_image"]{
+  font-size: 20px;
+  font-family: 'Inconsolata', monospace;
+}
+
+input[type="file"] {
+  font-size: 20px;
+  font-family: 'Inconsolata', monospace;
+  padding-left: 30px;
+}
+
+input::file-selector-button{
+  font-family: 'Inconsolata', monospace;
+  background-color: $yellow;
+  border: solid $orange 1px;
+  color: $orange;
+  border-radius: 15px;
+  margin-right: 20px;
+}
+
+#file-upload-button{
+  font-size: 20px;
+  font-family: 'Inconsolata', monospace;
+}
+
+.login-text{
+  font-family: "Inconsolata", monospace;
+  font-size: 20px;
+  margin-right: 20px;
+}
+.login-input{
+  background-color: white;
+  font-family: "Inconsolata", monospace;
+  font-size: 20px;
+  border-radius: 15px;
+  border: solid black 0.75px;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding: 8px;
+}
+.login-container{
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.snacky-title{
+  display:flex;
+  justify-content: center;
+}
+.remember-me{
+  border: solid black 0px;
+}
+
+label{
+  font-family: 'Geneva';
+}
+
+// select{
+//   color: black;
+//   background-color: $orange;
+//   font-family: 'Geneva';
+//   border: solid $blue 1px;
+// }
+
+option{
+  color: $orange;
+  background-color: $blue;
+  font-family: 'Geneva';
+}
+
+.sign-in-form{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+.post-div{
+  display:flex;
+  justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.invalid-feedback{
+  font-family: 'Geneva';
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.607);
+}
+
+.hint-text{
+  font-family: "Inconsolata", monospace;
+  font-size: 12px;
+}

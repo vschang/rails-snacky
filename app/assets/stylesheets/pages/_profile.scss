@@ -1,0 +1,82 @@
+.profile-info{
+  display:flex;
+  align-items: center;
+  justify-content:space-around;
+  border-bottom: solid black 1px;
+  width: 80vw;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.welcome-profile{
+  font-size: 40px;
+  font-family: 'Geneva', sans-serif;
+  color: $yellow;
+  text-shadow: 0.5px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
+               0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
+  margin-bottom:10px;
+  text-decoration:none;
+}
+
+.prof-pic{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: solid black 1px;
+}
+
+.prof-pic:hover{
+  opacity:75%;
+}
+
+
+.text-right{
+  text-align: right;
+  margin-top: 0px;
+  font-weight: 300;
+}
+
+.dropdown-btn{
+  background: none;
+  border: none;
+  font-family: 'Inconsolata', monospace;
+  font-size: 24px;
+}
+
+.dropdown-content{
+  display:none;
+  flex-direction: column;
+  background: $orange;
+}
+
+.dropdown-content:hover{
+  display:flex;
+  flex-direction: column;
+  background: $orange;
+  padding: 10px;
+}
+
+.dropdown-content a:hover {
+  display:flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: $pink;
+  text-decoration: underline;
+}
+
+.dropdown:hover .dropdown-content {
+  display:flex;
+  flex-direction: column;
+  background: $orange;
+  padding: 10px;
+}
+
+.dropdown:hover .dropdown-btn {
+  text-decoration: underline;
+
+}
+
+.profile-pic-link:hover{
+  opacity:75%;
+}

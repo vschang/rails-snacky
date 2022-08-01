@@ -1,0 +1,160 @@
+.all-posts{
+  display:flex;
+  flex-direction:column;
+}
+.post-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 65vw;
+  margin: 0 auto;
+  border-bottom: solid black 0.5px;
+}
+
+.post-container-show{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 65vw;
+  margin: 0 auto;
+  border-bottom: solid black 0.5px;
+  padding-bottom: 20px;
+}
+
+.show-btn{
+  font-size: 24px;
+}
+.show-btn:hover{
+  text-decoration: underline;
+}
+
+.post-image{
+  width: 200px;
+  height: 200px;
+  border-radius: 52px;
+  border: solid black 1px;
+}
+h3{
+  text-decoration: underline;
+}
+
+.image-text-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+.post-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.review-text{
+  background-color:white;
+  border-radius: 30px;
+  border: solid black 1px;
+  padding: 10px 25px 10px 15px;
+  width: 37vw;
+}
+
+.small-p{
+  font-size: 12px;
+  margin: 0px;
+  text-align: right;
+}
+
+.mt-10{
+  margin-top: 10px;
+}
+
+.mb-10{
+  margin-bottom: 10px;
+}
+
+.star{
+  color:$yellow;
+  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
+               0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
+  margin: 2px;
+}
+.empty-star{
+  color: #ffcaed;
+  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
+               0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
+  margin: 2px;
+}
+.stars{
+  display:flex;
+  margin-bottom: 20px;
+}
+.delete-back{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 65vw;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.mb-20{
+  margin-bottom: 20px;
+}
+
+.delete{
+  color: red;
+  background: none;
+  border: none;
+  font-family: 'Inconsolata', monospace;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.post-title:hover{
+  background: black;
+  color: $pink;
+}
+
+.sort-menu{
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 20px 0px 20px;
+}
+
+.likes-comments-container{
+  display:flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.comment-div{
+  padding: 10px;
+  border-bottom: solid black 1px;
+}
+
+.tags-container{
+  display:flex;
+
+}
+
+.tag{
+  display:flex;
+  padding:10px;
+  margin-right: 10px;
+  background-color: $green;
+  border: solid 2px $orange;
+}
+
+.filter-options{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mr-5{
+  margin-right: 5px;
+}
