@@ -10,7 +10,7 @@
   <% end %>
   <div class="search-results">
     <% if params[:query] && @posts.length == 0 %>
-      <h3 >no results for <%= params[:query] %> 😔</h3>
+      <h3 class="no-underline">no results for <%= params[:query] %> 😔</h3>
     <% elsif !params[:query] %>
       <p></p>
     <% else %>

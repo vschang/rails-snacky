@@ -26,7 +26,8 @@
   border: solid black 1px;
 }
 
-.prof-pic:hover{
+
+.edit-pic:hover{
   opacity:75%;
 }
 
@@ -37,17 +38,33 @@
   font-weight: 300;
 }
 
+.dropdown{
+  position: relative;
+  display: inline-block;
+}
+
 .dropdown-btn{
   background: none;
   border: none;
   font-family: 'Inconsolata', monospace;
-  font-size: 24px;
+  font-size: 22px;
+  position: static;
+}
+
+.dropdown-btn:hover{
+}
+
+.dropdown-edit{
+  font-size: 22px;
+  padding:10px
 }
 
 .dropdown-content{
   display:none;
+  position: absolute;
   flex-direction: column;
   background: $orange;
+  padding: 10px;
 }
 
 .dropdown-content:hover{
@@ -74,7 +91,6 @@
 
 .dropdown:hover .dropdown-btn {
   text-decoration: underline;
-
 }
 
 .profile-pic-link:hover{

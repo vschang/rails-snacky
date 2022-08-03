@@ -20,6 +20,15 @@ class PagesController < ApplicationController
     @user = current_user
     @posts = @user.posts
     @total = @posts.all.count
+    @geocoded_posts = @posts.geocoded
+    @markers = @posts.map do |post|
+      {
+        lat: post.latitude,
+        lng: post.longitude,
+        info_window: render_to_string(partial: "posts/info_window", locals: {post: post}),
+        image_url: helpers.asset_url("pink-gummy-removebg-preview.png")
+      }
+    end
   end
 
   def edit_prof_pic

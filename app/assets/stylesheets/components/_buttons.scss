@@ -28,6 +28,23 @@
 }
 
 .post-btn{
+  font-size: 20px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 700;
+    background-color: #B4FD3E;
+    border: solid black 1px;
+    border-radius: 30px;
+    box-shadow: 5px 5px black;
+    padding: 7px 15px;
+    margin-top: 20px;
+}
+
+.post-btn:hover, .update-btn:hover{
+  box-shadow: none;
+  opacity: 75%;
+}
+
+.update-btn{
   font-size: 22px;
   font-family: 'Inconsolata', monospace;
   font-weight: 300;
@@ -36,17 +53,14 @@
   border-radius: 30px;
   box-shadow: 5px 5px black;
   padding: 8px 15px;
-}
-
-.post-btn:hover{
-  box-shadow: none;
-  opacity: 75%;
+  margin: 20px 0px;
 }
 
 .comment-delete-btn{
   background: none;
   border: none;
   color: red;
+  padding: 5px 0px 0px 0px;
 }
 
 .tag-delete-btn{
@@ -55,4 +69,62 @@
   color: orange;
   font-size: 14px;
   padding: 0px;
+}
+
+.like-btn{
+  font-size: 14px;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 300;
+  background-color: $blue;
+  border: solid black 1px;
+  border-radius: 30px;
+  box-shadow: 2.5px 2.5px black;
+  padding: 4px 8px;
+}
+
+.like-btn:hover{
+  box-shadow: none;
+  opacity: 75%;
+}
+
+.heart-btn{
+  background:none;
+  border:none;
+}
+.red{
+  font-size: 24px;
+  color:red;
+  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000, 3.5px 2.5px #000, -0.5px -0.5px #000, 3px 1px #000, -0.5px 0.5px #000;
+}
+
+.empty-heart{
+  font-size:24px;
+  color:#ffcaed;
+  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000, 3.5px 2.5px #000, -0.5px -0.5px #000, 3px 1px #000, -0.5px 0.5px #000;
+}
+
+.red:hover{
+  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
+               0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
+  opacity: 75%;
+}
+
+.empty-heart:hover{
+  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
+               0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
+  opacity: 75%;
+  color:red;
+}
+
+.small-delete:hover{
+  text-decoration: underline;
+}
+
+.pt-70{
+  padding-top: 70px;
+}
+
+.settings-btn{
+  font-size:22px;
+  color: black;
 }

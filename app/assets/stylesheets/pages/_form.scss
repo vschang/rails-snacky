@@ -1,5 +1,5 @@
 .form-container{
-  width:80vw;
+  width:70vw;
   margin: 0 auto;
 }
 .underline{
@@ -8,34 +8,45 @@
 
 .form-text{
   font-family: "Inconsolata", monospace;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 }
+.address-wrapper{
+//  flex: 1;
+}
+.upload{
+  // flex: 1;
+}
+
 .title{
-  width: 84%;
+  width:100%;
 }
 .stars{
-  width: 50px;
+  padding-bottom: 20px;
 }
 .review{
-  width: 97%;
+  width:100%;
+  padding-top:30px;
 }
 .brand{
-  width: 90%;
+  width: 150%;
+}
+.country{
+  // flex:1;
 }
 .upload-text{
-  margin-left: 20px;
 }
 .title-input{
   border-radius: 15px;
   border: solid black 0.75px;
-  margin-top:10px;
-  margin-bottom:10px;
-  padding: 8px;
+  margin-bottom:20px;
+  padding: 5px;
 }
 
 .flex{
   display:flex;
+  justify-content: space-between;
+  align-items:center;
 }
 
 input[id="post_image"]{
@@ -44,9 +55,21 @@ input[id="post_image"]{
 }
 
 input[type="file"] {
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'Inconsolata', monospace;
   padding-left: 30px;
+  border-radius: 20px;
+}
+
+input[type="text"] {
+  font-size: 16px;
+  font-family: 'Inconsolata', monospace;
+}
+
+.mapboxgl-ctrl-geocoder{
+  border-radius:20px;
+  border: solid black 0.5px;
+  box-shadow: none
 }
 
 input::file-selector-button{
@@ -58,10 +81,18 @@ input::file-selector-button{
   margin-right: 20px;
 }
 
+input::file-selector-button:hover{
+  border: solid orange 1px;
+  background-color: yellow;
+  color: orange;
+}
+
 #file-upload-button{
   font-size: 20px;
   font-family: 'Inconsolata', monospace;
 }
+
+
 
 .login-text{
   font-family: "Inconsolata", monospace;
@@ -129,4 +160,51 @@ option{
 .hint-text{
   font-family: "Inconsolata", monospace;
   font-size: 12px;
+}
+
+.display-none{
+  display: none;
+}
+
+.comment-box{
+  width: 100%;
+  margin: 20px 0px 20px 0px;
+}
+
+.form-control{
+  font-family: 'Inconsolata';
+  padding: 8px;
+  border-radius: 15px;
+  width: 100%;
+}
+
+.tag-selection{
+  padding: 5px;
+  margin-right: 5px;
+  font-family: 'Inconsolata';
+  border-radius: 24px;
+  margin-top: 10px;
+}
+
+.grey-text{
+  color: rgba(0, 0, 0, 0.579);
+
+}
+
+.edit-profile-container{
+  padding-top: 20px
+}
+
+.font-16{
+  font-size: 16px;
+}
+
+.label-text{
+  font-family: 'Inconsolata';
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.pt-20{
+  padding-top: 20px;
 }

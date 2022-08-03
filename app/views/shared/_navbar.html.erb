@@ -1,30 +1,33 @@
 <div class="navbar">
     <% if user_signed_in? %>
-      <button class="nav-btn "
-              id="home-nav"
-              data-controller="navbar-active"
-              data-action="click->navbar-active#activate">
-        <%= link_to "home", "/posts", class: "nav-link" %>
+      <button class="nav-btn home-nav"
+              <%# id="home-nav" %>
+              data-controller="navbar"
+              data-action="click->navbar#activate">
+        <%= link_to "home", "/posts", class: "" %>
       </button>
 
-      <button class="nav-btn " id="post-nav" data-controller="navbar-active">
-        <%= link_to "post", "/posts/new", class: "nav-link" %>
+      <button class="nav-btn " id="post-nav" data-controller="navbar" >
+        <%= link_to "post", "/posts/new", class: "" %>
       </button>
 
-      <button class="nav-btn " id="search-nav" data-controller="navbar-active">
-        <%= link_to "search", "/search", class: "nav-link" %>
+      <button class="nav-btn " id="search-nav" data-controller="navbar">
+        <%= link_to "search", "/search", class: "" %>
       </button>
 
-      <button class="nav-btn " id="profile-nav" data-controller="navbar-active">
-        <%= link_to profile_path do %>
+      <button class="nav-btn " id="profile-nav" data-controller="navbar">
+      <div class="avatar-nav">
+        <%= link_to profile_path, class:"" do%>
         <% if current_user.prof_pic.present? %>
           <%= image_tag(current_user.prof_pic, class: "avatar")  %>
         <% else %>
           <%= image_tag('avatar.png', class:'avatar') %>
         <% end %>
+        <% end %>
+        <%= link_to profile_path, class:"" do%>
         profile
         <% end %>
-
+      </div>
       </button>
 
     <% else %>

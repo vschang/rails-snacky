@@ -1,9 +1,9 @@
 <div class="profile-info">
   <%= link_to '/edit_prof_pic' do%>
     <% if current_user.prof_pic.present? %>
-      <%= image_tag(@user.prof_pic, class: "prof-pic") %>
+      <%= image_tag(@user.prof_pic, class: "prof-pic edit-pic") %>
       <% else %>
-      <%= image_tag('avatar.png', class:'prof-pic') %>
+      <%= image_tag('avatar.png', class:'prof-pic edit-pic') %>
     <% end %>
   <% end %>
   <div class="profile-text">
@@ -15,11 +15,20 @@
     <p class="text-right">Snacky contributer since <%=@user.created_at.strftime("%B %d, %Y") %></p>
   </div>
   <div class="dropdown">
-    <button class="dropdown-btn">settings</button>
+    <button class="dropdown-btn"><i class="fa-solid fa-gear"></i></button>
     <div class="dropdown-content ">
     <%= link_to "edit profile", 'users/edit', class:'dropdown-edit'%>
-    <%= link_to "logout", '/log_out', class:'dropdown-logout'%>
+    <%= link_to "logout", '/log_out', class:'dropdown-edit'%>
     </div>
+  </div>
+</div>
+<div class="map-container">
+  <h1 class="your-snack-map">your snack map</h1>
+  <div class="" style="width: 100%; height: 300px; border-radius: 20px;"
+    data-controller="map"
+    data-map-page-value="profile"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
 

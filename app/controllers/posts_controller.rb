@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   def index
     @all_posts = Post.all
     @posts = @all_posts.sort_by {|posts| posts.created_at}.reverse
+    @user = current_user
 
     if params[:query].present?
       @posts = @all_posts.global_search(params[:query])
@@ -31,10 +32,37 @@ class PostsController < ApplicationController
       @posts = @posts_with_i.reverse
     end
 
-    if params[:filter] == "all"
+    @geocoded_posts = Post.all.geocoded
+    @markers = @geocoded_posts.map do |post|
+    {
+      lat: post.latitude,
+      lng: post.longitude,
+      info_window: render_to_string(partial: "info_window", locals: {post: post}),
+      image_url: helpers.asset_url("pink-gummy-removebg-preview.png")
+    }
+    end
+
+    if params[:filter] == "all" || params[:filter] == nil
       @posts = Post.all
+      @markers = @geocoded_posts.map do |post|
+        {
+          lat: post.latitude,
+          lng: post.longitude,
+          info_window: render_to_string(partial: "info_window", locals: {post: post}),
+          image_url: helpers.asset_url("pink-gummy-removebg-preview.png")
+        }
+        end
     else
       @posts = PostTag.where(tag: params[:filter]).map {|post_tag| post_tag.post}
+
+      @markers = @posts.map do |post|
+      {
+        lat: post.latitude,
+        lng: post.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {post: post}),
+        image_url: helpers.asset_url("pink-gummy-removebg-preview.png")
+      }
+      end
     end
 
     if params[:filter]
@@ -47,15 +75,7 @@ class PostsController < ApplicationController
       @selection_arr = ["selected", "","", "","", "",""]
     end
 
-    @geocoded_posts = Post.all.geocoded
-    @markers = @geocoded_posts.map do |post|
-      {
-        lat: post.latitude,
-        lng: post.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {post: post}),
-        image_url: helpers.asset_url("pink-gummy-removebg-preview.png")
-      }
-    end
+
   end
 
   def show
@@ -63,8 +83,12 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post_likes = PostLike.new
     @liked_post = PostLike.find_by(post_id: @post.id, user_id: @user.id)
-
-
+    @markers = [{
+        lat: @post.latitude,
+        lng: @post.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {post: @post}),
+        image_url: helpers.asset_url("pink-gummy-removebg-preview.png")
+      }]
   end
 
   def new
@@ -102,6 +126,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :review, :rating, :image, :country, :brand, :user_id, :order)
+    params.require(:post).permit(:title, :review, :rating, :image, :country, :brand, :user_id, :order, :address)
   end
 end
