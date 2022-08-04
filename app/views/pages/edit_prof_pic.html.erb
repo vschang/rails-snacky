@@ -1,5 +1,6 @@
-<div class="edit-profile-container">
-  <h3>edit your profile picture</h3>
+<%= render 'shared/navbar' %>
+<div class="edit-pic-container">
+  <h3 class="welcome-profile">edit your profile picture</h3>
   <%= simple_form_for(@user, as: :user, url: update_prof_pic_path) do |f| %>
     <%= f.error_notification %>
 
@@ -17,7 +18,7 @@
                       input_html: { class: '' },
                       id: "file-upload-button" %>
     </div>
-    <div class="form-actions">
+    <div class="flex-center">
       <%= f.button :submit, "update", class: "post-btn" %>
     </div>
   <% end %>

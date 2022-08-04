@@ -4,6 +4,9 @@ class PostsController < ApplicationController
   def index
     @all_posts = Post.all
     @posts = @all_posts.sort_by {|posts| posts.created_at}.reverse
+
+
+    # @posts = Post.page(params[:page])
     @user = current_user
 
     if params[:query].present?
@@ -75,6 +78,8 @@ class PostsController < ApplicationController
       @selection_arr = ["selected", "","", "","", "",""]
     end
 
+    # @posts = @posts.page params[:page]
+    # @posts = Kaminari.paginate_array(Post.page params[:page])
 
   end
 
@@ -101,10 +106,12 @@ class PostsController < ApplicationController
     @post.user_id = @user.id
 
     if @post.save
-      redirect_to post_path(@post), notice: "posted successfully 🎉"
+      redirect_to post_path(@post), notice: "posted 🎉"
     else
-      render :new, alert: "post failed 💔"
+      flash[:alert] = "please fill in all fields!"
+      render new_post_path
     end
+
   end
 
   def edit

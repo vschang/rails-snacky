@@ -1,3 +1,6 @@
+<%= render 'shared/navbar' %>
+<%# <%= paginate @posts, window: 2 %> 
+
 <div class="all-posts">
   <div class="map-filter-container">
     <div class="map-container">
@@ -96,7 +99,7 @@
           </div>
           <p class="small-p mt-10">posted <%= post.created_at.strftime("%B %d, %Y") %></p>
           <p class="small-p mb-10">by
-          <% if post.user_id == @user.id %>
+          <% if user_signed_in? && post.user_id == @user.id %>
             <%= link_to profile_path, class:"small-p  bold"  do %>
               @<%= post.user.username%></p>
             <% end %>
@@ -118,4 +121,5 @@
       </div>
       <% end %>
   <%end%>
+
 </div>

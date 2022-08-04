@@ -1,3 +1,4 @@
+<%= render 'shared/navbar' %>
 <div class="post-container">
   <div class="image-text-container">
     <div class="image">
@@ -26,7 +27,7 @@
       </div>
       <p class="small-p mt-10">posted <%= @post.created_at.strftime("%B %d, %Y") %></p>
       <p class="small-p mb-20">by
-      <% if @post.user_id == @user.id %>
+      <% if user_signed_in? && @post.user_id == @user.id %>
         <%= link_to profile_path, class:"small-p  bold" do %>
           @<%= @post.user.username%></p>
         <% end %>
@@ -87,7 +88,7 @@
         <% @post.post_comments.each do |comment| %>
           <div class="comment-div">
             <p class="small-p flex-start grey-text">
-            <% if comment.user_id == @user.id %>
+            <% if user_signed_in? && comment.user_id == @user.id %>
               <%= link_to profile_path, class:"small-p  bold" do%>
                 @<%= comment.user.username%>
               <% end %>

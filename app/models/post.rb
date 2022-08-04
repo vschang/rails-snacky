@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   validates :title, :rating, :country, :review, :brand, :address, presence: true
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  paginates_per 5
 
   def country_name
     ISO3166::Country[country]

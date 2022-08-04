@@ -17,11 +17,11 @@
 
   <body>
     <%= render "shared/flashes" %>
-    <% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) || action_name == "faq" || action_name == "home"  %>
-      <%= render 'shared/navbar' %>
+    <%# <% unless ((user_signed_in? == false) && current_page?(new_user_session_path)) || ((user_signed_in? == false) && current_page?(new_user_registration_path)) || action_name == "faq" || action_name == "home"  %>
+      <%# <%= render 'shared/navbar' %>
       <%# if user_signed_in? %>
-    <% end %>
-
+    <%# <% end %>
+  
     <%= yield %>
   </body>
 </html>

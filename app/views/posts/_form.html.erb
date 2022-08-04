@@ -1,14 +1,14 @@
 <div class="form-container">
-  <%= simple_form_for @post do |f| %>
+  <%= simple_form_for @post, data: { turbo: false } do |f| %>
       <%= f.input :title, required: true, label: "snack name", label_html: { class: 'form-text' }, input_html: { class: 'title-input title' } %>
       <%= f.input :rating, collection: (1..10).to_a,
       label: "stars 🤩", required:true,
       wrapper_html: {data: {controller: "star-rating"}},
       label_html: { class: 'form-text' },
       input_html: { class: 'title-input stars' } %>
-      <%= f.input :review, required: true, label: "your honest review 👀", label_html: { class: 'form-text' }, input_html: { class: 'title-input review pt-20' }, hint: "think flavor, appearance, packaging, texture, taste" %>
+      <%= f.input :review, required: true, label: "your honest review 👀", label_html: { class: 'form-text' }, input_html: { class: 'title-input review mb-0' }, hint: "think flavor, appearance, packaging, texture, smell, overall experience, etc.", hint_html: {class:"hint"} %>
       <div class="flex">
-        <%= f.input :brand, required: true, label: "brand", label_html: { class: 'form-text' }, input_html: { class: 'title-input brand' } %>
+        <%= f.input :brand, required: true, label: "brand", label_html: { class: 'form-text ' }, input_html: { class: 'title-input brand' } %>
         <%= f.input :country, required: true, label: "country of origin 🌎", label_html: { class: 'form-text' }, input_html: { class: 'title-input country' } %>
       </div>
       <div class="flex">

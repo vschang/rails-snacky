@@ -1,11 +1,13 @@
 
 <div class="home-container">
   <div class="home-btn-1  flex-1">
-    <button class="login active">
-     <%= link_to "login", "/users/sign_in", class: "nav-link active" %>
+    <button class="login"
+    data-controller="navbar"
+    data-action="click->navbar#activate">
+     <%= link_to "login", "/users/sign_in", class: "nav-link " %>
     </button>
-    <button class="welcome-btn active">
-     <%= link_to "welcome!", "/", class: "nav-link active" %>
+    <button class="welcome-btn" data-controller="navbar">
+     <%= link_to "welcome!", "/", class: "nav-link " %>
     </button>
   </div>
 
@@ -43,11 +45,11 @@
   </div>
 
   <div class="home-btn-2 faq-signup flex-1">
-    <button class="signup active">
-      <%= link_to "signup", "/users/sign_up", class: "nav-link active"  %>
+    <button class="signup" data-controller="navbar">
+      <%= link_to "signup", "/users/sign_up", class: "nav-link "  %>
     </button>
-    <button class="faq active">
-      <%= link_to "FAQ", "/faq", class: "nav-link active" %>
+    <button class="faq" data-controller="navbar">
+      <%= link_to "FAQ", "/faq", class: "nav-link " %>
     </button>
   </div>
 </div>

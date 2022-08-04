@@ -3,10 +3,11 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
-  resources :users, only: [:show, :edit, :update] 
+  resources :users, only: [:show, :edit, :update]
 
   resources :posts do
   # only: [:index, :new, :create, :edit, :update, :destroy] do
+    get '/page/:page', action: :index, on: :collection
     resources :post_likes, only: [:create]
     resources :post_comments, only: [:new, :create, :index, :destroy]
     resources :post_tags, only: [:new, :create, :index, :destroy]

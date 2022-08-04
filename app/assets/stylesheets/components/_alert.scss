@@ -10,7 +10,16 @@
   border: $orange 1px solid;
   box-shadow: 4px 4px $orange;
   font-family: 'Inconsolata', monospace;
+  animation: hideAnimation 0s ease-in forwards 3s;
 }
+
+@keyframes hideAnimation {
+  to {
+    visibility: hidden;
+  }
+}
+
+
 .notice {
   position: fixed;
   bottom: 25px;
@@ -23,6 +32,7 @@
   border: $orange 1px solid;
   box-shadow: 4px 4px $orange;
   font-family: 'Inconsolata', monospace;
+  animation: hideAnimation 0s ease-in-out forwards 0.5s;
 }
 
 .btn-close{

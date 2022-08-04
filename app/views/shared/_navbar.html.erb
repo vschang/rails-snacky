@@ -1,7 +1,7 @@
 <div class="navbar">
     <% if user_signed_in? %>
-      <button class="nav-btn home-nav"
-              <%# id="home-nav" %>
+      <button class="nav-btn"
+              id="home-nav"
               data-controller="navbar"
               data-action="click->navbar#activate">
         <%= link_to "home", "/posts", class: "" %>
@@ -31,13 +31,15 @@
       </button>
 
     <% else %>
-      <button class="nav-btn active" id="home-nav">
+      <button class="nav-btn" id="home-nav-2"
+              data-controller="navbar"
+              data-action="click->navbar#activate">
         <%= link_to "home", "/posts", class: "nav-link" %>
       </button>
-      <button class="nav-btn active" id="search-nav">
+      <button class="nav-btn" id="search-nav-2" data-controller="navbar">
         <%= link_to "search", "/search", class: "nav-link" %>
       </button>
-      <button class="nav-btn active" id="login-nav">
+      <button class="nav-btn" id="login-nav" data-controller="navbar">
         <%= link_to "login", new_user_session_path, class: "nav-link" %>
       </button>
     <% end %>
