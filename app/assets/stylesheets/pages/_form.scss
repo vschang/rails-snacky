@@ -111,6 +111,21 @@ input::file-selector-button:hover{
   margin-bottom:10px;
   padding: 8px;
 }
+
+.login-input-name{
+  background-color: white;
+  font-family: "Inconsolata", monospace;
+  font-size: 20px;
+  border-radius: 15px;
+  border: solid black 0.75px;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding: 8px;
+  width:90% !important;
+  // margin-right: 10px !important;
+}
+
+
 .login-container{
   width: 80vw;
   margin: 0 auto;
@@ -225,5 +240,17 @@ option{
 .form-inputs{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
+}
+
+.mt-60{
+  margin-top: 60px;
+}
+
+.mt-0{
+  margin-top: 0px;
+}
+
+.hint-text-2{
+
 }

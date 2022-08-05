@@ -5,13 +5,9 @@
   justify-content: space-between;
   width: 70vw;
   margin: 0 auto;
-  height:95vh;
+  height:85vh;
 }
-.delete-back-2{
-  display:flex;
-  justify-content:space-between;
-  width: 31vw;
-}
+
 .font-16:hover{
   text-decoration: underline;
 }
@@ -40,7 +36,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
   height: 100%;
 }
@@ -48,3 +44,20 @@
 .center{
   text-align:center;
 }
+
+.mb-40{
+  margin-bottom: 40px;
+
+}
+
+.neg-mt-20{
+  margin-top: -20px;
+}
+
+.back{
+  display:flex;
+  justify-content: flex-start;
+  width: 95%;
+  margin-bottom: -30px;
+}
+

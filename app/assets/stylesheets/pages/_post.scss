@@ -21,6 +21,7 @@
   margin: 0 auto;
   border-bottom: solid black 0.5px;
   padding-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .show-btn{
@@ -105,8 +106,8 @@ h3{
   display:flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  width: 134%;
 }
 
 .mb-20{
@@ -223,4 +224,17 @@ h3{
 
 .bold{
   font-weight: 700;
+}
+
+.border{
+  border-right: solid 1px;
+  border-left: solid 1px;
+  border-bottom: solid 1px;
+  height: 87vh;
+  overflow: scroll;
+}
+
+.make-post{
+  margin-top: 0px;
+  padding-top: 20px;
 }

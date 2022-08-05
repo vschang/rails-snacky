@@ -1,0 +1,51 @@
+
+.pagination{
+  display:flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.current{
+  font-family: 'inconsolata', monospace;
+  font-size: 24px;
+  background-color: $blue;
+  color: $orange;
+  padding: 0px 5px;
+}
+
+.page{
+  padding: 0px 5px;
+}
+
+.paginate-controls{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  color: $yellow;
+  font-family: 'Inconsolata', monospace;
+}
+
+.paginate-link{
+  font-family: 'Gluten';
+  font-size: 22px;
+}
+
+.paginate-link-next{
+  font-family: 'Inconsolata', monospace;
+  font-size: 20px;
+  padding: 0px 5px;
+}
+
+
+.paginate-link-first{
+  font-family: 'Inconsolata', monospace;
+  font-size: 16px;
+  padding: 0px 5px;
+}
+
+.first{
+  padding-top:3px;
+}
+.last{
+  padding-top:3px;
+}

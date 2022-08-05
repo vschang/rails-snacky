@@ -1,136 +1,150 @@
 <%= render 'shared/navbar' %>
-<div class="post-container">
-  <div class="image-text-container">
-    <div class="image">
-      <%= cl_image_tag(@post.image.key, crop: :pad, class: "post-image") %>
-    </div>
-    <div class="post-text">
-      <h3><%= @post.title %></h3>
-      <div class="stars">
-        <% case @post.rating %>
+<div class="border">
+  <div class="post-container">
+    <div class="image-text-container">
+      <div class="image">
+        <%= cl_image_tag(@post.image.key, crop: :pad, class: "post-image") %>
+      </div>
+      <div class="post-text">
+        <h3><%= @post.title %></h3>
+        <div class="stars">
+          <% case @post.rating %>
           <% when 1 %>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
+            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
           <% when 2%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
+            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
           <% when 3%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
+            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
           <% when 4%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i>
+            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
           <% when 5%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i>
-          <% end %>
-      </div>
-      <div class="review-text">
-        <p><strong>review: </strong><%= @post.review %></p>
-        <p><strong>brand: </strong><%= @post.brand %></p>
-        <p><strong>country: </strong><%= @post.country_name %></p>
-      </div>
-      <p class="small-p mt-10">posted <%= @post.created_at.strftime("%B %d, %Y") %></p>
-      <p class="small-p mb-20">by
-      <% if user_signed_in? && @post.user_id == @user.id %>
-        <%= link_to profile_path, class:"small-p  bold" do %>
-          @<%= @post.user.username%></p>
-        <% end %>
-      <% else %>
-        <%= link_to user_path(@post.user_id), class:"small-p  bold" do %>
-              @<%= @post.user.username%></p>
-            <% end %>
-      <% end %>
-      </div>
-    </div>
-  <div class="likes-comments-container ">
-    <div class="likes-container">
-      <% if user_signed_in? %>
-        <% if @liked_post %>
-          <%= button_to post_post_likes_path(@post), method: :post, class: "heart-btn" do %>
-            <i class="fa-solid fa-heart red"></i>
-          <% end %>
-        <% else %>
-          <%= button_to post_post_likes_path(@post), method: :post, class: "heart-btn" do %>
-            <i class="fa-solid fa-heart empty-heart"></i>
-          <% end %>
-        <% end %>
-
-        <p>likes <%= @post.post_likes.count %></p>
-    </div>
-    <div class="tags-div">
-      <div class="tags-form">
-      <% if @post.user_id == current_user.id %>
-      <%= simple_form_for([ @post, PostTag.new]) do |f| %>
-          <%= f.select :tag,
-                        options_for_select(['chips','chocolate','candy','alcohol','gummies','pastry']),
-                        { include_blank: 'select a tag' },
-                        class: 'tag-selection' %>
-          <%= f.submit 'add', class:'like-btn'%>
-        <% end %>
-      <% end %>
-      </div>
-      <% end %>
-      <% if @post.post_tags.any? %>
-        <div class="tags-container">
-        <% @post.post_tags.each do |tag| %>
-          <div class="tag mt-10 mb-10">
-            <p class="small-p mr-5"><%= tag.tag %></p>
-            <% if @post.user_id == current_user.id %>
-              <%= button_to post_post_tag_path(@post, tag.id), method: :delete, class:"tag-delete-btn" do %>
-                <i class="fa-regular fa-circle-xmark"></i>
-              <% end %>
-            <% end %>
-          </div>
+            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
+          <% when 6%>
+            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
+          <% when 7%>
+            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
+          <% when 8%>
+            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
+          <% when 9%>
+            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i>
+          <% when 10%>
+            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i>
           <% end %>
         </div>
-    </div>
-      <% end %>
-    </div>
-  </div>
-     <div class ="comments-container">
-      <% if @post.post_comments.any? %>
-        <% @post.post_comments.each do |comment| %>
-          <div class="comment-div">
-            <p class="small-p flex-start grey-text">
-            <% if user_signed_in? && comment.user_id == @user.id %>
-              <%= link_to profile_path, class:"small-p  bold" do%>
-                @<%= comment.user.username%>
+        <div class="review-text">
+          <p><strong>review: </strong><%= @post.review %></p>
+          <p><strong>brand: </strong><%= @post.brand %></p>
+          <p><strong>country: </strong><%= @post.country_name %></p>
+        </div>
+        <p class="small-p mt-10">posted <%= @post.created_at.strftime("%B %d, %Y") %></p>
+        <p class="small-p mb-20">by
+        <% if user_signed_in? && @post.user_id == @user.id %>
+          <%= link_to profile_path, class:"small-p  bold" do %>
+            @<%= @post.user.username%></p>
+          <% end %>
+        <% else %>
+          <%= link_to user_path(@post.user_id), class:"small-p  bold" do %>
+                @<%= @post.user.username%></p>
               <% end %>
-            <% else %>
-              <%= link_to user_path(comment.user_id), class:"small-p  bold" do %>
-                @<%= comment.user.username%>
+        <% end %>
+        </div>
+      </div>
+    <div class="likes-comments-container ">
+      <div class="likes-container">
+        <% if user_signed_in? %>
+          <% if @liked_post %>
+            <%= button_to post_post_likes_path(@post), method: :post, class: "heart-btn" do %>
+              <i class="fa-solid fa-heart red"></i>
+            <% end %>
+          <% else %>
+            <%= button_to post_post_likes_path(@post), method: :post, class: "heart-btn" do %>
+              <i class="fa-solid fa-heart empty-heart"></i>
+            <% end %>
+          <% end %>
+
+          <p>likes <%= @post.post_likes.count %></p>
+      </div>
+      <div class="tags-div">
+        <div class="tags-form">
+        <% if @post.user_id == current_user.id %>
+        <%= simple_form_for([ @post, PostTag.new]) do |f| %>
+            <%= f.select :tag,
+                          options_for_select(['chips','chocolate','candy','alcohol','gummies','pastry']),
+                          { include_blank: 'select a tag' },
+                          class: 'tag-selection' %>
+            <%= f.submit 'add', class:'like-btn'%>
+          <% end %>
+        <% end %>
+        </div>
+        <% end %>
+        <% if @post.post_tags.any? %>
+          <div class="tags-container">
+          <% @post.post_tags.each do |tag| %>
+            <div class="tag mt-10 mb-10">
+              <p class="small-p mr-5"><%= tag.tag %></p>
+              <% if @post.user_id == current_user.id %>
+                <%= button_to post_post_tag_path(@post, tag.id), method: :delete, class:"tag-delete-btn" do %>
+                  <i class="fa-regular fa-circle-xmark"></i>
+                <% end %>
               <% end %>
-            <% end%>
-            said:</p>
-            <div class="content-div"><em><p class="m-5"><%= comment.content %></p></em></div>
-            <p class="small-p grey-text">on <%= comment.created_at.strftime("%B %d, %Y") %></p>
-            <% if comment.persisted? %>
-              <div class="content-div">
-              <%= button_to post_post_comment_path(@post, comment.id), method: :delete, class:"comment-delete-btn" do %>
-                <p class="small-p small-delete">delete</p>
-              <% end %>
-              </div>
+            </div>
             <% end %>
           </div>
-        <% end %>
-      <% end %>
-      <div class='comment-box'>
-        <%= simple_form_for([ @post, PostComment.new ]) do |f| %>
-          <%= f.input :content, placeholder:'have something nice to say?', label: false, as: :text, class: 'comment-box' %>
-            <div class="reply-btn-div">
-            <%= f.submit 'reply', class:'like-btn'%>
-            </div>
+      </div>
         <% end %>
       </div>
-</div>
-  <div class="map-container-show">
-    <div class="" style="width: 100%; height: 100%; border-radius: 20px;"
-      data-controller="map"
-      data-map-page-value="show"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+      <div class ="comments-container">
+        <% if @post.post_comments.any? %>
+          <% @post.post_comments.each do |comment| %>
+            <div class="comment-div">
+              <p class="small-p flex-start grey-text">
+              <% if user_signed_in? && comment.user_id == @user.id %>
+                <%= link_to profile_path, class:"small-p  bold" do%>
+                  @<%= comment.user.username%>
+                <% end %>
+              <% else %>
+                <%= link_to user_path(comment.user_id), class:"small-p  bold" do %>
+                  @<%= comment.user.username%>
+                <% end %>
+              <% end%>
+              said:</p>
+              <div class="content-div"><em><p class="m-5"><%= comment.content %></p></em></div>
+              <p class="small-p grey-text">on <%= comment.created_at.strftime("%B %d, %Y") %></p>
+              <% if comment.persisted? %>
+                <div class="content-div">
+                <%= button_to post_post_comment_path(@post, comment.id), method: :delete, class:"comment-delete-btn" do %>
+                  <p class="small-p small-delete">delete</p>
+                <% end %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+        <div class='comment-box'>
+          <%= simple_form_for([ @post, PostComment.new ]) do |f| %>
+            <%= f.input :content, placeholder:'have something nice to say?', label: false, as: :text, class: 'comment-box' %>
+              <div class="reply-btn-div">
+              <%= f.submit 'reply', class:'like-btn'%>
+              </div>
+          <% end %>
+        </div>
   </div>
-<div class="delete-back">
-  <%= link_to "back", :back, class:"show-btn" %>
-  <% if @post.user_id == current_user.id %>
-    <%= link_to 'edit', edit_post_path(@post), method: :patch, class:"show-btn" %>
-    <%= button_to 'delete', post_path(@post), method: :delete, data: { confirm: 'you sure 😢?' }, class:"show-btn delete" %>
-  <% end %>
+    <div class="map-container-show">
+      <div class="" style="width: 100%; height: 100%; border-radius: 20px;"
+        data-controller="map"
+        data-map-page-value="show"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  <div class="delete-back">
+    <%= link_to :back, class:"back-btn" do %>
+      <i class="fa-solid fa-hand-point-left"></i>
+      <% end %>
+    <% if @post.user_id == current_user.id %>
+      <%= link_to 'edit', edit_post_path(@post), method: :patch, class:"show-btn" %>
+      <%= button_to 'delete', post_path(@post), method: :delete, data: { confirm: 'you sure 😢?' }, class:"show-btn delete" %>
+    <% end %>
+  </div>
 </div>

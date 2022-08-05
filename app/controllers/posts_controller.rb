@@ -2,11 +2,11 @@ class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
+    page = params[:page] || 1
+    per  = params[:per] || 10
+
     @all_posts = Post.all
     @posts = @all_posts.sort_by {|posts| posts.created_at}.reverse
-
-
-    # @posts = Post.page(params[:page])
     @user = current_user
 
     if params[:query].present?
@@ -29,6 +29,7 @@ class PostsController < ApplicationController
       @posts = Post.all.order(:created_at => :asc)
     when "highest"
       @posts = Post.all.order(:rating => :desc)
+
     when "lowest"
       @posts = Post.all.order(:rating => :asc)
     when "popular"
@@ -78,9 +79,7 @@ class PostsController < ApplicationController
       @selection_arr = ["selected", "","", "","", "",""]
     end
 
-    # @posts = @posts.page params[:page]
-    # @posts = Kaminari.paginate_array(Post.page params[:page])
-
+    @posts = Kaminari.paginate_array(@posts).page(page).per(per)
   end
 
   def show
@@ -109,7 +108,7 @@ class PostsController < ApplicationController
       redirect_to post_path(@post), notice: "posted 🎉"
     else
       flash[:alert] = "please fill in all fields!"
-      render new_post_path
+      render new_post_path, alert: "please fill in all fields!"
     end
 
   end

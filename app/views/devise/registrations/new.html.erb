@@ -9,10 +9,10 @@
     </button>
   </div>
 
-  <div class="flex-13 sign-in-container">
+  <div class="flex-13 sign-in-container pt-20">
     <div class="snacky-title">
-      <h1 class="snacky">Snacky</h1>
-      <h2 class="sign-in-text">sign up</h2>
+      <h1 class="snacky ">Snacky</h1>
+      <h2 class="sign-in-text ">sign up</h2>
     </div>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
       <%= f.error_notification %>
@@ -20,45 +20,52 @@
       <div class="form-inputs">
         <div class="first-last-name">
           <%= f.input :first_name,
+                      label: "first name",
                       required: true,
                       autofocus: true,
-                      input_html: { autocomplete: "first_name", class: 'login-input' },
-                      label_html: { class: 'login-text' } %>
+                      input_html: { autocomplete: "first_name", class: 'login-input-name mt-0' },
+                      label_html: { class: 'label-text' } %>
           <%= f.input :last_name,
+                      label: "last name",
                       required: true,
                       autofocus: true,
-                      input_html: { autocomplete: "last_name", class: 'login-input' },
-                      label_html: { class: 'login-text ml-20' } %>
+                      input_html: { autocomplete: "last_name", class: 'login-input-name mt-0' },
+                      label_html: { class: 'label-text ml-20' } %>
         </div>
         <%= f.input :username,
+                    label: "username",
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "username", class: 'login-input' },
-                    label_html: { class: 'login-text' } %>
-      <%= f.input :image, as: :file,
+                    input_html: { autocomplete: "username", class: 'login-input mt-0' },
+                    label_html: { class: 'label-text' } %>
+        <%= f.input :image, as: :file,
                     required: true,
                     label: "upload a profile pic:",
-                    label_html: { class: 'form-text upload-text' },
+                    label_html: { class: 'form-text label-text ' },
                     input_html: { class: 'title-input upload' },
                     id: "file-upload-button" %>
         <%= f.input :email,
+                    label: "email",
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "email", class: 'login-input' },
-                    label_html: { class: 'login-text' } %>
+                    input_html: { autocomplete: "email", class: 'login-input mt-0' },
+                    label_html: { class: 'label-text' } %>
         <%= f.input :password,
+                    label: "password",
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password", class: 'login-input' },
-                    label_html: { class: 'login-text' } %>
+                    input_html: { autocomplete: "new-password", class: 'login-input mt-0' },
+                    label_html: { class: 'label-text' },
+                    hint_html: { class: 'hint-2' } %>
         <%= f.input :password_confirmation,
+                    label: "confirm your password",
                     required: true,
-                    input_html: { autocomplete: "new-password", class: 'login-input' },
-                    label_html: { class: 'login-text' } %>
+                    input_html: { autocomplete: "new-password", class: 'login-input mt-0' },
+                    label_html: { class: 'label-text' } %>
       </div>
 
       <div class="form-submit-btn">
-        <%= f.button :submit, "sign up" , class:'post-btn' %>
+        <%= f.button :submit, "sign up" , class:'post-btn ' %>
       </div>
     <% end %>
       </div>

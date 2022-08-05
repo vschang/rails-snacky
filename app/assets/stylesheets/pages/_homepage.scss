@@ -56,12 +56,11 @@
   flex:1;
 }
 .flex-13{
-  margin-top: 30px;
-  margin-bottom: 30px;
-  flex:13;
-  padding-right: 30px;
-  padding-left: 30px;
-  display:flex;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+  flex: 13;
+  padding: 50px;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -113,6 +112,7 @@
   display:flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around !important;
 }
 
 .width-100{
@@ -135,7 +135,6 @@
 .form-submit-btn{
   display:flex;
   justify-content: center;
-  margin: 25px;
 }
 
 .sign-in-text{
@@ -152,6 +151,8 @@
 
 .first-last-name{
   display:flex;
+  justify-content: space-between;
+  width: 105%;
 }
 
 .font-12{
@@ -160,4 +161,11 @@
 
 .ml-20{
   margin-left: 20px;
+}
+
+.hint-2 {
+  padding-bottom: 20px;
+  font-size: 12px;
+  margin-top: -10px;
+  font-weight: 300;
 }
