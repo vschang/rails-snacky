@@ -1,19 +1,24 @@
 <%= render 'shared/navbar' %>
 <div class="border">
   <div class="profile-info">
-    <%= link_to '/edit_prof_pic' do%>
-      <% if current_user.prof_pic.present? %>
-        <%= image_tag(@user.prof_pic, class: "prof-pic edit-pic") %>
-        <% else %>
-        <%= image_tag('avatar.png', class:'prof-pic edit-pic') %>
+    <div class="edit-pic">
+    <p class="small-p edit-text">edit</p>
+      <%= link_to '/edit_prof_pic' do%>
+        <% if current_user.prof_pic.present? %>
+          <%= image_tag(@user.prof_pic, class: "prof-pic edit-pic") %>
+          <% else %>
+          <%= image_tag('haribo-prof.jpeg', class:'prof-pic edit-pic') %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
     <div class="profile-text">
-      <% if @posts.count == 1 %>
+    <% if @posts.count == 0 %>
+      <h3 class="welcome-profile">Hi <%= @user.first_name %>, we're excited for your first post 👀</h3>
+    <% elsif @posts.count == 1 %>
       <h3 class="welcome-profile">Hi <%= @user.first_name %>, you've made 1 post</h3>
-      <% else %>
+    <% else %>
       <h3 class="welcome-profile">Hi <%= @user.first_name %>, you've made <%= @total%> posts</h3>
-      <% end %>
+    <% end %>
       <p class="text-right">Snacky contributer since <%=@user.created_at.strftime("%B %d, %Y") %></p>
     </div>
     <div class="dropdown">
@@ -24,6 +29,11 @@
       </div>
     </div>
   </div>
+  <% if @markers.count == 0 %>
+  <div class="first-post">
+    <%= link_to "make my first post! 🤩", 'posts/new', class:"post-btn"%>
+  </div>
+  <% else %>
   <div class="map-container">
     <h1 class="your-snack-map">your snack map</h1>
     <div class="" style="width: 100%; height: 300px; border-radius: 20px;"
@@ -33,6 +43,7 @@
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
+  <% end %>
 
   <div class="all-posts">
     <% @posts.each do |post|%>
@@ -86,5 +97,6 @@
         </div>
       </div>
       <% end %>
+    <%# <% end %>
   </div>
 </div>

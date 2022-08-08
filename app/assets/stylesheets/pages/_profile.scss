@@ -29,6 +29,23 @@
 
 .edit-pic:hover{
   opacity:75%;
+  .edit-text{
+    display:block;
+  }
+}
+
+.edit-pic{
+  position: relative;
+}
+
+.edit-text{
+  display:none;
+  position: absolute;
+  z-index: 2;
+  background: #ffffffd6;
+  bottom: 15px;
+  right: 35px;
+  padding: 6px;
 }
 
 
@@ -95,4 +112,10 @@
 
 .profile-pic-link:hover{
   opacity:75%;
+}
+
+.first-post{
+  display:flex;
+  justify-content: center;
+  padding-top: 100px;
 }

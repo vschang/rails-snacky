@@ -10,7 +10,7 @@
         <% if current_user.prof_pic.present? %>
           <%= image_tag(@user.prof_pic, class: "prof-pic mb-40") unless @user.prof_pic.nil? %>
         <% else %>
-          <%= image_tag('avatar.png', class:'prof-pic mb-40') %>
+          <%= image_tag('haribo-prof.jpeg', class:'prof-pic mb-40') %>
         <% end %>
 
         <%= f.input :image, as: :file,

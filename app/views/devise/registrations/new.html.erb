@@ -14,7 +14,7 @@
       <h1 class="snacky ">Snacky</h1>
       <h2 class="sign-in-text ">sign up</h2>
     </div>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+    <%= simple_form_for(@user, as: :user, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
@@ -38,7 +38,7 @@
                     autofocus: true,
                     input_html: { autocomplete: "username", class: 'login-input mt-0' },
                     label_html: { class: 'label-text' } %>
-        <%= f.input :image, as: :file,
+        <%# <%= f.input :image, as: :file,
                     required: true,
                     label: "upload a profile pic:",
                     label_html: { class: 'form-text label-text ' },
