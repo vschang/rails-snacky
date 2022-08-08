@@ -5,7 +5,7 @@
     <%= simple_form_for(@user, as: :user, url: update_prof_pic_path) do |f| %>
       <%= f.error_notification %>
 
-      <div class="form-inputs">
+      <div class="form-inputs-profpic">
         <p>current profile picture</p>
         <% if current_user.prof_pic.present? %>
           <%= image_tag(@user.prof_pic, class: "prof-pic mb-40") unless @user.prof_pic.nil? %>

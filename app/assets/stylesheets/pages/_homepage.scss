@@ -1,3 +1,8 @@
+// @media (max-width: 768px) {
+// }
+
+// @media (min-width: 769px) {
+// }
 .home-container{
   display:flex;
   height:96vh;
@@ -105,7 +110,8 @@
 }
 .button-div{
   display:flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .sign-in-container{
@@ -168,4 +174,18 @@
   font-size: 12px;
   margin-top: -10px;
   font-weight: 300;
+}
+
+.bear-button-div{
+  display:flex;
+  justify-content:flex-end;
+}
+
+.haribo-bear{
+  height: 150px;
+}
+
+.haribo-bear:hover{
+  // transform: scale(1.1);
+  transform: translateX(10px);
 }

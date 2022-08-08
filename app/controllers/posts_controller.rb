@@ -9,11 +9,11 @@ class PostsController < ApplicationController
     @posts = @all_posts.sort_by {|posts| posts.created_at}.reverse
     @user = current_user
 
-    if params[:query].present?
-      @posts = @all_posts.global_search(params[:query])
-    else
-      @message = "No results found for #{params[:query]}"
-    end
+    # if params[:query].present?
+    #   @posts = @all_posts.global_search(params[:query])
+    # else
+    #   @message = "No results found for #{params[:query]}"
+    # end
 
     @selected = params[:order]
 
@@ -22,40 +22,32 @@ class PostsController < ApplicationController
     @index_of_likes_of_posts_with_i = @likes_of_posts_with_i.map {|likes, index| index}
     @posts_with_i = @index_of_likes_of_posts_with_i.map {|index| @posts[index]}
 
-    case params[:order]
-    when "newest"
-      @posts = Post.all.order(:created_at => :desc)
-    when "oldest"
-      @posts = Post.all.order(:created_at => :asc)
-    when "highest"
-      @posts = Post.all.order(:rating => :desc)
 
-    when "lowest"
-      @posts = Post.all.order(:rating => :asc)
-    when "popular"
-      @posts = @posts_with_i.reverse
-    end
+    # Show markers for all posts
 
-    @geocoded_posts = Post.all.geocoded
-    @markers = @geocoded_posts.map do |post|
-    {
-      lat: post.latitude,
-      lng: post.longitude,
-      info_window: render_to_string(partial: "info_window", locals: {post: post}),
-      image_url: helpers.asset_url("pink-gummy-removebg-preview.png")
-    }
-    end
+    # @geocoded_posts = Post.all.geocoded
+    # @markers = @posts.map do |post|
+    # {
+    #   lat: post.latitude,
+    #   lng: post.longitude,
+    #   info_window: render_to_string(partial: "info_window", locals: {post: post}),
+    #   image_url: helpers.asset_url("pink-gummy-removebg-preview.png")
+    # }
+    # end
 
+    # If no filter or "all" mark all posts
     if params[:filter] == "all" || params[:filter] == nil
-      @posts = Post.all
-      @markers = @geocoded_posts.map do |post|
+      # @posts = Post.all
+      @markers = @posts.map do |post|
         {
           lat: post.latitude,
           lng: post.longitude,
           info_window: render_to_string(partial: "info_window", locals: {post: post}),
           image_url: helpers.asset_url("pink-gummy-removebg-preview.png")
         }
-        end
+      end
+
+    # If there is a filter
     else
       @posts = PostTag.where(tag: params[:filter]).map {|post_tag| post_tag.post}
 
@@ -69,13 +61,26 @@ class PostsController < ApplicationController
       end
     end
 
+    case params[:order]
+    when "newest"
+      @posts = @posts.sort_by { |post| post.created_at }.reverse!
+    when "oldest"
+      @posts = @posts.sort_by { |post| post.created_at }
+    when "highest"
+      @posts = @posts.sort_by { |post| post.rating }.reverse!
+    when "lowest"
+      @posts = @posts.sort_by { |post| post.rating }
+    when "popular"
+      @posts = @posts_with_i.reverse
+    end
+
     if params[:filter]
       arr = ["all", "chips", "chocolate", "alcohol", "gummies", "candy","pastry"]
       index = arr.find_index(params[:filter])
       @selection_arr = ["", "","", "","", "",""]
       @selection_arr[index] = "selected"
     else
-      @posts = @all_posts.sort_by {|posts| posts.created_at}.reverse
+      # @posts = @all_posts.sort_by {|posts| posts.created_at}.reverse
       @selection_arr = ["selected", "","", "","", "",""]
     end
 
