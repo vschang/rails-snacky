@@ -1,7 +1,73 @@
-.form-container{
-  width:70vw;
-  margin: 0 auto;
+@media (max-width: 768px) {
+  .snacky-title{
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+  }
+
+  .big-p{
+    font-size: 16px;
+    margin:0px;
+  }
+
+  .flex{
+    display:block;
+  }
+
+  .post-div{
+    display:flex;
+    justify-content: center;
+  }
+  .form-container{
+    padding: 0px 18px;
+  }
+  .comment-box{
+    margin: 20px 0px 20px 0px;
+    width: 80vw;
+  }
+
 }
+@media (min-width: 769px) {
+  .snacky-title{
+    display:flex;
+    justify-content: center;
+  }
+
+  .big-p{
+    font-family: 'inconsolata';
+    font-size: 20px;
+  }
+
+  .flex{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+  }
+
+  .post-div{
+    display:flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+  }
+  .form-container{
+    width:70vw;
+    margin: 0 auto;
+  }
+  .comment-box{
+    margin: 20px 0px 20px 0px;
+    width: 64vw;
+  }
+
+}
+input[type="text"] {
+  font-size: 16px;
+  font-family: 'Inconsolata', monospace;
+}
+.snacky-faq{
+  display:flex;
+  justify-content: center;
+}
+
 .underline{
   text-decoration: underline;
 }
@@ -11,19 +77,11 @@
   font-size: 16px;
   font-weight: bold;
 }
-.address-wrapper{
-//  flex: 1;
-}
-.upload{
-  // flex: 1;
-}
 
 .title{
   width:100%;
 }
-.stars{
-  padding-bottom: 20px;
-}
+
 .review{
   width:100%;
   height: 9vh;
@@ -32,22 +90,12 @@
 .brand{
   width: 150%;
 }
-.country{
-  // flex:1;
-}
-.upload-text{
-}
+
 .title-input{
   border-radius: 15px;
   border: solid black 0.75px;
   margin-bottom:20px;
   padding: 5px;
-}
-
-.flex{
-  display:flex;
-  justify-content: space-between;
-  align-items:center;
 }
 
 input[id="post_image"]{
@@ -62,10 +110,7 @@ input[type="file"] {
   border-radius: 20px;
 }
 
-input[type="text"] {
-  font-size: 16px;
-  font-family: 'Inconsolata', monospace;
-}
+
 
 .mapboxgl-ctrl-geocoder{
   border-radius:20px;
@@ -131,10 +176,6 @@ input::file-selector-button:hover{
   margin: 0 auto;
 }
 
-.snacky-title{
-  display:flex;
-  justify-content: center;
-}
 .remember-me{
   border: solid black 0px;
 }
@@ -143,12 +184,6 @@ label{
   font-family: 'Geneva';
 }
 
-// select{
-//   color: black;
-//   background-color: $orange;
-//   font-family: 'Geneva';
-//   border: solid $blue 1px;
-// }
 
 option{
   color: $orange;
@@ -162,11 +197,6 @@ option{
   align-items:center;
 }
 
-.post-div{
-  display:flex;
-  justify-content: flex-end;
-    margin-right: 10px;
-}
 
 .invalid-feedback{
   font-family: 'Geneva';
@@ -181,11 +211,6 @@ option{
 
 .display-none{
   display: none;
-}
-
-.comment-box{
-  width: 100%;
-  margin: 20px 0px 20px 0px;
 }
 
 .form-control{
@@ -250,7 +275,6 @@ option{
 .mt-0{
   margin-top: 0px;
 }
-
-.hint-text-2{
-
+.search-form{
+  display:flex;
 }

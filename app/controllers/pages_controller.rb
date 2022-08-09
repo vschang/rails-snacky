@@ -14,6 +14,8 @@ class PagesController < ApplicationController
     else
       @posts = []
     end
+    @user = current_user
+
   end
 
   def profile

@@ -1,30 +1,213 @@
 
-.navbar{
-  background-color: $orange;
-  border: black solid 0.25px;
-  height: 10vh;
-  display: flex;
-  align-items:center;
-  top: 0px;
+@media (max-width: 768px) {
+  .nav-link{
+    font-size: 20px;
+  }
+
+  .navbar-logged-in {
+    border: black solid 0.25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .navbar-logged-out{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: -25px;
+    height: 5.5vh;
+  }
+
+  .home-post-mobile{
+    flex: 1;
+    display:flex;
+    height:100%;
+    width:100%;
+    margin: 10px;
+  }
+
+  .search-profile-mobile{
+    flex: 1;
+    display: flex;
+    width: 95%;
+    margin: 10px;
+    height: 5.5vh;
+  }
+
+  .nav-btn{
+    border: black solid 0.5px;
+    height: 100%;
+    background-color: $green;
+    font-size: 20px;
+    flex: 1;
+  }
+
+  a{
+    font-family: 'inconsolata';
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    font-weight: 300;
+  }
+
+  .mobile-div-show {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    height: 5.5vh;
+  }
+
+  .mobile-div-show-2{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    z-index:3;
+  }
+
+  .mobile-div-hide{
+    display:none;
+  }
+
+  .nav-btn {
+    border: black solid 0px;
+    flex: 1;
+  }
+
+  #search-nav {
+    background-color: #B4FD3E;
+    border-left: black solid 1px;
+    border-bottom: black solid 1px;
+    border-top: black solid 1px;
+    border-right: black solid 0.5px;
+  }
+
+  #profile-nav {
+    background-color: #F5F5F5;
+    border-right: black solid 1px;
+    border-bottom: black solid 1px;
+    border-top: black solid 1px;
+    border-left: black solid 0.5px;
+  }
+
+  #home-nav {
+    background-color: #D9D9D9;
+    border-left: black solid 1px;
+    border-bottom: black solid 1px;
+    border-top: black solid 1px;
+    border-right: black solid 0.5px;
+  }
+
+  #post-nav {
+    background-color: #FFB26A;
+    border-right: black solid 1px;
+    border-bottom: black solid 1px;
+    border-top: black solid 1px;
+    border-left: black solid 0.5px;
+  }
+
+  #login-nav {
+    background-color: $light-grey;
+    border-left: black solid 0.5px;
+    border-bottom: black solid 1px;
+    border-top: black solid 1px;
+    border-right: black solid 1px;
+  }
+
+  #home-nav-2{
+    background-color: $orange;
+    border-left: black solid 1px;
+    border-bottom: black solid 1px;
+    border-top: black solid 1px;
+    border-right: black solid 0.5px;
+  }
+
+  #search-nav-2{
+    background-color: $green;
+    border-left: black solid 0.5px;
+    border-bottom: black solid 1px;
+    border-top: black solid 1px;
+    border-right: black solid 0.5px;
+  }
+
+}
+@media (min-width: 769px) {
+  .nav-link{
+    font-size: 24px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+
+  .navbar-logged-in{
+    border: black solid 0.25px;
+    height: 10vh;
+    display: flex;
+    align-items:center;
+    top: 0px;
+  }
+
+  .navbar-logged-out{
+    border: black solid 0.25px;
+    height: 10vh;
+    display: flex;
+    align-items:center;
+    top: 0px;
+  }
+
+  .home-post-mobile{
+    flex: 1;
+    display:flex;
+    height:100%;
+  }
+
+  .search-profile-mobile{
+    flex: 1;
+    display:flex;
+    height: 100%;
+  }
+
+  .nav-btn{
+    border: black solid 0.5px;
+    height: 100%;
+    background-color: $green;
+    font-size: 24px;
+    flex: 1;
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 300;
+  }
+  //home and post desktop
+  .mobile-div-hide{
+    flex: 1;
+    height: 100%;
+  }
+  //search and profile desktop
+  .mobile-div-show-2{
+    flex: 1;
+    height: 100%;
+  }
+
+
+  .mobile-div-show {
+    display:none;
+  }
 }
 
-.nav-link{
-  font-size: 24px;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-}
+
 
 .nav-link-2{
   font-size: 24px;
- 
-}
 
-.nav-btn{
-  border: black solid 0.5px;
-  height: 100%;
-  background-color: $green;
-  font-size: 24px;
-  flex: 1;
 }
 
 
@@ -33,15 +216,6 @@
   text-decoration: underline;
 }
 
-
-
-a{
-  text-decoration: none;
-  color: black;
-  font-size: 24px;
-  font-family: 'Inconsolata', monospace;
-  font-weight: 300;
-}
 
 #home-nav{
   background-color: $grey;

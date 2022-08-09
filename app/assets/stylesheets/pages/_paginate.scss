@@ -1,21 +1,82 @@
+@media (max-width: 768px) {
+  .page{
+    padding: 0px 5px;
+    font-size: 28px !important;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
 
-.pagination{
-  display:flex;
-  justify-content: center;
-  padding: 20px;
+  .current{
+    font-family: 'inconsolata', monospace;
+    font-size: 28px;
+    background-color: $blue;
+    color: $orange;
+    padding: 0px 5px;
+  }
+  .paginate-link{
+    font-family: 'Gluten';
+    font-size: 24px;
+  }
+
+  .paginate-link-next{
+    font-family: 'Inconsolata', monospace;
+    font-size: 22px;
+    padding: 0px 5px;
+  }
+
+
+  .paginate-link-first{
+    font-family: 'Inconsolata', monospace;
+    font-size: 18px;
+    padding: 0px 5px;
+  }
 }
 
-.current{
-  font-family: 'inconsolata', monospace;
-  font-size: 24px;
-  background-color: $blue;
-  color: $orange;
-  padding: 0px 5px;
-}
+@media (min-width: 768px) {
+  .pagination{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    padding: 20px;
+  }
+  .current{
+    font-family: 'inconsolata', monospace;
+    font-size: 24px;
+    background-color: $blue;
+    color: $orange;
+    padding: 0px 5px;
+  }
+  .paginate-link{
+    font-family: 'Gluten';
+    font-size: 22px;
+  }
+
+  .paginate-link-next{
+    font-family: 'Inconsolata', monospace;
+    font-size: 20px;
+    padding: 0px 5px;
+  }
+
+
+  .paginate-link-first{
+    font-family: 'Inconsolata', monospace;
+    font-size: 16px;
+    padding: 0px 5px;
+  }
 
 .page{
   padding: 0px 5px;
+  font-size: 24px;
 }
+}
+
+
+
 
 .paginate-controls{
   display: flex;
@@ -25,23 +86,6 @@
   font-family: 'Inconsolata', monospace;
 }
 
-.paginate-link{
-  font-family: 'Gluten';
-  font-size: 22px;
-}
-
-.paginate-link-next{
-  font-family: 'Inconsolata', monospace;
-  font-size: 20px;
-  padding: 0px 5px;
-}
-
-
-.paginate-link-first{
-  font-family: 'Inconsolata', monospace;
-  font-size: 16px;
-  padding: 0px 5px;
-}
 
 .first{
   padding-top:3px;

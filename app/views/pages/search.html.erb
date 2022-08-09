@@ -1,14 +1,14 @@
 <%= render 'shared/navbar' %>
 <div class="border">
   <div class="search-container">
-    <%= form_tag search_path, method: :get, class: "" do %>
+    <%= form_tag search_path, method: :get, class: "search-form" do %>
       <%= text_field_tag :query,
           params[:query],
           class: "form-control",
           placeholder: "search by name or brand",
-          style:"font-family: 'inconsolata', monospace; font-size: 24px; font-weight: 300; width: 85%; margin-right:25px; margin-bottom:25px; color: black; background-color: white; border: black solid 1px; border-radius: 15px; padding: 8px 15px;"
+          style:"font-family: 'inconsolata', monospace; font-weight: 300; font-size:20px; width: 75%; color: black; background-color: white; border: black solid 1px; border-radius: 15px; padding: 8px 15px;"
       %>
-      <%= submit_tag "go!", class: "post-btn" %>
+      <%= submit_tag "go!", class: "go-btn" %>
     <% end %>
     <div class="search-results">
       <% if params[:query] && @posts.length == 0 %>
@@ -16,7 +16,8 @@
       <% elsif !params[:query] %>
         <p></p>
       <% else %>
-      <p  class="mt-10">search results for: </p>
+
+      <p  class="mt-10"><%= @posts.length %> search results for: </p>
       <h3 class="search-param"> <%= params[:query] %> </h3>
         <% @posts.each do |post| %>
           <div class="search-result">
@@ -53,7 +54,16 @@
               </div>
               <p> <%= truncate(post.review, :length => 80) %> </p>
               <p class="small-p mt-10">posted <%= post.created_at.strftime("%B %d, %Y") %></p>
-              <p class="small-p mb-20">by @<%= post.user.username%></p>
+              <p class="small-p mb-20">by
+              <% if user_signed_in? && post.user_id == @user.id %>
+                <%= link_to profile_path, class:"small-p  bold" do %>
+                  @<%= post.user.username%></p>
+                <% end %>
+              <% else %>
+                <%= link_to user_path(post.user_id), class:"small-p  bold" do %>
+                      @<%= post.user.username%></p>
+                    <% end %>
+              <% end %>
             </div>
           </div>
         <% end %>

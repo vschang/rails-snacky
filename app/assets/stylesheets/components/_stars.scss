@@ -1,3 +1,23 @@
 [data-star-rating] {
   padding-bottom: 20px;
 }
+
+
+@media (max-width: 768px) {
+  [data-star-rating] .gl-star-rating--stars[aria-label]:after{
+    font-family: 'Inconsolata';
+    width: 50px;
+    font-size: 7.5px;
+    overflow-wrap: break-word;
+    background-color: #ffc10700;
+    color:black
+  }
+  [data-star-rating] .gl-star-rating--stars[aria-label]:before{
+    background-color: #ffc10700;
+  }
+}
+@media (min-width: 769px) {
+  [data-star-rating] .gl-star-rating--stars[aria-label]:after{
+    font-family: 'Inconsolata';
+  }
+}

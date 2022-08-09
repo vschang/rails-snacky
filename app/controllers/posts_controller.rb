@@ -71,7 +71,7 @@ class PostsController < ApplicationController
     when "lowest"
       @posts = @posts.sort_by { |post| post.rating }
     when "popular"
-      @posts = @posts_with_i.reverse
+      @posts = @posts_with_i.reverse.select { |post| post.post_likes.count >= 1 }
     end
 
     if params[:filter]

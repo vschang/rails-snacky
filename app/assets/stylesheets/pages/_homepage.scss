@@ -1,191 +1,360 @@
-// @media (max-width: 768px) {
-// }
+@media (max-width: 768px) {
+  .home-container{
+    display:flex;
+    flex-direction: column;
+    height:96vh;
+  }
 
-// @media (min-width: 769px) {
-// }
-.home-container{
-  display:flex;
-  height:96vh;
-}
+  .home-btn-1{
+    display:flex;
+    background-color: $pink;
+    border: solid black 1px;
+  }
 
-.home-btn-1{
-  display:flex;
-  flex-direction: column;
-  background-color: $pink;
-  border: solid black 1px;
-}
+  .home-btn-2{
+    display:flex;
+    flex-direction: row-reverse;
+    background-color: $pink;
+    border: solid black 1px;
+  }
 
-.home-btn-2{
-  display:flex;
-  flex-direction: column-reverse;
-  background-color: $pink;
-  border: solid black 1px;
-}
+  .login{
+    border: 0px;
+    background-color: $light-grey;
+    font-weight: 300;
+    font-family: 'Inconsolata', monospace;
+    border-right: solid black 1px;
+    flex: 2;
+  }
 
-.login{
-  border: 0px;
-  background-color: $light-grey;
-  font-size: 26px;
-  font-weight: 300;
-  font-family: 'Inconsolata', monospace;
-  border-bottom: solid black 1px;
-  height: 60vh;
-  flex: 2;
-}
-.login:hover, .faq:hover, .signup:hover, .welcome-btn:hover{
-  background-color: $pink;
-  text-decoration: underline;
-}
+  .faq{
+    font-size: 26px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 300;
+    background-color: $orange;
+    border: solid black 0px;
+    border-right: solid black 1px;
+    flex:1;
+  }
+
+  .signup{
+    background-color: $grey;
+    border: solid black 0px;
+    flex: 2;
+  }
+
+  .flex-1{
+    flex:1;
+  }
+  .flex-13{
+    flex: 10;
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-right: solid black 1px;
+    border-left: solid black 1px;
+  }
+
+  .welcome{
+    font-size: 56px;
+    font-family: 'Geneva', sans-serif;
+    color: $yellow;
+    text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
+                0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
+    margin-top:0px;
+    margin-bottom: 0px;
+  }
+
+  .snacky{
+    font-size: 56px;
+    font-family: 'Gluten', sans-serif;
+    color: $yellow;
+    text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
+                0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
+    margin-top:0px;
+    margin-bottom:0px;
+  }
+
+  .about{
+    background-color: $blue;
+    font-size: 24px;
+    border: solid black 1px;
+    border-radius: 60px;
+    padding: 20px 20px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+  .welcome-btn{
+    background-color: $green;
+    font-size: 18px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 300;
+    border: solid black 0px;
+    flex: 1;
+  }
+  .button-div{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .sign-in-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top:0px !important;
+  }
 
 
-.faq{
-  font-size: 26px;
-  font-family: 'Inconsolata', monospace;
-  font-weight: 300;
-  background-color: $orange;
-  border: solid black 0px;
-  border-bottom: solid black 1px;
-  flex:1;
-}
 
-.signup{
-  font-size: 26px;
-  font-family: 'Inconsolata', monospace;
-  font-weight: 300;
-  background-color: $grey;
-  border: solid black 0px;
-  flex: 2;
-}
+  .width-100{
+    width: 100%;
+  }
 
-.flex-1{
-  flex:1;
-}
-.flex-13{
-  border-top: solid 1px;
-  border-bottom: solid 1px;
-  flex: 13;
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+  .mb-25{
+    margin-bottom: 25px;
+  }
 
-.welcome{
-  font-size: 98px;
-  font-family: 'Geneva', sans-serif;
-  color: $yellow;
-  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
-               0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
-  margin-top:0px;
-  margin-bottom: 0px;
-}
+  .forgot{
+    font-size: 14px;
+    text-decoration: underline;
+  }
 
-.snacky{
-  font-size: 98px;
-  font-family: 'Gluten', sans-serif;
-  color: $yellow;
-  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
-               0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
-  margin-top:0px;
-  margin-bottom:20px;
-}
+  .mb-0{
+    margin-bottom: 0px;
+  }
 
-.about{
-  background-color: $blue;
-  font-size: 30px;
-  border: solid black 1px;
-  border-radius: 82px;
-  padding: 21px 34px;
-  text-align: center;
-  margin-top: 0px;
-}
+  .form-submit-btn{
+    display:flex;
+    justify-content: center;
+  }
 
-.welcome-btn{
-  background-color: $green;
-  font-size: 26px;
-  font-family: 'Inconsolata', monospace;
-  font-weight: 300;
-  border: solid black 0px;
-  flex: 1;
-}
-.button-div{
-  display:flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
+  .sign-in-text{
+    font-size: 48px;
+    font-family: 'Geneva', sans-serif;
+    color: $yellow;
+    text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
+                0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
+    margin-top:0px;
+    margin-bottom: 0px;
+    text-decoration: none;
+    margin-left: 30px;
+  }
 
-.sign-in-container{
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around !important;
-}
+  .first-last-name{
+    display:flex;
+    justify-content: space-between;
+    width: 105%;
+  }
 
-.width-100{
-  width: 100%;
-}
+  .font-12{
+    font-size: 12px;
+  }
 
-.mb-25{
-  margin-bottom: 25px;
-}
+  .ml-20{
+    margin-left: 20px;
+  }
 
-.forgot{
-  font-size: 14px;
-  text-decoration: underline;
-}
+  .hint-2 {
+    padding-bottom: 20px;
+    font-size: 12px;
+    margin-top: -10px;
+    font-weight: 300;
+  }
 
-.mb-0{
-  margin-bottom: 0px;
-}
+  .bear-button-div{
+    display:flex;
+    justify-content:flex-end;
+  }
 
-.form-submit-btn{
-  display:flex;
-  justify-content: center;
-}
+  .haribo-bear{
+    height: 150px;
+  }
 
-.sign-in-text{
-  font-size: 48px;
-  font-family: 'Geneva', sans-serif;
-  color: $yellow;
-  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
-               0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
-  margin-top:0px;
-  margin-bottom: 0px;
-  text-decoration: none;
-  margin-left: 30px;
-}
-
-.first-last-name{
-  display:flex;
-  justify-content: space-between;
-  width: 105%;
-}
-
-.font-12{
-  font-size: 12px;
-}
-
-.ml-20{
-  margin-left: 20px;
-}
-
-.hint-2 {
-  padding-bottom: 20px;
-  font-size: 12px;
-  margin-top: -10px;
-  font-weight: 300;
-}
-
-.bear-button-div{
-  display:flex;
-  justify-content:flex-end;
+  .haribo-bear:hover{
+    // transform: scale(1.1);
+    transform: translateX(10px);
+  }
 }
 
-.haribo-bear{
-  height: 150px;
-}
+@media (min-width: 769px) {
+  .home-container{
+    display:flex;
+    height:96vh;
+  }
 
-.haribo-bear:hover{
-  // transform: scale(1.1);
-  transform: translateX(10px);
+  .home-btn-1{
+    display:flex;
+    flex-direction: column;
+    background-color: $pink;
+    border: solid black 1px;
+  }
+
+  .home-btn-2{
+    display:flex;
+    flex-direction: column-reverse;
+    background-color: $pink;
+    border: solid black 1px;
+  }
+
+  .login{
+    border: 0px;
+    background-color: $light-grey;
+    border-bottom: solid black 1px;
+    height: 60vh;
+    flex: 2;
+  }
+  .login:hover, .faq:hover, .signup:hover, .welcome-btn:hover{
+    background-color: $pink;
+    text-decoration: underline;
+  }
+
+
+  .faq{
+    background-color: $orange;
+    border: solid black 0px;
+    border-bottom: solid black 1px;
+    flex:1;
+  }
+
+  .signup{
+    background-color: $grey;
+    border: solid black 0px;
+    flex: 2;
+  }
+
+  .flex-1{
+    flex:1;
+  }
+  .flex-13{
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    flex: 13;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .welcome{
+    font-size: 98px;
+    font-family: 'Geneva', sans-serif;
+    color: $yellow;
+    text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
+                0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
+    margin-top:0px;
+    margin-bottom: 0px;
+  }
+
+  .snacky{
+    font-size: 98px;
+    font-family: 'Gluten', sans-serif;
+    color: $yellow;
+    text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
+                0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
+    margin-top:0px;
+    margin-bottom:20px;
+  }
+
+  .about{
+    background-color: $blue;
+    font-size: 30px;
+    border: solid black 1px;
+    border-radius: 82px;
+    padding: 21px 34px;
+    text-align: center;
+    margin-top: 0px;
+  }
+
+  .welcome-btn{
+    background-color: $green;
+    font-size: 26px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 300;
+    border: solid black 0px;
+    flex: 1;
+  }
+  .button-div{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .sign-in-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around !important;
+  }
+
+  .width-100{
+    width: 100%;
+  }
+
+  .mb-25{
+    margin-bottom: 25px;
+  }
+
+  .forgot{
+    font-size: 14px;
+    text-decoration: underline;
+  }
+
+  .mb-0{
+    margin-bottom: 0px;
+  }
+
+  .form-submit-btn{
+    display:flex;
+    justify-content: center;
+  }
+
+  .sign-in-text{
+    font-size: 48px;
+    font-family: 'Geneva', sans-serif;
+    color: $yellow;
+    text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
+                0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
+    margin-top:0px;
+    margin-bottom: 0px;
+    text-decoration: none;
+    margin-left: 30px;
+  }
+
+  .first-last-name{
+    display:flex;
+    justify-content: space-between;
+    width: 105%;
+  }
+
+  .font-12{
+    font-size: 12px;
+  }
+
+  .ml-20{
+    margin-left: 20px;
+  }
+
+  .hint-2 {
+    padding-bottom: 20px;
+    font-size: 12px;
+    margin-top: -10px;
+    font-weight: 300;
+  }
+
+  .bear-button-div{
+    display:flex;
+    justify-content:flex-end;
+  }
+
+  .haribo-bear{
+    height: 150px;
+  }
+
+  .haribo-bear:hover{
+    // transform: scale(1.1);
+    transform: translateX(10px);
+  }
 }

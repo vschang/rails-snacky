@@ -2,7 +2,7 @@
 <div class="border">
   <div class="all-posts">
     <div class="map-filter-container">
-      <div class="map-container">
+      <div class="map-container pt-20">
         <h1 class="snack-map">snack map</h1>
         <div class="" style="width: 100%; height: 300px; border-radius: 20px;"
           data-controller="map"
@@ -75,7 +75,7 @@
           </div>
           <div class="post-text">
             <%= link_to post_path(post.id) do %>
-            <h3 class="post-title"><%= post.title %></h3>
+            <h3 class="post-title text-center"><%= post.title %></h3>
             <% end %>
             <div class="stars">
               <% case post.rating %>
@@ -118,8 +118,10 @@
               <% end %>
             <% end %>
             <div class="likes-div">
-              <p>likes <%= post.post_likes.count %></p>
-              <p>comments <%= post.post_comments.count %></p>
+              <div class="likes-n-comments">
+                <p><i class="fa-solid fa-heart red"></i> <%= post.post_likes.count %></p>
+                <p><i class="fa-solid fa-comment-dots comment"></i> <%= post.post_comments.count %></p>
+              </div>
               <div class="tags-container">
                 <% post.post_tags.each do |tag| %>
                 <p class="tag small-p"><%= tag.tag %></p>

@@ -1,5 +1,7 @@
-<div class="navbar">
-    <% if user_signed_in? %>
+<% if user_signed_in? %>
+<div class="navbar-logged-in">
+  <div class="mobile-div-hide">
+    <div class="home-post-mobile">
       <button class="nav-btn"
               id="home-nav"
               data-controller="navbar"
@@ -10,11 +12,13 @@
       <button class="nav-btn " id="post-nav" data-controller="navbar" >
         <%= link_to "post", "/posts/new", class: "" %>
       </button>
-
+    </div>
+  </div>
+  <div class="mobile-div-show-2">
+    <div class="search-profile-mobile">
       <button class="nav-btn " id="search-nav" data-controller="navbar">
         <%= link_to "search", "/search", class: "" %>
       </button>
-
       <button class="nav-btn " id="profile-nav" data-controller="navbar">
       <div class="avatar-nav">
         <%= link_to profile_path, class:"" do%>
@@ -29,18 +33,36 @@
         <% end %>
       </div>
       </button>
+    </div>
+  </div>
+    <div class="mobile-div-show">
+      <div class="home-post-mobile">
+          <button class="nav-btn"
+                  id="home-nav"
+                  data-controller="navbar"
+                  data-action="click->navbar#activate">
+            <%= link_to "home", "/posts", class: "" %>
+          </button>
+          <button class="nav-btn " id="post-nav" data-controller="navbar" >
+            <%= link_to "post", "/posts/new", class: "" %>
+          </button>
+      </div>
+    </div>
+</div>
 
-    <% else %>
-      <button class="nav-btn" id="home-nav-2"
-              data-controller="navbar"
-              data-action="click->navbar#activate">
-        <%= link_to "home", "/posts", class: "nav-link-2" %>
-      </button>
-      <button class="nav-btn" id="search-nav-2" data-controller="navbar">
-        <%= link_to "search", "/search", class: "nav-link-2" %>
-      </button>
-      <button class="nav-btn" id="login-nav" data-controller="navbar">
-        <%= link_to "login", new_user_session_path, class: "nav-link-2" %>
-      </button>
-    <% end %>
+
+<% else %>
+<div class="navbar-logged-out">
+  <button class="nav-btn" id="home-nav-2"
+          data-controller="navbar"
+          data-action="click->navbar#activate">
+    <%= link_to "home", "/posts", class: "nav-link-2" %>
+  </button>
+  <button class="nav-btn" id="search-nav-2" data-controller="navbar">
+    <%= link_to "search", "/search", class: "nav-link-2" %>
+  </button>
+  <button class="nav-btn" id="login-nav" data-controller="navbar">
+    <%= link_to "login", new_user_session_path, class: "nav-link-2" %>
+  </button>
+<% end %>
 </div>

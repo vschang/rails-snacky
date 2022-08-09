@@ -1,15 +1,38 @@
-.go-btn{
-  font-size: 20px;
+@media (max-width: 768px) {
+
+  .go-btn{
+    font-size: 16px;
     font-family: 'Inconsolata', monospace;
-    background-color: white;
+    font-weight: 700;
+    background-color: #B4FD3E;
     border: solid black 1px;
-    border-radius: 10px;
-    box-shadow: 2px 2px black;
+    border-radius: 15px;
+    box-shadow: 5px 5px black;
+    padding: 5px;
+    margin-left: 20px;
+  }
 }
-.go-btn:hover{
-  box-shadow: 0px 0px black;
-  opacity: 75%;
+
+@media (min-width: 769px) {
+  .go-btn{
+    font-size: 16px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 700;
+    background-color: #B4FD3E;
+    border: solid black 1px;
+    border-radius: 18px;
+    box-shadow: 5px 5px black;
+    padding: 5px 10px;
+    margin-left: 20px;
+  }
+
+
+  .go-btn:hover{
+    box-shadow: 0px 0px black;
+    opacity: 75%;
+  }
 }
+
 
 .get-started-btn{
   font-size: 26px;
@@ -29,17 +52,29 @@
 
 .post-btn{
   font-size: 20px;
-    font-family: 'Inconsolata', monospace;
-    font-weight: 700;
-    background-color: #B4FD3E;
-    border: solid black 1px;
-    border-radius: 30px;
-    box-shadow: 5px 5px black;
-    padding: 7px 15px;
-    margin-top: 20px;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 700;
+  background-color: $green;
+  border: solid black 1px;
+  border-radius: 30px;
+  box-shadow: 5px 5px black;
+  padding: 7px 15px;
+  margin-top: 20px;
 }
 
-.post-btn:hover, .update-btn:hover{
+.first-btn{
+  font-size: 20px;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 700;
+  background-color: $blue;
+  border: solid black 1px;
+  border-radius: 30px;
+  box-shadow: 5px 5px black;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+.post-btn:hover, .update-btn:hover, .first-btn:hover{
   box-shadow: none;
   opacity: 75%;
 }
@@ -129,6 +164,7 @@
   color: black;
 }
 
-.back-btn:hover{
-  color: $orange;
+.back-hand:hover{
+  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000, 1px 1px #000, -1px -1px #000, 1px 1px #000, -1px 1px #000;
+  opacity: 75%;
 }

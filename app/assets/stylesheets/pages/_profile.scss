@@ -1,23 +1,60 @@
-.profile-info{
-  display:flex;
-  align-items: center;
-  justify-content:space-around;
-  border-bottom: solid black 1px;
-  width: 80vw;
-  margin: 0 auto;
-  padding-top: 20px;
-  padding-bottom: 30px;
+@media (max-width: 768px) {
+  .welcome-profile{
+    font-size: 32px;
+    font-family: 'Geneva', sans-serif;
+    color: $yellow;
+    text-shadow: 0.5px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
+                 0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
+    margin-bottom:10px;
+    text-decoration:none;
+    margin-top: 10px;
+  }
+
+  .profile-info{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+    border-bottom: solid black 1px;
+    width: 90vw;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .text-center{
+    text-align: center;
+  }
+}
+@media (min-width: 768px) {
+  .welcome-profile{
+    font-size: 40px;
+    font-family: 'Geneva', sans-serif;
+    color: $yellow;
+    text-shadow: 0.5px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
+                 0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
+    margin-bottom:10px;
+    text-decoration:none;
+  }
+
+  .profile-info{
+    display:flex;
+    align-items: center;
+    justify-content:space-around;
+    border-bottom: solid black 1px;
+    width: 80vw;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  .text-right{
+    text-align: right;
+    margin-top: 0px;
+    font-weight: 300;
+  }
 }
 
-.welcome-profile{
-  font-size: 40px;
-  font-family: 'Geneva', sans-serif;
-  color: $yellow;
-  text-shadow: 0.5px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
-               0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
-  margin-bottom:10px;
-  text-decoration:none;
-}
 
 .prof-pic{
   height: 100px;
@@ -49,12 +86,6 @@
 }
 
 
-.text-right{
-  text-align: right;
-  margin-top: 0px;
-  font-weight: 300;
-}
-
 .dropdown{
   position: relative;
   display: inline-block;
@@ -68,8 +99,6 @@
   position: static;
 }
 
-.dropdown-btn:hover{
-}
 
 .dropdown-edit{
   font-size: 22px;
@@ -115,7 +144,12 @@
 }
 
 .first-post{
-  display:flex;
-  justify-content: center;
-  padding-top: 100px;
+  height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-text{
+  padding: 0px 40px 0px 40px;
 }

@@ -1,8 +1,60 @@
-.mapboxgl-popup {
-  max-width: 200px;
-  border-radius: 20px;
+
+// change font size of mapbox search results //
+// ul.suggestions{
+//   max-width: 200px;
+//   border-radius: 20px;
+//   font-size: 12px !important;
+// }
+@media (max-width: 768px) {
+  .pt-20{
+    padding-top: 20px;
+  }
+
+  .size-30{
+    font-size: 30px !important;
+  }
+
+  .map-container-show{
+    padding: 30px 0px 30px 0px;
+    height: 35vh;
+    width: 85vw;
+    justify-self: center;
+    margin: 0 auto;
+    border-bottom: solid 0.5px black;
+  }
+  .map-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding: 20px 30px 40px;
+    border-bottom: solid 0.5px black;
+  }
+
+  .snack-map{
+    padding:0px;
+    margin: 10px 0px 10px 0px;
+    font-size: 42px;
+    font-family: 'Gluten', sans-serif;
+    color: $yellow;
+    text-shadow: 0.5px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
+                 0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
+    margin-top:0px;
+    margin-bottom:20px;
+  }
+
+.your-snack-map{
+  margin: 10px 0px 10px 0px;
+  font-size: 42px;
+  font-family: 'Gluten', sans-serif;
+  color: $yellow;
+  text-shadow: 0.5px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
+               0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
+  margin-bottom:20px;
+}
 }
 
+@media (min-width: 768px) {
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "Open Sans", sans-serif;
@@ -37,19 +89,17 @@
   color: $yellow;
   text-shadow: 0.5px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
                0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
-  margin-top:0px;
+  margin-top:20px;
   margin-bottom:20px;
 }
 
 .your-snack-map{
-  padding: 40px 0px 0px 0px;
-  margin: 10px 0px 10px 0px;
-  font-size: 42px;
+  font-size: 50px;
   font-family: 'Gluten', sans-serif;
   color: $yellow;
   text-shadow: 0.5px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
                0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
-  margin-top:0px;
+  margin-top:40px;
   margin-bottom:20px;
 }
 
@@ -75,4 +125,5 @@
   color: rgba(0,0,0,.75);
   text-decoration: none;
   font-size: 12px;
+}
 }

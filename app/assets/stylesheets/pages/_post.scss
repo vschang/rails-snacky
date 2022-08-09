@@ -1,28 +1,200 @@
+@media (max-width: 768px) {
+  .sort{
+    font-family: 'inconsolata', monospace;
+    border-radius: 10px;
+    height: 24px;
+  }
+
+  label{
+    font-family: 'inconsolata', monospace;
+    font-size: 14px;
+  }
+
+  .image-text-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px 0px 20px 0px;
+  }
+
+  .post-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 85vw;
+    margin: 0 auto;
+    // border-bottom: solid black 0.5px;
+    padding-bottom: 20px;
+  }
+
+  .review-text{
+    background-color:white;
+    border-radius: 30px;
+    border: solid black 1px;
+    padding: 10px 25px 10px 15px;
+    width: 72vw;
+  }
+
+  .stars{
+    display:flex;
+    margin-bottom: 20px;
+    align-self:center;
+  }
+
+  .post-container-show{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    border-bottom: solid black 0.5px;
+    padding: 30px 20px 30px 20px;
+   }
+   .delete-back {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 95%;
+}
+
+  .comments-container {
+    width: 92%;
+    margin-left: -12px;
+  }
+
+  .map-filter-container{
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+
+  .make-post{
+    margin-top: 0px;
+  }
+  .border{
+    margin-top: 25px;
+    border-right: solid 1px;
+    border-left: solid 1px;
+    border-bottom: solid 1px;
+    height: 92vh;
+    overflow: scroll;
+  }
+
+  .delete-back-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 120%;
+}
+}
+
+@media (min-width: 769px) {
+  .sort{
+    font-family: 'inconsolata', monospace;
+    border-radius: 10px;
+  }
+
+  .image-text-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0px 20px 0px;
+  }
+
+  .post-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 65vw;
+    margin: 0 auto;
+    // border-bottom: solid black 0.5px;
+    padding-bottom: 20px;
+  }
+
+  .review-text{
+    background-color:white;
+    border-radius: 30px;
+    border: solid black 1px;
+    padding: 10px 25px 10px 15px;
+    width: 37vw;
+  }
+
+  .stars{
+    display:flex;
+    margin-bottom: 20px;
+  }
+
+  .post-container-show{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 65vw;
+    margin: 0 auto;
+    border-bottom: solid black 0.5px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  .delete-back{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 65vw;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .comments-container{
+    width: 65vw;
+    margin: auto;
+  }
+
+  .map-filter-container{
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .make-post{
+    margin-top: 0px;
+    padding-top: 20px;
+  }
+  .border{
+    border-right: solid 1px;
+    border-left: solid 1px;
+    border-bottom: solid 1px;
+    height: 87vh;
+    overflow: scroll;
+  }
+
+  .delete-back-2{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 134%;
+  }
+}
+
+.likes-n-comments{
+  display: flex;
+  justify-content: flex-end;
+}
 .all-posts{
   display:flex;
   flex-direction:column;
 }
-.post-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 65vw;
-  margin: 0 auto;
-  // border-bottom: solid black 0.5px;
-  padding-bottom: 20px;
-}
 
-.post-container-show{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 65vw;
-  margin: 0 auto;
-  border-bottom: solid black 0.5px;
-  padding-bottom: 20px;
-  margin-bottom: 10px;
-}
 
 .show-btn{
   font-size: 24px;
@@ -41,26 +213,10 @@ h3{
   text-decoration: underline;
 }
 
-.image-text-container{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 20px 0px 20px 0px;
-}
-
 .post-text{
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.review-text{
-  background-color:white;
-  border-radius: 30px;
-  border: solid black 1px;
-  padding: 10px 25px 10px 15px;
-  width: 37vw;
 }
 
 .small-p{
@@ -89,26 +245,6 @@ h3{
                0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
   margin: 2px;
 }
-.stars{
-  display:flex;
-  margin-bottom: 20px;
-}
-.delete-back{
-  display:flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 65vw;
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.delete-back-2{
-  display:flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  width: 134%;
-}
 
 .mb-20{
   margin-bottom: 20px;
@@ -128,10 +264,6 @@ h3{
   color: $pink;
 }
 
-.sort{
-  font-family: 'inconsolata', monospace;
-  border-radius: 10px;
-}
 
 .sort-menu{
   display: flex;
@@ -146,13 +278,6 @@ h3{
   width: 100%;
   border-bottom: solid black 0.5px;
   padding-bottom: 30px;
-}
-
-
-
-.comments-container{
-  width: 65vw;
-  margin: auto;
 }
 
 .comment-div{
@@ -192,12 +317,6 @@ h3{
   margin-right: 5px;
 }
 
-.map-filter-container{
-  display:flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
-  align-items: flex-start;
-}
 
 .reply-btn-div{
   display:flex;
@@ -226,15 +345,19 @@ h3{
   font-weight: 700;
 }
 
-.border{
-  border-right: solid 1px;
-  border-left: solid 1px;
-  border-bottom: solid 1px;
-  height: 87vh;
-  overflow: scroll;
+
+.comment{
+  padding-left: 20px;
+  font-size: 24px;
+  color: springgreen;
+  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000, 3.5px 2.5px #000, -0.5px -0.5px #000, 3px 1px #000, -0.5px 0.5px #000;
 }
 
-.make-post{
-  margin-top: 0px;
-  padding-top: 20px;
-}
+// .title-posted-div{
+//   display:flex;
+//   justify-content: space-between;
+// }
+
+// .mt-38{
+//   margin-top: 38px;
+// }

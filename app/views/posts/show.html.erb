@@ -6,7 +6,7 @@
         <%= cl_image_tag(@post.image.key, crop: :pad, class: "post-image") %>
       </div>
       <div class="post-text">
-        <h3><%= @post.title %></h3>
+        <h3 class="text-center"><%= @post.title %></h3>
         <div class="stars">
           <% case @post.rating %>
           <% when 1 %>
@@ -140,7 +140,7 @@
     </div>
   <div class="delete-back">
     <%= link_to :back, class:"back-btn" do %>
-      <i class="fa-solid fa-hand-point-left"></i>
+      <i class="fa-solid fa-hand-point-left back-hand"></i>
       <% end %>
     <% if @post.user_id == current_user.id %>
       <%= link_to 'edit', edit_post_path(@post), method: :patch, class:"show-btn" %>

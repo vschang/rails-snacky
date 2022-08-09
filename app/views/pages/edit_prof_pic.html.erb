@@ -1,31 +1,34 @@
 <%= render 'shared/navbar' %>
 <div class="border">
   <div class="edit-pic-container">
-    <h3 class="welcome-profile neg-mt-20">edit your profile picture</h3>
-    <%= simple_form_for(@user, as: :user, url: update_prof_pic_path) do |f| %>
-      <%= f.error_notification %>
+    <div class="welcome-pic">
+      <h3 class="welcome-profile neg-mt-20 text-center">edit your profile picture</h3>
+      <%= simple_form_for(@user, as: :user, url: update_prof_pic_path) do |f| %>
+        <%= f.error_notification %>
 
-      <div class="form-inputs-profpic">
-        <p>current profile picture</p>
-        <% if current_user.prof_pic.present? %>
-          <%= image_tag(@user.prof_pic, class: "prof-pic mb-40") unless @user.prof_pic.nil? %>
-        <% else %>
-          <%= image_tag('haribo-prof.jpeg', class:'prof-pic mb-40') %>
-        <% end %>
+        <div class="form-inputs-profpic">
+          <p>current profile picture</p>
+          <% if current_user.prof_pic.present? %>
+            <%= image_tag(@user.prof_pic, class: "prof-pic mb-40") unless @user.prof_pic.nil? %>
+          <% else %>
+            <%= image_tag('haribo-prof.jpeg', class:'prof-pic mb-40') %>
+          <% end %>
 
-        <%= f.input :image, as: :file,
-                        label: false,
-                        label_html: { class: 'login-text ' },
-                        input_html: { class: '' },
-                        id: "file-upload-button" %>
-      </div>
+          <%= f.input :image, as: :file,
+                          label: false,
+                          label_html: { class: 'login-text ' },
+                          input_html: { class: '' },
+                          id: "file-upload-button" %>
+        </div>
       <div class="flex-center">
         <%= f.button :submit, "update", class: "post-btn mt-60" %>
       </div>
     <% end %>
+    </div>
+
     <div class="back">
       <%= link_to :back, class:"back-btn" do %>
-      <i class="fa-solid fa-hand-point-left"></i>
+      <i class="fa-solid fa-hand-point-left back-hand"></i>
       <% end %>
     </div>
   </div>
