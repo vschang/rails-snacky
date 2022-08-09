@@ -22,7 +22,7 @@
       <p class="text-right text-center">Snacky contributer since <%=@user.created_at.strftime("%B %d, %Y") %></p>
     </div>
     <div class="dropdown">
-      <button class="dropdown-btn"><i class="fa-solid fa-gear"></i></button>
+      <button class="dropdown-btn"><i class="fa-solid fa-gear black"></i></button>
       <div class="dropdown-content ">
       <%= link_to "edit profile", 'users/edit', class:'dropdown-edit'%>
       <%= link_to "logout", '/log_out', class:'dropdown-edit'%>

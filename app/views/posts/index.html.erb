@@ -16,7 +16,7 @@
           <form action="/posts" id="post-form">
           </form>
 
-          <label for="order">sort by &nbsp;</label>
+          <label for="order" style="font-family: 'Inconsolata', monospace;">sort by &nbsp;</label>
           <select class="sort" name="order" id="order" onchange="this.form.submit()" form="post-form">
             <% if @selected == "newest" || !@selected %>
               <option value="newest" selected>newest first</option>
@@ -50,7 +50,7 @@
           <form action="/posts" id="post-form">
           </form>
 
-          <label for="tag-filter">filter by tag&nbsp;</label>
+          <label for="tag-filter" style="font-family: 'Inconsolata', monospace;">filter by tag&nbsp;</label>
           <select class="sort" name="filter" id="filter" onchange="this.form.submit()" form="post-form">
             <option <%= @selection_arr[0] %> value="all">all</option>
             <option <%= @selection_arr[1] %> value="chips" >chips</option>
