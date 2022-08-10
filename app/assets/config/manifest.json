@@ -1,0 +1,14 @@
+{
+  "background_color": "$pink",
+  "description": "Sharing snacks with your friends",
+  "display": "fullscreen",
+  "icons": [
+    {
+       "src": "pink-gummy-removebg-preview.png",
+       "type": "image/png"
+    }
+  ],
+  "name": "Snacky",
+  "short_name": "Snacky",
+  "start_url": "/"
+}

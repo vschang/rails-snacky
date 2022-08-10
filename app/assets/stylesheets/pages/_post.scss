@@ -3,6 +3,9 @@
     font-family: 'inconsolata', monospace;
     border-radius: 10px;
     height: 24px;
+    border-color: $green;
+    background-color: $orange;
+    color: white;
   }
 
   label{
@@ -82,7 +85,7 @@
     border-right: solid 1px;
     border-left: solid 1px;
     border-bottom: solid 1px;
-    height: 92vh;
+    height: 91vh;
     overflow: scroll;
   }
 
@@ -94,7 +97,7 @@
     width: 120%;
 }
   h3{
-    font-family: 'Geneva';
+    font-family: 'Rubik';
     font-size: 24px;
   }
 }
@@ -103,6 +106,9 @@
   .sort{
     font-family: 'inconsolata', monospace;
     border-radius: 10px;
+    border-color: $green;
+    background-color: $orange;
+    color: white;
   }
 
   .image-text-container{
