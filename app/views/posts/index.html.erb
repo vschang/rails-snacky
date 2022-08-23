@@ -2,15 +2,18 @@
 <div class="border">
   <div class="all-posts">
     <div class="map-filter-container">
+    <% if @posts.length == 0 %>
+    <% else %>
       <div class="map-container pt-20">
         <h1 class="snack-map">snack map</h1>
-        <div class="" style="width: 100%; height: 300px; border-radius: 20px;"
+        <div class="" style="width: 100%; height: 300px;border: 0.5px solid black;border-radius: 10px;"
           data-controller="map"
           data-map-page-value="index"
           data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
+    <% end %>
       <div class="filter-options">
         <div class="sort-menu" >
           <form action="/posts" id="post-form">
@@ -65,17 +68,18 @@
     </div>
     <% if @posts.length == 0 %>
       <div class="no-posts">
-        <h3>no posts found for <%= params[:filter]%> tag 😔</h3>
+        <h3 class="no-underline">no posts found for <%= params[:filter]%> tag 😔</h3>
       </div>
     <% else %>
       <% @posts.each do |post|%>
         <div class="post-container-show">
           <div class="image">
-            <%= cl_image_tag(post.image.key, crop: :pad, class: "post-image") %>
+            <img src="<%=post.image_url%>" class="post-image">
+            <%# <%= cl_image_tag(post.image.key, crop: :fill, class: "post-image") %>
           </div>
           <div class="post-text">
             <%= link_to post_path(post.id) do %>
-            <h3 class="post-title text-center"><%= post.title %></h3>
+            <h3 class="post-title text-left mt-0"><%= post.title %></h3>
             <% end %>
             <div class="stars">
               <% case post.rating %>

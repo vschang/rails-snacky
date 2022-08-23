@@ -2,7 +2,7 @@
 <div class="home-container">
   <div class="home-btn-1  flex-1">
     <button class="login" data-controller="navbar">
-     <%= link_to "login", "/users/sign_in", class: "nav-link" %>
+     <%= link_to "log in", "/users/sign_in", class: "nav-link" %>
     </button>
     <button class="welcome-btn" data-controller="navbar">
      <%= link_to "welcome!", "/", class: "nav-link" %>
@@ -10,7 +10,7 @@
   </div>
 
   <div class="flex-13 sign-in-container pt-20">
-    <div class="snacky-title">
+    <div class="snacky-title mb-20">
       <h1 class="snacky ">Snacky</h1>
       <h2 class="sign-in-text ">sign up</h2>
     </div>
@@ -30,7 +30,7 @@
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "last_name", class: 'login-input-name mt-0' },
-                      label_html: { class: 'label-text ml-20' } %>
+                      label_html: { class: 'label-text' } %>
         </div>
         <%= f.input :username,
                     label: "username",
@@ -65,14 +65,14 @@
       </div>
 
       <div class="form-submit-btn">
-        <%= f.button :submit, "sign up" , class:'post-btn ' %>
+        <%= f.button :submit, "sign up" , class:'post-btn' %>
       </div>
     <% end %>
       </div>
 
   <div class="home-btn-2 faq-signup flex-1">
     <button class="signup" data-controller="navbar">
-      <%= link_to "signup", "/users/sign_up", class: "nav-link" %>
+      <%= link_to "sign up", "/users/sign_up", class: "nav-link" %>
     </button>
     <button class="faq" data-controller="navbar">
       <%= link_to "FAQ", "/faq", class: "nav-link" %>

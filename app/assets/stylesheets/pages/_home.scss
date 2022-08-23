@@ -1,8 +1,25 @@
 // Specific CSS for your home-page
 body{
   background-color: $pink;
-  // border-left: black solid 1px;
-  // border-right: black solid 1px;
-  // border-bottom: black solid 1px;
-  // height: 95vh;
+  overflow: hidden;
+
+}
+
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color:$blue$orange;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+*::-webkit-scrollbar-thumb {
+  background-color: $green;
+  border-radius: 20px;
+  border: solid $pink 2px;
 }

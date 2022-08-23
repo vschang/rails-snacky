@@ -3,7 +3,7 @@
 <%# <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <p class="mb-0">don't have an account yet?</p>
+  <p class="mb-0 mt-60">don't have an account yet?</p>
   <%= link_to "sign up", new_registration_path(resource_name), class: "forgot" %><br />
 <% end %>
 

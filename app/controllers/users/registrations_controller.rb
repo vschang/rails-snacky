@@ -8,9 +8,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+
+    current_user.pic_url = "https://snacky-production.s3.eu-west-2.amazonaws.com/" + current_user.prof_pic.key
+    current_user.save
+  end
 
   # GET /resource/edit
   # def edit

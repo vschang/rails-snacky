@@ -25,6 +25,21 @@
   .text-center{
     text-align: center;
   }
+  .dropdown-edit{
+    font-size: 16px;
+    padding:5px
+  }
+  .dropdown{
+    position: relative;
+    display: inline-block;
+  }
+  .text-right{
+    text-align: right;
+
+  }
+  .text-left{
+    text-align: left;
+  }
 }
 @media (min-width: 768px) {
   .welcome-profile{
@@ -53,6 +68,10 @@
     margin-top: 0px;
     font-weight: 300;
   }
+  .dropdown-edit{
+    font-size: 22px;
+    padding:10px
+  }
 }
 
 
@@ -68,6 +87,10 @@
   opacity:75%;
   .edit-text{
     display:block;
+  }
+
+  .text-left{
+    
   }
 }
 
@@ -99,11 +122,6 @@
   position: static;
 }
 
-
-.dropdown-edit{
-  font-size: 22px;
-  padding:10px
-}
 
 .dropdown-content{
   display:none;

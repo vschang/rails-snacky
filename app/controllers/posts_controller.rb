@@ -9,31 +9,12 @@ class PostsController < ApplicationController
     @posts = @all_posts.sort_by {|posts| posts.created_at}.reverse
     @user = current_user
 
-    # if params[:query].present?
-    #   @posts = @all_posts.global_search(params[:query])
-    # else
-    #   @message = "No results found for #{params[:query]}"
-    # end
-
     @selected = params[:order]
 
     @likes_of_posts_with_i = @posts.each_with_index.map {|post, index| [post.post_likes.count, index]}
     @likes_of_posts_with_i.sort_by! {|likes, index| likes}.reverse
     @index_of_likes_of_posts_with_i = @likes_of_posts_with_i.map {|likes, index| index}
     @posts_with_i = @index_of_likes_of_posts_with_i.map {|index| @posts[index]}
-
-
-    # Show markers for all posts
-
-    # @geocoded_posts = Post.all.geocoded
-    # @markers = @posts.map do |post|
-    # {
-    #   lat: post.latitude,
-    #   lng: post.longitude,
-    #   info_window: render_to_string(partial: "info_window", locals: {post: post}),
-    #   image_url: helpers.asset_url("pink-gummy-removebg-preview.png")
-    # }
-    # end
 
     # If no filter or "all" mark all posts
     if params[:filter] == "all" || params[:filter] == nil
@@ -108,7 +89,7 @@ class PostsController < ApplicationController
     @user = current_user
     @post = Post.new(post_params)
     @post.user_id = @user.id
-
+    @post.image_url = "https://snacky-production.s3.eu-west-2.amazonaws.com/" + @post.image.key
     if @post.save
       redirect_to post_path(@post), notice: "posted 🎉"
     else

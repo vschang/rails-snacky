@@ -11,7 +11,6 @@
   }
   .search-param{
     margin-top: 0px;
-    background-color: $green;
     width: 50%;
   }
 
@@ -22,10 +21,10 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 0.5px solid black;
+    padding: 10px 0px;
   }
   .search-param{
     margin-top: 0px;
-    background-color: $green;
     width: 15%;
   }
 }

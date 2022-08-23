@@ -20,9 +20,11 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
-    @posts = @user.posts
-    @total = @posts.all.count
-    @geocoded_posts = @posts.geocoded
+    # posts need to be ordered in reverse order
+
+    @posts = @user.posts.sort_by {|posts| posts.created_at}.reverse
+    @total = @posts.count
+    @geocoded_posts = @user.posts.geocoded
     @markers = @posts.map do |post|
       {
         lat: post.latitude,
@@ -41,6 +43,7 @@ class PagesController < ApplicationController
     @user = current_user
     if params[:user]
       current_user.prof_pic.attach(io: params[:user]["image"].tempfile, filename: params[:user]["image"].original_filename)
+      current_user.pic_url = "https://snacky-production.s3.eu-west-2.amazonaws.com/" + current_user.prof_pic.key
       if current_user.save!
         flash[:notice] = "Profile picture updated"
         redirect_to profile_path

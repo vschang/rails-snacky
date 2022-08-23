@@ -6,10 +6,10 @@
       wrapper_html: {data: {controller: "star-rating"}},
       label_html: { class: 'form-text' },
       input_html: { class: 'title-input stars' } %>
-      <%= f.input :review, required: true, label: "your honest review 👀", label_html: { class: 'form-text' }, input_html: { class: 'title-input review mb-0' }, hint: "think flavor, appearance, packaging, texture, smell, overall experience, etc.", hint_html: {class:"hint"} %>
+      <%= f.input :review, required: true, label: "your honest review 👀", label_html: { class: 'form-text' }, input_html: { class: 'title-input review mb-0 ' }, hint: "think flavor, appearance, packaging, texture, smell, overall experience, etc.", hint_html: {class:"hint"} %>
       <div class="flex">
-        <%= f.input :brand, required: true, label: "brand", label_html: { class: 'form-text ' }, input_html: { class: 'title-input brand' } %>
-        <%= f.input :country, required: true, label: "country of origin 🌎", label_html: { class: 'form-text' }, input_html: { class: 'title-input country' }, style: "margin-left: 20px;" %>
+        <%= f.input :brand, required: true, label: "brand", label_html: { class: 'form-text ' }, input_html: { class: 'title-input brand ' } %>
+        <%= f.input :country, required: true, label: "country of origin 🌎", label_html: { class: 'form-text' }, input_html: { class: 'title-input country-input country' } %>
       </div>
       <div class="flex">
         <%= f.input :image, as: :file, required: true, label: "upload a pic", label_html: { class: 'form-text upload-text' }, input_html: { class: 'title-input upload' }, id: "file-upload-button" %>
@@ -21,7 +21,7 @@
             required: true, class:"address-wrapper" %>
       </div>
       <div class="post-div">
-        <%= f.submit "post!", class:'post-btn'%>
+        <%= f.submit "post!", class:'post-btn mt-40'%>
       </div>
   <% end %>
 </div>

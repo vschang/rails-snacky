@@ -13,21 +13,110 @@
   .flex{
     display:block;
   }
+  .justify-center{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .post-div{
     display:flex;
     justify-content: center;
   }
-  .form-container{
-    padding: 0px 18px;
-  }
-  .comment-box{
-    margin: 20px 0px 20px 0px;
+
+  .form-container {
     width: 80vw;
+    margin: 0px 10px 0px 10px;
+    padding-bottom: 10px;
   }
 
+  .comment-box{
+    width: 95%;
+    margin: 20px 20px 20px 0px;
+  }
+  .snacky-faq{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    padding-bottom: 10px;
+  }
+
+  .form-control {
+    font-family: 'Inconsolata';
+    padding: 10px;
+    border-radius: 0px;
+    width: 98%;
+    font-size: 16px;
+    border: solid 0.5px black;
+    background-color: $pink;
+    }
+  .title-input {
+    border: solid black 0.5px;
+    margin-bottom: 20px;
+  }
+
+  .title, .review, .brand{
+
+  }
+
+  .country{
+    width: 102%;
+  }
+  input::file-selector-button{
+    font-family: 'Inconsolata', monospace;
+    background-color: $yellow;
+    border: solid $orange 1.5px;
+    color: $orange;
+    border-radius: 15px;
+    margin-right: 20px;
+    font-size:14px;
+  }
+  input[id="post_image"]{
+    font-size: 16px;
+    font-family: 'Inconsolata', monospace;
+  }
+  .mt-60{
+    margin-top: 100px;
+  }
+  .login-text {
+    font-family: "Inconsolata", monospace;
+    font-size: 16px;
+    margin-right: 20px;
+    font-weight: 700;
+  }
+  .login-input-name {
+    background-color: $pink;
+    font-family: "Inconsolata", monospace;
+    font-size: 20px;
+    border-radius: 0px;
+    border: solid black 0.5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 80% !important;
+    padding-right: 10px;
+  }
+  #file-upload-button{
+    font-size: 20px;
+    font-family: 'Inconsolata', monospace;
+  }
+  .search-form{
+    display:flex;
+  }
+  .country-input{
+
+  }
+  .mt-0{
+    margin-top: 20px;
+  }
 }
+
 @media (min-width: 769px) {
+  .country{
+    width: 23vw;
+  }
+
   .snacky-title{
     display:flex;
     justify-content: center;
@@ -57,16 +146,94 @@
     margin: 20px 0px 20px 0px;
     width: 64vw;
   }
+  .snacky-faq{
+    display:flex;
+    justify-content: center;
+  }
 
+  .form-control{
+    font-family: 'Inconsolata';
+    padding: 8px;
+    width: 100%;
+    font-size:16px;
+    color:black;
+    background-color: $pink;
+  }
+  .title-input {
+    border-radius: 0px;
+    margin-bottom: 20px;
+    border: solid black 0.5px;
+    background: $pink;
+  }
+  .country-input{
+    // width: 50%;
+  }
+  .brand{
+    width: 150%;
+  }
+  .title{
+    width:100%;
+  }
+
+  .review{
+    width:100%;
+    height: 9vh;
+    // padding-top:30px;
+  }
+  input::file-selector-button{
+    font-family: 'Inconsolata', monospace;
+    background-color: $yellow;
+    border: solid $orange 1px;
+    color: $orange;
+    border-radius: 15px;
+    margin-right: 20px;
+  }
+  input[id="post_image"]{
+    font-size: 20px;
+    font-family: 'Inconsolata', monospace;
+  }
+  .mt-60{
+    margin-top: 60px;
+  }
+  .login-text{
+    font-family: "Inconsolata", monospace;
+    font-size: 18px;
+    margin-right: 20px;
+    font-weight:700;
+  }
+  .login-input-name {
+    background-color: $pink;
+    font-family: "Inconsolata", monospace;
+    font-size: 20px;
+    border-radius: 0px;
+    border: solid black 0.5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 89% !important;
+    padding-right: 10px;
+}
+  #file-upload-button{
+    font-size: 22px;
+    font-family: 'Inconsolata', monospace;
+  }
+
+  #file-upload-button:hover{
+    opacity: 75%;
+  }
+  .search-form{
+    display:flex;
+    justify-content: flex-start;
+  }
+  .mt-0{
+    margin-top: 0px;
+  }
 }
 input[type="text"] {
   font-size: 16px;
   font-family: 'Inconsolata', monospace;
 }
-.snacky-faq{
-  display:flex;
-  justify-content: center;
-}
+
 
 .underline{
   text-decoration: underline;
@@ -78,54 +245,11 @@ input[type="text"] {
   font-weight: bold;
 }
 
-.title{
-  width:100%;
-}
-
-.review{
-  width:100%;
-  height: 9vh;
-  padding-top:30px;
-}
-.brand{
-  width: 150%;
-}
-
-.title-input{
-  border-radius: 15px;
-  border: solid black 0.75px;
-  margin-bottom:20px;
-  padding: 5px;
-}
-
-input[id="post_image"]{
-  font-size: 20px;
-  font-family: 'Inconsolata', monospace;
-}
-
-input[type="file"] {
-  font-size: 18px;
-  font-family: 'Inconsolata', monospace;
-  // padding-left: 30px;
-  border-radius: 20px;
-}
 
 
 
-.mapboxgl-ctrl-geocoder{
-  border-radius:20px;
-  border: solid black 0.5px;
-  box-shadow: none
-}
 
-input::file-selector-button{
-  font-family: 'Inconsolata', monospace;
-  background-color: $yellow;
-  border: solid $orange 1px;
-  color: $orange;
-  border-radius: 15px;
-  margin-right: 20px;
-}
+
 
 input::file-selector-button:hover{
   border: solid orange 1px;
@@ -133,43 +257,17 @@ input::file-selector-button:hover{
   color: orange;
 }
 
-#file-upload-button{
-  font-size: 20px;
-  font-family: 'Inconsolata', monospace;
+
+
+
+.login-input {
+  background-color: $pink !important;
+  font-family: "Inconsolata", monospace !important;
+  font-size: 20px !important;
+  border-radius: 0px;
+  border: solid black 0.5px;
+  margin-bottom: 10px;
 }
-
-
-
-.login-text{
-  font-family: "Inconsolata", monospace;
-  font-size: 20px;
-  margin-right: 20px;
-}
-
-.login-input{
-  background-color: white;
-  font-family: "Inconsolata", monospace;
-  font-size: 20px;
-  border-radius: 15px;
-  border: solid black 0.75px;
-  margin-top:10px;
-  margin-bottom:10px;
-  padding: 8px;
-}
-
-.login-input-name{
-  background-color: white;
-  font-family: "Inconsolata", monospace;
-  font-size: 20px;
-  border-radius: 15px;
-  border: solid black 0.75px;
-  margin-top:10px;
-  margin-bottom:10px;
-  padding: 8px;
-  width:90% !important;
-  // margin-right: 10px !important;
-}
-
 
 .login-container{
   width: 80vw;
@@ -211,13 +309,6 @@ option{
 
 .display-none{
   display: none;
-}
-
-.form-control{
-  font-family: 'Inconsolata';
-  padding: 8px;
-  border-radius: 15px;
-  width: 100%;
 }
 
 .tag-selection{
@@ -268,13 +359,13 @@ option{
   // align-items: center;
 }
 
-.mt-60{
-  margin-top: 60px;
+
+
+#post_image{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.mt-0{
-  margin-top: 0px;
-}
-.search-form{
-  display:flex;
-}
+input{box-sizing:border-box}
+textarea{box-sizing:border-box}

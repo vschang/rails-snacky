@@ -23,9 +23,11 @@
       <div class="avatar-nav">
         <%= link_to profile_path, class:"" do%>
         <% if current_user.prof_pic.present? %>
-          <%= image_tag(current_user.prof_pic, class: "avatar")  %>
+          <img src="<%=current_user.pic_url%>" class="avatar">
+          <%# <%= cl_image_tag(current_user.prof_pic.key, crop: :fill, class: "avatar") %> 
+          <%# <%= image_tag(current_user.prof_pic, class: "avatar")  %>
         <% else %>
-          <%= image_tag('haribo-prof.jpeg', class:'avatar') %>
+        <img src="https://snacky-assets.s3.eu-west-2.amazonaws.com/haribo-prof.jpeg", class="avatar">
         <% end %>
         <% end %>
         <%= link_to profile_path, class:"" do%>
@@ -62,7 +64,7 @@
     <%= link_to "search", "/search", class: "nav-link-2" %>
   </button>
   <button class="nav-btn" id="login-nav" data-controller="navbar">
-    <%= link_to "login", new_user_session_path, class: "nav-link-2" %>
+    <%= link_to "log in", new_user_session_path, class: "nav-link-2" %>
   </button>
 <% end %>
 </div>
