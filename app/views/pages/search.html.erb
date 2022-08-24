@@ -6,7 +6,7 @@
           params[:query],
           class: "form-control",
           placeholder: "search by name or brand",
-          style:"font-family: 'inconsolata', monospace; font-weight: 300; font-size:20px; color: black; background-color: #ffcaed; border: black solid 0.5px; border-radius: 0px; padding: 10px 15px; margin-right:30px;"
+          style:"font-family: 'inconsolata', monospace; font-weight: 300; font-size:18px; color: black; background-color: #ffcaed; border: black solid 0.5px; border-radius: 0px; margin-right:10px;"
       %>
       <%= submit_tag "go!", class: "go-btn" %>
     <% end %>
@@ -16,8 +16,11 @@
       <% elsif !params[:query] %>
         <p></p>
       <% else %>
-
-      <p  class="mt-20"><%= @posts.length %> search results for: </p>
+      <% if @posts.length == 1 %>
+      <p class="mt-20">1 search result for:</p>
+      <% else %>
+      <p class="mt-20"><%= @posts.length %> search results for: </p>
+      <% end %>
       <h3 class="search-param"> <%= params[:query] %> </h3>
         <% @posts.each do |post| %>
           <div class="search-result">

@@ -1,8 +1,8 @@
 @media (max-width: 768px) {
   .sort{
     font-family: 'inconsolata', monospace;
-    border-radius: 10px;
-    height: 24px;
+    border-radius: 15px;
+    height: 30px;
     border: 1.5px solid $green;
     background-color: #ffcaed;
     color: black;
@@ -43,7 +43,7 @@
   .stars{
     display:flex;
     margin-bottom: 20px;
-    align-self:left;
+    align-self:center;
   }
 
   .post-container-show{
@@ -409,7 +409,7 @@ h3{
 }
 
 .post-title:hover{
-  background: black;
+  background: white;
   color: $pink;
 }
 

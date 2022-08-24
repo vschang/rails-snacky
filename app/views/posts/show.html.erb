@@ -75,7 +75,7 @@
         <% if @post.user_id == current_user.id %>
         <%= simple_form_for([ @post, PostTag.new]) do |f| %>
             <%= f.select :tag,
-                          options_for_select(['chips','chocolate','candy','alcohol','gummies','pastry']),
+                          options_for_select(["alcohol", "beverage", "bread", "candy", "cereal","chips","chocolate", "cookies","crackers","dip", "frozen", "fruit", "gummies","icecream","nuts","pastry","spread"]),
                           { include_blank: 'select a tag' },
                           class: 'sort' %>
             <%= f.submit 'add', class:'like-btn'%>
