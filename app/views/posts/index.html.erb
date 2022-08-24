@@ -117,7 +117,7 @@
               <% end %>
             </div>
             <div class="review-text">
-              <p><strong>review: </strong><%= post.review %></p>
+              <p><strong>review: </strong><%= truncate(post.review, :length => 250) %></p>
               <p><strong>brand: </strong><%= post.brand %></p>
               <p><strong>country: </strong><%= post.country_name %></p>
             </div>

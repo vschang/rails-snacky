@@ -123,6 +123,34 @@
     box-shadow: none;
     opacity: 75%;
   }
+  .back-hand:hover{
+    text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000, 1px 1px #000, -1px -1px #000, 1px 1px #000, -1px 1px #000;
+    opacity: 75%;
+  }
+  .empty-heart:hover{
+    text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
+                 0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
+    opacity: 75%;
+    color:#fa73cc;
+  }
+
+  .red:hover{
+    text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
+                0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
+    opacity: 75%;
+  }
+
+
+  .small-delete:hover{
+    text-decoration: underline;
+  }
+  .tag-delete-btn:hover{
+    opacity: 50%;
+  }
+  .like-btn:hover, .edit-btn:hover{
+    box-shadow: none;
+    opacity: 75%;
+  }
 }
 
 
@@ -155,9 +183,7 @@
   font-size: 14px;
   padding: 0px;
 }
-.tag-delete-btn:hover{
-  opacity: 50%;
-}
+
 
 .like-btn, .edit-btn{
   font-size: 14px;
@@ -172,10 +198,7 @@
   -webkit-appearance: none;
 }
 
-.like-btn:hover, .edit-btn:hover{
-  box-shadow: none;
-  opacity: 75%;
-}
+
 
 .heart-btn{
   background:none;
@@ -193,22 +216,6 @@
   text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000, 3.5px 2.5px #000, -0.5px -0.5px #000, 3px 1px #000, -0.5px 0.5px #000;
 }
 
-.red:hover{
-  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
-               0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
-  opacity: 75%;
-}
-
-.empty-heart:hover{
-  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
-               0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
-  opacity: 75%;
-  color:#fa73cc;
-}
-
-.small-delete:hover{
-  text-decoration: underline;
-}
 
 .pt-70{
   padding-top: 70px;
@@ -217,9 +224,4 @@
 .settings-btn{
   font-size:22px;
   color: black;
-}
-
-.back-hand:hover{
-  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000, 1px 1px #000, -1px -1px #000, 1px 1px #000, -1px 1px #000;
-  opacity: 75%;
 }
