@@ -15,7 +15,7 @@
   display:flex;
   align-items:center;
   justify-content:center;
-  animation: hideAnimation 0s ease-in forwards 3s;
+  animation: hideAnimation 0s ease-in forwards 5s;
 }
 
 @keyframes hideAnimation {
@@ -30,14 +30,19 @@
   bottom: 25px;
   right: 25px;
   z-index: 1000;
-  background-color: $yellow;
+  background-color: $pink;
   padding: 10px 20px;
-  color: $orange;
+  color: black;
   border-radius: 30px;
-  border: $orange 1px solid;
-  box-shadow: 4px 4px $orange;
+  border: black 1px solid;
+  box-shadow: 3px 3px black;
   font-family: 'Inconsolata', monospace;
-  animation: hideAnimation 5s ease-in-out forwards 0.5s;
+  font-size: 14px;
+  opacity: 70%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  animation: hideAnimation 0s ease-in forwards 3s;
 }
 
 .btn-close{

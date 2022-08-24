@@ -56,13 +56,19 @@ class PostsController < ApplicationController
     end
 
     if params[:filter]
-      arr = ["all", "chips", "chocolate", "alcohol", "gummies", "candy","pastry"]
+      arr = ["all", "alcohol", "beverage", "bread", "candy", "cereal","chips","chocolate", "cookies","crackers","dip", "frozen", "fruit", "gummies","icecream","nuts","pastry","spread"]
+      # arr = ["all", "alcohol", "beverage", "bread", "candy", "cereal", "chips", "chocolate", "cookies", "crackers", "dip", "frozen", "fruit", "gummies", "ice cream", "nuts", "pastry", "spread"]
       index = arr.find_index(params[:filter])
-      @selection_arr = ["", "","", "","", "",""]
+      @selection_arr = ["", "","", "","", "","","","","","","","","","","","",""]
+      # @selection_arr = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+
       @selection_arr[index] = "selected"
+
     else
       # @posts = @all_posts.sort_by {|posts| posts.created_at}.reverse
-      @selection_arr = ["selected", "","", "","", "",""]
+      @selection_arr = ["selected", "","", "","", "","","","","","","","","","","",""]
+      # @selection_arr = ["selected", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+
     end
 
     @posts = Kaminari.paginate_array(@posts).page(page).per(per)

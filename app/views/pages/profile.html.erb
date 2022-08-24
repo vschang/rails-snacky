@@ -51,7 +51,7 @@
     <% @posts.each do |post|%>
       <div class="post-container-show">
         <div class="image">
-          <%= cl_image_tag(post.image.key, crop: :fill, class: "post-image") %>
+          <img src="<%=post.image_url%>" class="post-image">
         </div>
         <div class="post-text">
           <%= link_to post_path(post.id) do %>

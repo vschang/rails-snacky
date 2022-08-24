@@ -56,12 +56,24 @@
           <label for="tag-filter" style="font-family: 'Inconsolata', monospace;">filter by tag&nbsp;</label>
           <select class="sort" name="filter" id="filter" onchange="this.form.submit()" form="post-form">
             <option <%= @selection_arr[0] %> value="all">all</option>
-            <option <%= @selection_arr[1] %> value="chips" >chips</option>
-            <option <%= @selection_arr[2] %> value="chocolate" >chocolate</option>
-            <option <%= @selection_arr[3] %> value="alcohol">alcohol</option>
-            <option <%= @selection_arr[4] %> value="gummies">gummies</option>
-            <option <%= @selection_arr[5] %> value="candy">candy</option>
-            <option <%= @selection_arr[6] %> value="pastry">pastry</option>
+            <option <%= @selection_arr[1] %> value="alcohol" >alcohol</option>
+            <option <%= @selection_arr[2] %> value="beverage" >beverage</option>
+            <option <%= @selection_arr[3] %> value="bread">bread</option>
+            <option <%= @selection_arr[4] %> value="candy">candy</option>
+            <option <%= @selection_arr[5] %> value="cereal">cereal</option>
+            <option <%= @selection_arr[6] %> value="chips">chips</option>
+            <option <%= @selection_arr[7] %> value="chocolate">chocolate</option>
+            <option <%= @selection_arr[8] %> value="cookies">cookies</option>
+            <option <%= @selection_arr[9] %> value="crackers">crackers</option>
+            <option <%= @selection_arr[10] %> value="dip">dip</option>
+            <option <%= @selection_arr[11] %> value="frozen">frozen</option>
+            <option <%= @selection_arr[12] %> value="fruit">fruit</option>
+            <option <%= @selection_arr[13] %> value="gummies">gummies</option>
+            <option <%= @selection_arr[14] %> value="icecream">ice cream</option>
+            <option <%= @selection_arr[15] %> value="nuts">nuts</option>
+            <option <%= @selection_arr[16] %> value="pastry">pastry</option>
+            <option <%= @selection_arr[17] %> value="spread">spread</option>
+
           </select>
         </div>
       </div>
@@ -75,7 +87,6 @@
         <div class="post-container-show">
           <div class="image">
             <img src="<%=post.image_url%>" class="post-image">
-            <%# <%= cl_image_tag(post.image.key, crop: :fill, class: "post-image") %>
           </div>
           <div class="post-text">
             <%= link_to post_path(post.id) do %>
