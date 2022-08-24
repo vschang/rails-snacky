@@ -26,6 +26,19 @@
     color:black;
     -webkit-appearance: none;
   }
+  .update-btn{
+    font-size: 20px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 500;
+    background-color: $green;
+    border: solid black 1px;
+    border-radius: 30px;
+    box-shadow: 3px 3px black;
+    padding: 7px 15px;
+    margin-top: 40px;
+    color:black;
+    -webkit-appearance: none;
+  }
   .mt-40{
     margin-top:40px;
   }
@@ -63,7 +76,7 @@
     box-shadow: 0px 0px black;
     opacity: 75%;
   }
-  .post-btn{
+  .post-btn, .edit-btn{
     font-size: 20px;
     font-family: 'Inconsolata', monospace;
     font-weight: 300;
@@ -88,12 +101,28 @@
     margin-right: 10px;
     color:black;
   }
-}
+  .post-btn:hover, .update-btn:hover, .first-btn:hover{
+    box-shadow: none;
+    opacity: 75%;
+  }
 
-
-.get-started-btn:hover{
-  box-shadow: none;
-  opacity: 75%;
+  .update-btn{
+    font-size: 20px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 300;
+    background-color: $green;
+    border: solid black 1px;
+    border-radius: 30px;
+    box-shadow: 5px 5px black;
+    padding: 8px 15px;
+    margin: 20px 0px;
+    color:black;
+    -webkit-appearance: none;
+  }
+  .get-started-btn:hover{
+    box-shadow: none;
+    opacity: 75%;
+  }
 }
 
 
@@ -111,24 +140,6 @@
   -webkit-appearance: none;
 }
 
-.post-btn:hover, .update-btn:hover, .first-btn:hover{
-  box-shadow: none;
-  opacity: 75%;
-}
-
-.update-btn{
-  font-size: 20px;
-  font-family: 'Inconsolata', monospace;
-  font-weight: 300;
-  background-color: $green;
-  border: solid black 1px;
-  border-radius: 30px;
-  box-shadow: 5px 5px black;
-  padding: 8px 15px;
-  margin: 20px 0px;
-  color:black;
-  -webkit-appearance: none;
-}
 
 .comment-delete-btn{
   background: none;

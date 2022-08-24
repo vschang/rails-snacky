@@ -3,7 +3,7 @@
   <div class="post-container">
     <div class="post-info">
       <img src="<%= @post.user.pic_url %>" class="avatar-post">
-      <div class="flex">
+      <div class="flex-info flex">
         <p class="small-p">posted by
         <% if user_signed_in? && @post.user_id == @user.id %>
           <%= link_to profile_path, class:"small-p  bold" do %>
@@ -137,7 +137,7 @@
         </div>
   </div>
     <div class="map-container-show">
-      <div class="" style="width: 100%; height: 100%; border-radius: 10px; border: solid black 0.75px"
+      <div class="" style="width: 100%; height: 100%; border: solid black 0.75px; z-index: 0"
         data-controller="map"
         data-map-page-value="show"
         data-map-markers-value="<%= @markers.to_json %>"
