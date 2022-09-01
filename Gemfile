@@ -81,7 +81,7 @@ gem 'aws-sdk-s3'
 gem "net-http"
 
 #another gem to convert heic to jpeg also resize images
-# gem "mini_magick"
+gem "mini_magick"
 
 #gem to add multiple photos
 gem 'carrierwave', '~> 2.0'
