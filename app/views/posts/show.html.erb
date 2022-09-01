@@ -18,9 +18,26 @@
       </div>
     </div>
     <div class="image-text-container">
+    <div class="image-div" data-controller="gallery">
+      <% if @post.images.count > 1 %>
+       <button type="button"
+                data-action="click->gallery#prev"
+                class="photo-btn">
+         <i class="fa-solid fa-chevron-left"></i>
+        </button>
+      <% end %>
       <div class="image">
-        <%# <%= cl_image_tag(@post.image.key, crop: :fill, class: "post-image") %>
-        <img src="<%=@post.image_url%>" class="post-image">
+        <% @post.images.each do |image|%>
+          <img src="<%=image.url%>" class="post-image" data-gallery-target="image" >
+        <% end %>
+      </div>
+      <% if @post.images.count > 1 %>
+        <button type="button"
+                data-action="click->gallery#next"
+                class="photo-btn">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      <% end %>
       </div>
       <div class="post-text">
         <h3 class="text-center mt-0"><%= @post.title %></h3>
@@ -118,7 +135,7 @@
               <div class="content-div"><em><p class="m-5"><%= comment.content %></p></em></div>
               <p class="small-p grey-text">on <%= comment.created_at.strftime("%B %d, %Y") %></p>
               <% if comment.persisted? %>
-                <div class="content-div">
+                <div class="content-div" >
                 <%= button_to post_post_comment_path(@post, comment.id), method: :delete, class:"comment-delete-btn" do %>
                   <p class="small-p small-delete">delete</p>
                 <% end %>

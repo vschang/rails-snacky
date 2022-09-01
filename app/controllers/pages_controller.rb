@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :faq, :search ]
+  skip_before_action :authenticate_user!, only: [ :home, :faq, :search, :profile ]
 
   def home
   end
@@ -11,6 +11,7 @@ class PagesController < ApplicationController
     @posts = Post.all
     if params[:query].present?
       @posts = @posts.global_search(params[:query])
+      @posts = @posts.sort_by {|posts| posts.created_at}.reverse
     else
       @posts = []
     end

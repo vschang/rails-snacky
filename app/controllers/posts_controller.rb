@@ -1,3 +1,5 @@
+require 'carrierwave/orm/activerecord'
+
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
@@ -57,17 +59,12 @@ class PostsController < ApplicationController
 
     if params[:filter]
       arr = ["all", "alcohol", "beverage", "bread", "candy", "cereal","chips","chocolate", "cookies","crackers","dip", "frozen", "fruit", "gummies","icecream","nuts","pastry","spread"]
-      # arr = ["all", "alcohol", "beverage", "bread", "candy", "cereal", "chips", "chocolate", "cookies", "crackers", "dip", "frozen", "fruit", "gummies", "ice cream", "nuts", "pastry", "spread"]
       index = arr.find_index(params[:filter])
       @selection_arr = ["", "","", "","", "","","","","","","","","","","","",""]
-      # @selection_arr = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
-
       @selection_arr[index] = "selected"
 
     else
-      # @posts = @all_posts.sort_by {|posts| posts.created_at}.reverse
       @selection_arr = ["selected", "","", "","", "","","","","","","","","","","",""]
-      # @selection_arr = ["selected", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 
     end
 
@@ -95,7 +92,27 @@ class PostsController < ApplicationController
     @user = current_user
     @post = Post.new(post_params)
     @post.user_id = @user.id
-    @post.image_url = "https://snacky-production.s3.eu-west-2.amazonaws.com/" + @post.image.key
+    # @post.image_url = "https://snacky-production.s3.eu-west-2.amazonaws.com/" + @post.image.key
+
+    # @post.image = params[:file]
+
+    # @post.image_url = []
+    @post.save!
+
+    # @post.images.each do |img, key|
+    #   @post.image_url << `https://snacky-production.s3.eu-west-2.amazonaws.com/ + #{@post.img.key}`
+    # end
+
+    # if @post.image.content_type == "image/heic"
+    #   photo = MiniMagick::Image.new(@post.image_url)
+    #   photo.format = "jpeg"
+    #   photo.write('output.jpg')
+
+    #   @post.image = photo
+    #   @post.image.content_type = "image/jpg"
+    #   @post.image_url = image.write(`#{@post.image.key}_converted.jpg`)
+    # end
+
     if @post.save
       redirect_to post_path(@post), notice: "posted 🎉"
     else
@@ -124,6 +141,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :review, :rating, :image, :country, :brand, :user_id, :order, :address)
+    params.require(:post).permit(:title, :review, :rating, :image, :country, :brand, :user_id, :order, :address, :image_url, {images: []})
   end
 end

@@ -1,4 +1,5 @@
 .avatar {
+  object-fit: cover;
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -21,6 +22,7 @@
   border: white 1px solid;
 }
 .avatar-post{
+  object-fit: cover;
   width: 45px;
   height: 45px;
   border-radius: 50%;

@@ -83,14 +83,47 @@
         <h3 class="no-underline">no posts found for <%= params[:filter]%> tag 😔</h3>
       </div>
     <% else %>
-      <% @posts.each do |post|%>
-        <div class="post-container-show">
-          <div class="image">
-            <img src="<%=post.image_url%>" class="post-image">
-          </div>
+
+    <% @posts.each do |post|%>
+    <div class="post-container-show">
+
+      <div class="image-div" data-controller="gallery2">
+      <% if post.images.count > 1 %>
+       <button type="button"
+                data-action="click->gallery2#prev"
+                class="photo-btn">
+         <i class="fa-solid fa-chevron-left"></i>
+        </button>
+      <% end %>
+      <div class="image">
+        <div class="slideshow-div">
+        <% post.images.each do |image|%>
+            <img src="<%=image.url%>" class="post-image" data-gallery2-target="image" >
+        <% end %>
+        </div>
+      </div>
+      <% if post.images.count > 1 %>
+        <button type="button"
+                data-action="click->gallery2#next"
+                class="photo-btn">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      <% end %>
+      </div>
+
+          <%# <div class="image"> %>
+            <%# <img src="<%=post.image_url" %>
+            <%# class="post-image"> %>
+          <%# </div> %>
+
+
           <div class="post-text">
+          <% if user_signed_in? %>
             <%= link_to post_path(post.id) do %>
-            <h3 class="post-title text-center mt-0"><%= post.title %></h3>
+              <h3 class="post-title text-center mt-0"><%= post.title %></h3>
+            <% end %>
+            <% else %>
+              <h3 class="post-title-out text-center mt-0"><%= post.title %></h3>
             <% end %>
             <div class="stars">
               <% case post.rating %>

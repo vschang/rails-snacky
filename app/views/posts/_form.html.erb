@@ -12,7 +12,7 @@
         <%= f.input :country, required: true, label: "country of origin 🌎", label_html: { class: 'form-text' }, input_html: { class: 'title-input country-input country' } %>
       </div>
       <div class="flex">
-        <%= f.input :image, as: :file, required: true, label: "upload a pic", label_html: { class: 'form-text upload-text' }, input_html: { class: 'title-input upload' }, id: "file-upload-button" %>
+        <%= f.input :images, as: :file, required: true, label: "upload pics", label_html: { class: 'form-text upload-text' }, input_html: { class: 'title-input upload', multiple: true }, id: "file-upload-button" %>
         <%= f.input :address,
             label: "where did you find it? 🔍", label_html: { class: 'form-text' },
             input_html: {data: {address_autocomplete_target: "address"}, class:"display-none address-wrapper"},

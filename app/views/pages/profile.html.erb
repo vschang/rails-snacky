@@ -6,7 +6,6 @@
       <%= link_to '/edit_prof_pic' do%>
         <% if current_user.prof_pic.present? %>
           <img src="<%=@user.pic_url%>" class="prof-pic edit-pic">
-          <%# <%= cl_image_tag(@user.prof_pic.key, crop: :fill, class: "prof-pic edit-pic") %>
           <%# <%= image_tag(@user.prof_pic, class: "prof-pic edit-pic") %>
           <% else %>
           <img src="https://snacky-assets.s3.eu-west-2.amazonaws.com/haribo-prof.jpeg", class="prof-pic edit-pic">

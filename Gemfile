@@ -80,6 +80,19 @@ gem 'aws-sdk-s3'
 #gem to get rid of errors
 gem "net-http"
 
+#another gem to convert heic to jpeg also resize images
+# gem "mini_magick"
+
+#gem to add multiple photos
+gem 'carrierwave', '~> 2.0'
+
+#gem to convert heic to jpeg
+# gem "cloudconvert"
+
+#gem to resize images
+# gem "refile", require: "refile/rails"
+# gem "refile-mini_magick"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
