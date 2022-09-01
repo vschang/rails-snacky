@@ -86,6 +86,9 @@ gem "mini_magick"
 #gem to add multiple photos
 gem 'carrierwave', '~> 2.0'
 
+#
+gem 'fog-aws'
+
 #gem to convert heic to jpeg
 # gem "cloudconvert"
 
