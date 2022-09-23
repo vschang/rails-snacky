@@ -1,7 +1,9 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="gallery2"
+// Connects to data-controller="gallery3"
 export default class extends Controller {
+
+  variable = "something"
   static targets = ["image"];
   static values = {index: Number};
   connect() {
@@ -9,18 +11,18 @@ export default class extends Controller {
   }
 
   next() {
-    const slideshow = this.element.querySelector('.slideshow-div').children
+    const slideshow = this.element.querySelector('.slideshow-div-profile').children
     if (this.indexValue > (slideshow.length-2)) {
       this.indexValue = 0
     } else {
       this.indexValue++
     }
     console.log(this.indexValue)
-    // console.log(slideshow)
+    console.log(slideshow)
   };
 
   prev() {
-    const slideshow = this.element.querySelector('.slideshow-div').children
+    const slideshow = this.element.querySelector('.slideshow-div-profile').children
     if (this.indexValue < 1) {
       this.indexValue = (slideshow.length-1)
     } else {

@@ -78,7 +78,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_24_101148) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
+    t.string "image", default: [], array: true
     t.string "address"
     t.float "latitude"
     t.float "longitude"

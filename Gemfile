@@ -68,6 +68,9 @@ gem 'country_select', '~> 6.0'
 #pg gem
 gem "pg_search"
 
+#gem to add multiple photos
+gem 'carrierwave', '~> 2.0'
+
 #cloudinary gem
 gem "cloudinary"
 
@@ -75,7 +78,7 @@ gem "cloudinary"
 gem 'kaminari'
 
 #amazon s3 gem
-gem 'aws-sdk-s3'
+# gem 'aws-sdk-s3'
 
 #gem to get rid of errors
 gem "net-http"
@@ -83,11 +86,8 @@ gem "net-http"
 #another gem to convert heic to jpeg also resize images
 gem "mini_magick"
 
-#gem to add multiple photos
-gem 'carrierwave', '~> 2.0'
-
 #
-gem 'fog-aws'
+# gem 'fog-aws'
 
 #gem to convert heic to jpeg
 # gem "cloudconvert"

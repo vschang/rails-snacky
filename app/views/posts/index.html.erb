@@ -95,13 +95,16 @@
          <i class="fa-solid fa-chevron-left"></i>
         </button>
       <% end %>
+
       <div class="image">
         <div class="slideshow-div">
         <% post.images.each do |image|%>
             <img src="<%=image.url%>" class="post-image" data-gallery2-target="image" >
+            <%# <%= image_tag(image.url) => %>
         <% end %>
         </div>
       </div>
+      
       <% if post.images.count > 1 %>
         <button type="button"
                 data-action="click->gallery2#next"

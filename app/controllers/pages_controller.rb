@@ -34,6 +34,12 @@ class PagesController < ApplicationController
         image_url: helpers.asset_url("pink-gummy-removebg-preview.png")
       }
     end
+    @post_likes_given = @user.post_likes.count
+
+    @post_likes_received = 0
+    @posts.each do |post|
+      @post_likes_received += post.post_likes.count
+    end
   end
 
   def edit_prof_pic
@@ -44,7 +50,7 @@ class PagesController < ApplicationController
     @user = current_user
     if params[:user]
       current_user.prof_pic.attach(io: params[:user]["image"].tempfile, filename: params[:user]["image"].original_filename)
-      current_user.pic_url = "https://snacky-production.s3.eu-west-2.amazonaws.com/" + current_user.prof_pic.key
+      # current_user.pic_url = "https://snacky-production.s3.eu-west-2.amazonaws.com/" + current_user.prof_pic.key
       if current_user.save!
         flash[:notice] = "Profile picture updated"
         redirect_to profile_path

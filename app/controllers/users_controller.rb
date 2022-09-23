@@ -11,6 +11,8 @@ class UsersController < ApplicationController
         image_url: helpers.asset_url("pink-gummy-removebg-preview.png")
       }
     end
+    
+
   end
 
   def edit

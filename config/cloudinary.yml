@@ -1,0 +1,10 @@
+# config/cloudinary.yml
+development:
+  cloud_name: "le-wagon-785-vchang"
+  api_key: ENV["CLOUDINARY_API_KEY"]
+  api_secret: ENV["CLOUDINARY_API_SECRET_KEY"]
+
+production:
+  cloud_name: "le-wagon-785-vchang"
+  api_key: ENV["CLOUDINARY_API_KEY"]
+  api_secret: ENV["CLOUDINARY_API_SECRET_KEY"]

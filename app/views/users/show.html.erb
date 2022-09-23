@@ -6,7 +6,8 @@
       <%# <%= cl_image_tag(@user.prof_pic.key, crop: :fill, class: "prof-pic edit-pic") %>
       <%# <%= image_tag(@user.prof_pic, class: "prof-pic edit-pic") %>
       <% else %>
-      <img src="https://snacky-assets.s3.eu-west-2.amazonaws.com/haribo-prof.jpeg", class="prof-pic edit-pic">
+      <img src="https://res.cloudinary.com/le-wagon-785-vchang/image/upload/v1663937183/production/snacky-assets/haribo-prof_ug0clq.jpg", class="prof-pic edit-pic">
+      <%# <img src="https://snacky-assets.s3.eu-west-2.amazonaws.com/haribo-prof.jpeg", class="prof-pic edit-pic"> %>
     <% end %>
     <div class="profile-text">
       <% if @posts.count == 0 %>

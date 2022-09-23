@@ -2,7 +2,9 @@
 <div class="border-show">
   <div class="post-container">
     <div class="post-info">
-      <img src="<%= @post.user.pic_url %>" class="avatar-post">
+      <%= cl_image_tag(@post.user.prof_pic.key, crop: :fill, class: "avatar-post") %>
+      <%# <img src="<%= @post.user.pic_url %>
+      <%# " class="avatar-post"> %>
       <div class="flex-info flex">
         <p class="small-p">posted by
         <% if user_signed_in? && @post.user_id == @user.id %>

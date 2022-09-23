@@ -5,10 +5,13 @@
     <p class="small-p edit-text">edit</p>
       <%= link_to '/edit_prof_pic' do%>
         <% if current_user.prof_pic.present? %>
-          <img src="<%=@user.pic_url%>" class="prof-pic edit-pic">
+          <%# <img src="<%=@user.prof_pic.key%>
+          <%# " class="prof-pic edit-pic"> %>
+          <%= cl_image_tag current_user.prof_pic.key, class:"prof-pic edit-pic" %>
           <%# <%= image_tag(@user.prof_pic, class: "prof-pic edit-pic") %>
           <% else %>
-          <img src="https://snacky-assets.s3.eu-west-2.amazonaws.com/haribo-prof.jpeg", class="prof-pic edit-pic">
+          <img src="https://res.cloudinary.com/le-wagon-785-vchang/image/upload/v1663937183/production/snacky-assets/haribo-prof_ug0clq.jpg", class="prof-pic edit-pic">
+          <%# <img src="https://snacky-assets.s3.eu-west-2.amazonaws.com/haribo-prof.jpeg", class="prof-pic edit-pic"> %>
         <% end %>
       <% end %>
     </div>
@@ -19,6 +22,16 @@
       <h3 class="welcome-profile text-center">Hi <%= @user.first_name %>, you've made 1 post</h3>
     <% else %>
       <h3 class="welcome-profile text-center">Hi <%= @user.first_name %>, you've made <%= @total%> posts</h3>
+    <% end %>
+    <% if @post_likes_given == 1 %>
+      <p class="likes-text ">You've given <%= @post_likes_given%> like ❤️</p>
+    <% else %>
+      <p class="likes-text ">You've given <%= @post_likes_given%> likes ❤️</p>
+    <% end %>
+    <% if @post_likes_received == 1 %>
+      <p class="likes-text ">and received <%= @post_likes_received%> like ✨</p>
+    <% else %>
+      <p class="likes-text ">and received <%= @post_likes_received%> likes ✨</p>
     <% end %>
       <p class="text-right text-center">Snacky contributer since <%=@user.created_at.strftime("%B %d, %Y") %></p>
     </div>
@@ -49,9 +62,33 @@
   <div class="all-posts">
     <% @posts.each do |post|%>
       <div class="post-container-show">
+
+      <div class="image-div" data-controller="gallery3">
+        <% if post.images.count > 1 %>
+        <button type="button"
+                  data-action="click->gallery3#prev"
+                  class="photo-btn">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <% end %>
+
         <div class="image">
-          <img src="<%=post.image_url%>" class="post-image">
+          <div class="slideshow-div-profile">
+          <% post.images.each do |image|%>
+            <img src="<%=image.url%>" class="post-image" data-gallery3-target="image" >
+          <% end %>
+          </div>
         </div>
+
+        <% if post.images.count > 1 %>
+        <button type="button"
+                data-action="click->gallery3#next"
+                class="photo-btn">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <% end %>
+      </div>
+
         <div class="post-text">
           <%= link_to post_path(post.id) do %>
           <h3 class="post-title text-center mt-0"><%= post.title %></h3>

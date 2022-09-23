@@ -23,11 +23,13 @@
       <div class="avatar-nav">
         <%= link_to profile_path, class:"" do%>
         <% if current_user.prof_pic.present? %>
-          <img src="<%=current_user.pic_url%>" class="avatar">
-          <%# <%= cl_image_tag(current_user.prof_pic.key, crop: :fill, class: "avatar") %> 
+          <%# <img src="<%=current_user.pic_url%>
+          <%# " class="avatar"> %>
+          <%= cl_image_tag(current_user.prof_pic.key, crop: :fill, class: "avatar") %>
           <%# <%= image_tag(current_user.prof_pic, class: "avatar")  %>
         <% else %>
-        <img src="https://snacky-assets.s3.eu-west-2.amazonaws.com/haribo-prof.jpeg", class="avatar">
+        <img src="https://res.cloudinary.com/le-wagon-785-vchang/image/upload/v1663937183/production/snacky-assets/haribo-prof_ug0clq.jpg", class="avatar">
+        <%# <img src="https://snacky-assets.s3.eu-west-2.amazonaws.com/haribo-prof.jpeg", class="avatar"> %>
         <% end %>
         <% end %>
         <%= link_to profile_path, class:"" do%>

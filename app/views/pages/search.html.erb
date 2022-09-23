@@ -25,8 +25,9 @@
         <% @posts.each do |post| %>
           <div class="search-result">
             <div class="image">
-              <img src="<%=post.image_url%>" class="search-image">
-              <%# <%= cl_image_tag(post.image.key, crop: :fill, class: "search-image") %>
+            <%# <% post.images.first do |image|%>
+              <img src="<%=post.images.first.url%>" class="search-image"  >
+            <%# <% end %> 
             </div>
             <div class="search-content">
               <%= link_to post_path(post.id) do %>

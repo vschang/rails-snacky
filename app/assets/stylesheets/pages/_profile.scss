@@ -40,6 +40,17 @@
   .text-left{
     text-align: left;
   }
+  .likes-text{
+    font-size: 16px;
+    font-family: 'Geneva', sans-serif;
+    color: $yellow;
+    text-shadow: 0.25px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
+                 0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
+    margin-bottom:10px;
+    text-decoration:none;
+    margin-top: 10px;
+    text-align: center;
+  }
 }
 @media (min-width: 768px) {
   .welcome-profile{
@@ -72,6 +83,17 @@
     font-size: 22px;
     padding:10px
   }
+  .likes-text{
+    font-size: 16px;
+    font-family: 'Geneva', sans-serif;
+    color: $yellow;
+    text-shadow: 0.25px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
+                 0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
+    margin-bottom:10px;
+    text-decoration:none;
+    margin-top: 10px;
+    text-align: right;
+  }
 }
 
 
@@ -90,9 +112,6 @@
     display:block;
   }
 
-  .text-left{
-
-  }
 }
 
 .edit-pic{

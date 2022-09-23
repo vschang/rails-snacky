@@ -188,6 +188,12 @@
     justify-content: center;
     width: 94%;
   }
+  .image-div{
+    display:flex;
+    align-items:center;
+    // width: 30vw;
+    justify-content: center;
+  }
 }
 
 @media (min-width: 769px) {
@@ -236,7 +242,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 65vw;
+    // width: 65vw;
     margin: 0 auto;
     border-bottom: solid black 0.5px;
     padding-bottom: 20px;
@@ -359,12 +365,14 @@
     background: $light-grey;
     color: $pink;
   }
+  .image-div{
+    display:flex;
+    align-items:center;
+    width: 30vw;
+    justify-content: center;
+  }
 }
 
-.image-div{
-  display:flex;
-  align-items:center;
-}
 
 .next-prev-div{
   display:flex;
