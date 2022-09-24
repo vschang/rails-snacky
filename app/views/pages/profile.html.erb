@@ -24,16 +24,16 @@
       <h3 class="welcome-profile text-center">Hi <%= @user.first_name %>, you've made <%= @total%> posts</h3>
     <% end %>
     <% if @post_likes_given == 1 %>
-      <p class="likes-text ">You've given <%= @post_likes_given%> like ❤️</p>
+      <p class="likes-text ">you've given <%= @post_likes_given%> like ❤️</p>
     <% else %>
-      <p class="likes-text ">You've given <%= @post_likes_given%> likes ❤️</p>
+      <p class="likes-text ">you've given <%= @post_likes_given%> likes ❤️</p>
     <% end %>
     <% if @post_likes_received == 1 %>
       <p class="likes-text ">and received <%= @post_likes_received%> like ✨</p>
     <% else %>
       <p class="likes-text ">and received <%= @post_likes_received%> likes ✨</p>
     <% end %>
-      <p class="text-right text-center">Snacky contributer since <%=@user.created_at.strftime("%B %d, %Y") %></p>
+      <p class="text-date">Snacky contributer since <%=@user.created_at.strftime("%B %d, %Y") %></p>
     </div>
     <div class="dropdown">
       <button class="dropdown-btn"><i class="fa-solid fa-gear black"></i></button>

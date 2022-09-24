@@ -27,7 +27,14 @@
   .form-container {
     width: 80vw;
     margin: 0px 10px 0px 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+  }
+
+  .form-container-edit{
+    width: 80vw;
+    margin: 0px 10px 0px 10px;
+    padding-bottom: 30px;
+    padding-top:10px;
   }
 
   .comment-box{
@@ -138,7 +145,7 @@
     justify-content: flex-end;
     margin-right: 10px;
   }
-  .form-container{
+  .form-container, .form-container-edit{
     width:70vw;
     margin: 0 auto;
   }

@@ -51,6 +51,9 @@
     margin-top: 10px;
     text-align: center;
   }
+  .text-date{
+    text-align: center;
+  }
 }
 @media (min-width: 768px) {
   .welcome-profile{
@@ -92,6 +95,9 @@
     margin-bottom:10px;
     text-decoration:none;
     margin-top: 10px;
+    text-align: right;
+  }
+  .text-date{
     text-align: right;
   }
 }
