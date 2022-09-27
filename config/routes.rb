@@ -21,4 +21,7 @@ Rails.application.routes.draw do
   get 'edit_prof_pic', to: 'pages#edit_prof_pic'
   patch 'update_prof_pic', to: 'pages#update_prof_pic'
   get '/posts' => "welcome#index", :as => :user_root
+
+  # Delete an image from a post
+  post 'remove_image', to: 'posts#remove_image'
 end

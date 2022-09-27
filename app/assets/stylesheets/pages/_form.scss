@@ -105,15 +105,13 @@
     padding-right: 10px;
   }
   #file-upload-button{
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Inconsolata', monospace;
   }
   .search-form{
     display:flex;
   }
-  .country-input{
 
-  }
   .mt-0{
     margin-top: 20px;
   }
@@ -139,15 +137,24 @@
     justify-content: space-between;
     align-items:center;
   }
+  .flex-col{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
   .post-div{
     display:flex;
     justify-content: flex-end;
     margin-right: 10px;
+    // position: absolute;
+    bottom: 50px;
+    right: 50px;
   }
   .form-container, .form-container-edit{
     width:70vw;
     margin: 0 auto;
+    // position: relative;
   }
   .comment-box{
     margin: 20px 0px 20px 0px;
@@ -221,12 +228,12 @@
     padding-right: 10px;
 }
   #file-upload-button{
-    font-size: 22px;
+    font-size: 18px;
     font-family: 'Inconsolata', monospace;
   }
 
   #file-upload-button:hover{
-    opacity: 75%;
+    // opacity: 75%;
   }
   .search-form{
     display:flex;
@@ -374,5 +381,8 @@ option{
   align-items: center;
 }
 
-input{box-sizing:border-box}
+input{
+  box-sizing:border-box;
+  padding: 10px 0px
+}
 textarea{box-sizing:border-box}

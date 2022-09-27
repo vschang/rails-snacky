@@ -3,7 +3,7 @@
   .go-btn{
     font-size: 16px;
     font-family: 'Inconsolata', monospace;
-    font-weight: 700;
+    font-weight: 500;
     background-color: #B4FD3E;
     border: solid black 1px;
     border-radius: 18px;
@@ -70,7 +70,7 @@
   .go-btn{
     font-size: 16px;
     font-family: 'Inconsolata', monospace;
-    font-weight: 700;
+    font-weight: 500;
     background-color: #B4FD3E;
     border: solid black 1px;
     border-radius: 18px;
@@ -94,7 +94,7 @@
     border-radius: 30px;
     box-shadow: 5px 5px black;
     padding: 7px 15px;
-    margin-top: 20px;
+    // margin-top: 20px;
     color:black;
   }
 
@@ -163,7 +163,6 @@
   }
   .like-btn:hover, .edit-btn:hover{
     box-shadow: none;
-    opacity: 75%;
     transform: translate(0, 0.2rem);
   }
   .photo-btn{

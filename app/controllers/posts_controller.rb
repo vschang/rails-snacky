@@ -128,8 +128,15 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update(post_params)
-    redirect_to post_path(@post)
+    if params[:post] && params[:post][:images]
+      @post.images.attach(params[:post][:images])
+      @post.save
+      redirect_to edit_post_path(@post)
+    else
+      @post.update(post_params)
+      redirect_to post_path(@post)
+
+    end
   end
 
   def destroy
@@ -138,9 +145,16 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def remove_image
+    @post = Post.find(params[:post_id].to_i)
+    @post.images[params[:image_index].to_i].purge
+    redirect_to edit_post_path(@post)
+  end
+
+
   private
 
   def post_params
-    params.require(:post).permit(:title, :review, :rating, :image, :country, :brand, :user_id, :order, :address, :image_url, {images: []})
+    params.require(:post).permit(:title, :review, :rating, :image, :country, :brand, :user_id, :order, :address, :image_url, {images: []}, :image_cache)
   end
 end
