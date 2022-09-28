@@ -104,7 +104,7 @@
         <% end %>
         </div>
       </div>
-      
+
       <% if post.images.count > 1 %>
         <button type="button"
                 data-action="click->gallery2#next"
@@ -113,12 +113,6 @@
         </button>
       <% end %>
       </div>
-
-          <%# <div class="image"> %>
-            <%# <img src="<%=post.image_url" %>
-            <%# class="post-image"> %>
-          <%# </div> %>
-
 
           <div class="post-text">
           <% if user_signed_in? %>
@@ -170,7 +164,15 @@
             <% end %>
             <div class="likes-div">
               <div class="likes-n-comments">
-                <p><i class="fa-solid fa-heart red"></i> <%= post.post_likes.count %></p>
+
+                <% if user_signed_in? %>
+                  <%= button_to post_post_likes_path(post), method: :post, class: "heart-btn" do %>
+                    <p><i class="fa-solid fa-heart red"></i><%= post.post_likes.count %></p>
+                  <% end %>
+                <% else%>
+                  <p><i class="fa-solid fa-heart red"></i> <%= post.post_likes.count %></p>
+                <% end %>
+
                 <p><i class="fa-solid fa-comment-dots comment"></i> <%= post.post_comments.count %></p>
               </div>
               <div class="tags-container">

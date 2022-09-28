@@ -17,11 +17,11 @@
     </div>
     <div class="profile-text">
     <% if @posts.count == 0 %>
-      <h3 class="welcome-profile text-center">Hi <%= @user.first_name %>, we're excited for your first post 👀</h3>
+      <h3 class="welcome-profile text-center">Hi <%= @user.first_name %>, we're excited for your first snack review 👀</h3>
     <% elsif @posts.count == 1 %>
-      <h3 class="welcome-profile text-center">Hi <%= @user.first_name %>, you've made 1 post</h3>
+      <h3 class="welcome-profile text-center">Hi <%= @user.first_name %>, you've reviewed 1 snack</h3>
     <% else %>
-      <h3 class="welcome-profile text-center">Hi <%= @user.first_name %>, you've made <%= @total%> posts</h3>
+      <h3 class="welcome-profile text-center">Hi <%= @user.first_name %>, you've reviewed <%= @total%> snacks</h3>
     <% end %>
     <% if @post_likes_given == 1 %>
       <p class="likes-text ">you've given <%= @post_likes_given%> like ❤️</p>
@@ -45,7 +45,7 @@
   </div>
   <% if @markers.count == 0 %>
   <div class="first-post">
-    <%= link_to "make my first post! 🤩", 'posts/new', class:"first-btn"%>
+    <%= link_to "review my first snack 🤩", 'posts/new', class:"first-btn"%>
   </div>
   <% else %>
   <div class="map-container">

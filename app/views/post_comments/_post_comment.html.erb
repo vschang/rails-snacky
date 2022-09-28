@@ -1,0 +1,26 @@
+
+<div class="comment-div">
+  <div class="username-x">
+    <p class="small-p flex-start grey-text">
+    <%# <% if user_signed_in? && post_comment.user_id == @user.id %>
+      <%# <%= link_to profile_path, class:"small-p  bold" do%>
+        <%# @<%= post_comment.user.username%>
+      <%# <% end %>
+    <%# <% else %>
+      <%= link_to user_path(post_comment.user_id), class:"small-p  bold" do %>
+        @<%= post_comment.user.username%>
+      <% end %>
+    <%# <% end%> </p>
+    <% if post_comment.persisted? %>
+      <div class="content-div" >
+        <%= button_to post_post_comment_path(@post, post_comment.id), method: :delete, class:"comment-delete-btn" do %>
+          <i class="fa-solid fa-xmark"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="content-div">
+    <em><p class="m-5"><%= post_comment.content %></p></em>
+  </div>
+  <p class="small-p grey-text"><%= post_comment.created_at.strftime("%B %d, %Y") %></p>
+</div>

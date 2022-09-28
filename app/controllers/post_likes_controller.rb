@@ -5,7 +5,7 @@ class PostLikesController < ApplicationController
     @post_like.user = current_user
     @post_like.post = @post
     user = current_user
-    
+
     @liked_post = PostLike.find_by(post_id: @post.id, user_id: user.id)
     if @liked_post
       @liked_post.destroy

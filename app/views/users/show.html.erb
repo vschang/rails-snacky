@@ -2,26 +2,32 @@
 <div class="border">
   <div class="profile-info">
     <% if @user.prof_pic.present? %>
-      <img src="<%=@user.pic_url%>" class="prof-pic edit-pic">
-      <%# <%= cl_image_tag(@user.prof_pic.key, crop: :fill, class: "prof-pic edit-pic") %>
-      <%# <%= image_tag(@user.prof_pic, class: "prof-pic edit-pic") %>
+      <%= cl_image_tag @user.prof_pic.key, class:"prof-pic edit-pic" %>
       <% else %>
       <img src="https://res.cloudinary.com/le-wagon-785-vchang/image/upload/v1663937183/production/snacky-assets/haribo-prof_ug0clq.jpg", class="prof-pic edit-pic">
-      <%# <img src="https://snacky-assets.s3.eu-west-2.amazonaws.com/haribo-prof.jpeg", class="prof-pic edit-pic"> %>
     <% end %>
     <div class="profile-text">
       <% if @posts.count == 0 %>
-      <h3 class="welcome-profile text-center"><%= @user.first_name %>hasn't posted yet! 🧐</h3>
+      <h3 class="welcome-profile text-center"><%= @user.first_name %>hasn't reviewed any snacks yet! 🧐</h3>
       <% elsif @posts.count == 1 %>
-      <h3 class="welcome-profile text-center"><%= @user.first_name %> has made 1 post</h3>
+      <h3 class="welcome-profile text-center"><%= @user.first_name %> has reviewed 1 snack</h3>
       <% else %>
-      <h3 class="welcome-profile text-center"><%= @user.first_name %> has made <%= @posts.count%> posts</h3>
+      <h3 class="welcome-profile text-center"><%= @user.first_name %> has reviewed <%= @posts.count%> snacks</h3>
+      <% end %>
+      <% if @post_likes_given == 1 %>
+      <p class="likes-text "><%= @user.first_name %> has given <%= @post_likes_given%> like ❤️</p>
+      <% else %>
+        <p class="likes-text "><%= @user.first_name %> has given <%= @post_likes_given%> likes ❤️</p>
+      <% end %>
+      <% if @post_likes_received == 1 %>
+        <p class="likes-text ">and received <%= @post_likes_received%> like ✨</p>
+      <% else %>
+        <p class="likes-text ">and received <%= @post_likes_received%> likes ✨</p>
       <% end %>
       <p class="text-right">Snacky contributer since <%=@user.created_at.strftime("%B %d, %Y") %></p>
     </div>
   </div>
   <% if @markers.count == 0 %>
-  <p>Nothing to see here!</p>
   <% else %>
   <div class="map-container">
     <h1 class="your-snack-map text-center"><%= @user.first_name %>'s snack map</h1>
@@ -37,9 +43,31 @@
   <div class="all-posts">
     <% @posts.each do |post|%>
       <div class="post-container-show">
+        <div class="image-div" data-controller="gallery4">
+        <% if post.images.count > 1 %>
+        <button type="button"
+                  data-action="click->gallery4#prev"
+                  class="photo-btn">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <% end %>
+
         <div class="image">
-          <img src="<%=post.image_url%>" class="post-image">
+          <div class="slideshow-div-user-profile">
+          <% post.images.each do |image|%>
+            <img src="<%=image.url%>" class="post-image" data-gallery4-target="image" >
+          <% end %>
+          </div>
         </div>
+
+        <% if post.images.count > 1 %>
+        <button type="button"
+                data-action="click->gallery4#next"
+                class="photo-btn">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <% end %>
+      </div>
         <div class="post-text">
           <%= link_to post_path(post.id) do %>
           <h3 class="post-title mt-0"><%= post.title %></h3>

@@ -1,0 +1,11 @@
+<%= simple_form_for([ post, post_comment ],
+    data: {insert_in_list_target: "form",
+    action: "submit->insert-in-list#send"
+    }) do |f| %>
+  <%= f.input :content, placeholder:'have something nice to say?', label: false, as: :text, class: 'comment-box' %>
+    <div class="reply-btn-div">
+    <%= f.submit 'reply', class:'like-btn'%>
+    </div>
+<% end %>
+
+

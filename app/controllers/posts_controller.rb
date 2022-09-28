@@ -69,6 +69,11 @@ class PostsController < ApplicationController
     end
 
     @posts = Kaminari.paginate_array(@posts).page(page).per(per)
+
+    # @user = current_user
+    # @post = Post.find(params[:post_id])
+    # @post_like = PostLike.new
+    # @liked_post = PostLike.find_by(post_id: @post.id, user_id: @user.id)
   end
 
   def show
@@ -82,6 +87,7 @@ class PostsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: {post: @post}),
         image_url: helpers.asset_url("pink-gummy-removebg-preview.png")
       }]
+    @post_comment = PostComment.new
   end
 
   def new
@@ -101,16 +107,6 @@ class PostsController < ApplicationController
 
     # @post.images.each do |img, key|
     #   @post.image_url << `https://snacky-production.s3.eu-west-2.amazonaws.com/ + #{@post.img.key}`
-    # end
-
-    # if @post.image.content_type == "image/heic"
-    #   photo = MiniMagick::Image.new(@post.image_url)
-    #   photo.format = "jpeg"
-    #   photo.write('output.jpg')
-
-    #   @post.image = photo
-    #   @post.image.content_type = "image/jpg"
-    #   @post.image_url = image.write(`#{@post.image.key}_converted.jpg`)
     # end
 
     if @post.save
@@ -155,6 +151,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :review, :rating, :image, :country, :brand, :user_id, :order, :address, :image_url, {images: []}, :image_cache)
+    params.require(:post).permit(:title, :review, :rating, :image, :country, :brand, :user_id, :order, :address, :image_url, {images: []})
   end
 end

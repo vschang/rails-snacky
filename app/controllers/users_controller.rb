@@ -11,9 +11,14 @@ class UsersController < ApplicationController
         image_url: helpers.asset_url("pink-gummy-removebg-preview.png")
       }
     end
-    
+    @post_likes_given = @user.post_likes.count
 
+    @post_likes_received = 0
+    @posts.each do |post|
+      @post_likes_received += post.post_likes.count
+    end
   end
+
 
   def edit
   end
