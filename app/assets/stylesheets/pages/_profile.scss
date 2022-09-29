@@ -21,6 +21,12 @@
     padding-top: 40px;
     padding-bottom: 30px;
   }
+  .profile-info-2{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    padding-bottom: 20px;
+  }
 
   .text-center{
     text-align: center;
@@ -65,16 +71,24 @@
     margin-bottom:10px;
     text-decoration:none;
   }
-
   .profile-info{
     display:flex;
-    align-items: center;
-    justify-content:space-around;
+    flex-direction:column;
     border-bottom: solid black 1px;
     width: 80vw;
     margin: 0 auto;
     padding-top: 20px;
     padding-bottom: 30px;
+    margin-bottom:20px;
+  }
+
+  .profile-info-2{
+    display:flex;
+    align-items: center;
+    justify-content:space-around;
+    // border-bottom: solid black 1px;
+    // width: 80vw;
+    // margin: 0 auto;
   }
 
   .text-right{
@@ -138,6 +152,7 @@
 .dropdown{
   position: relative;
   display: inline-block;
+  align-self:center;
 }
 
 .dropdown-btn{

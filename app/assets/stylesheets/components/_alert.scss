@@ -17,8 +17,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    -webkit-animation: hideAnimation 0s ease-in forwards 4s;
-    animation: hideAnimation 0s ease-in forwards 4s;
     display: flex;
     justify-content: space-between;
   }
@@ -40,8 +38,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    -webkit-animation: hideAnimation 0s ease-in forwards 4s;
-    animation: hideAnimation 0s ease-in forwards 4s;
     display: flex;
     justify-content: space-between;
   }
@@ -64,7 +60,6 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    animation: hideAnimation 0s ease-in forwards 4s;
     display: flex;
     justify-content: space-between;
   }
@@ -85,12 +80,21 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    animation: hideAnimation 0s ease-in forwards 4s;
   }
 
   .btn-close:hover{
     opacity: 50%;
   }
+}
+
+.invisible{
+  visibility: hidden;
+}
+
+.hide-animation{
+  -webkit-animation: hideAnimation 0s ease-in forwards 4s;
+  animation: hideAnimation 0s ease-in forwards 4s;
+
 }
 @keyframes hideAnimation {
   to {
@@ -110,6 +114,11 @@
 
 
 .fade-out{
- opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.show{
+  visibility:visible;
   transition: opacity 0.5s ease-in-out;
 }

@@ -5,6 +5,7 @@ class PostCommentsController < ApplicationController
     @post_comment = PostComment.new(post_comment_params)
     @post_comment.user = current_user
     @post_comment.post = @post
+    
     # if @post_comment.save
     #   redirect_to post_path(@post)
     # else

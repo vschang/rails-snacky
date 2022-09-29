@@ -1,0 +1,10 @@
+<%= simple_form_for([post, PostTag.new],
+    data: {insert_in_list_tag_target: "form",
+    action: "submit->insert-in-list-tag#send"
+    }) do |f| %>
+  <%= f.select :tag,
+                options_for_select(["alcohol", "beverage", "bread", "candy", "cereal","chips","chocolate", "cookies","crackers","dip", "frozen", "fruit", "gummies","icecream","nuts","pastry","spread"]),
+                { include_blank: 'select a tag' },
+                class: 'sort' %>
+  <%= f.submit 'add', class:'like-btn'%>
+<% end %>

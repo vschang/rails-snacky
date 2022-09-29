@@ -1,0 +1,27 @@
+@media (max-width: 768px) {
+  .modal-opened{
+
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-opened{
+  }
+
+  .map-btn-setting{
+    display:flex;
+    flex-direction:column;
+  }
+}
+
+.map-overlay{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  // background: rgba(87, 94, 118, 0.7);
+  background: #ffcaed82;
+  backdrop-filter: blur(6px);
+}

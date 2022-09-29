@@ -88,6 +88,7 @@ class PostsController < ApplicationController
         image_url: helpers.asset_url("pink-gummy-removebg-preview.png")
       }]
     @post_comment = PostComment.new
+    @current_user_id = current_user.id
   end
 
   def new

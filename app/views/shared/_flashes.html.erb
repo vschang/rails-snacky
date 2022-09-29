@@ -1,19 +1,19 @@
 <% if notice %>
-  <div class="notice" data-controller="flash">
+  <div class="notice hide-animation" data-controller="flash">
     <%= notice %>
     <button type="button" class="btn-close"
             data-action="click->flash#hide">
-    <i class="fa-solid fa-ban"></i>
+      <i class="fa-regular fa-circle-xmark"></i>
     </button>
   </div>
 <% end %>
 
 <% if alert %>
-  <div class="alert" role="alert" data-controller="flash">
+  <div class="alert hide-animation" role="alert" data-controller="flash">
     <%= alert %>
     <button type="button" class="btn-close"
             data-action="click->flash#hide">
-    <i class="fa-solid fa-ban"></i>
+      <i class="fa-regular fa-circle-xmark"></i>
     </button>
   </div>
 <% end %>

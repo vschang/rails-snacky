@@ -31,6 +31,15 @@
     border-bottom: solid 0.5px black;
   }
 
+  .map-container-profile{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding: 20px 30px 40px;
+    height: 80%;
+  }
+
   .snack-map{
     padding:0px;
     margin: 10px 0px 10px 0px;
@@ -63,69 +72,87 @@
   }
 
 @media (min-width: 768px) {
-.mapboxgl-popup-content {
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
-  border-radius: 20px;
-  border: solid black 0.75px;
-}
+  .mapboxgl-popup-content {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    border-radius: 20px;
+    border: solid black 0.75px;
+  }
 
-.map-container{
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items:center;
-  width:80%;
-  margin: 0 auto;
-  padding-bottom: 40px;
-  border-bottom: solid 0.5px black;
-  margin-bottom: 30px;
-}
+  .map-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    border-bottom: solid 0.5px black;
+    margin-bottom: 30px;
+  }
 
-.map-container-show{
-  padding: 30px 0px 30px 0px;
-  height: 35vh;
-  width: 65vw;
-  justify-self: center;
-  margin: 0 auto;
-  border-bottom: solid 0.5px black;
-}
+  .map-container-profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    padding: 10px 50px 50px 50px;
+  }
 
-.snack-map{
-  padding:0px;
-  margin: 10px 0px 10px 0px;
-  font-size: 50px;
-  font-family: 'Gluten', sans-serif;
-  color: $yellow;
-  text-shadow: 0.5px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
-               0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
-  margin-top:20px;
-  margin-bottom:20px;
-}
+  .map-container-show{
+    padding: 30px 0px 30px 0px;
+    height: 35vh;
+    width: 65vw;
+    justify-self: center;
+    margin: 0 auto;
+    border-bottom: solid 0.5px black;
+  }
 
-.your-snack-map{
-  font-size: 50px;
-  font-family: 'Gluten', sans-serif;
-  color: $yellow;
-  text-shadow: 0.5px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
-               0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
-  margin-top:40px;
-  margin-bottom:20px;
-}
+  .snack-map{
+    padding:0px;
+    margin: 10px 0px 10px 0px;
+    font-size: 50px;
+    font-family: 'Gluten', sans-serif;
+    color: $yellow;
+    text-shadow: 0.5px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
+                0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+
+  .your-snack-map{
+    font-size: 50px;
+    font-family: 'Gluten', sans-serif;
+    color: $yellow;
+    text-shadow: 0.5px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
+                0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
+    margin: 20px;
+  }
+
+  .snack-map-margin{
+    margin-top:30px;
+    margin-bottom:10px;
+  }
 
 
-.font-18{
-  font-size: 18px;
-}
+  .font-18{
+    font-size: 18px;
+  }
 
-.font-18:hover{
-  color:white;
-  background-color: black;
-}
+  .font-18:hover{
+    color:white;
+    background-color: black;
+  }
 
-.mapboxgl-ctrl-attrib a {
-  color: rgba(0,0,0,.75);
-  text-decoration: none;
-  font-size: 12px;
+  .mapboxgl-ctrl-attrib a {
+    color: rgba(0,0,0,.75);
+    text-decoration: none;
+    font-size: 12px;
+  }
 }
+.map-container-profile{
+  z-index: 30;
 }

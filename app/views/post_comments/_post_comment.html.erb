@@ -1,5 +1,5 @@
 
-<div class="comment-div">
+<div class="comment-div" data-controller="delete-comment">
   <div class="username-x">
     <p class="small-p flex-start grey-text">
     <%# <% if user_signed_in? && post_comment.user_id == @user.id %>
@@ -11,10 +11,11 @@
         @<%= post_comment.user.username%>
       <% end %>
     <%# <% end%> </p>
-    <% if post_comment.persisted? %>
+
+    <% if post_comment.user_id == current_user.id %>
       <div class="content-div" >
         <%= button_to post_post_comment_path(@post, post_comment.id), method: :delete, class:"comment-delete-btn" do %>
-          <i class="fa-solid fa-xmark"></i>
+          <i class="fa-solid fa-xmark" data-action="click->delete-comment#delete"></i>
         <% end %>
       </div>
     <% end %>
