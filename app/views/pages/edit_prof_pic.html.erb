@@ -9,15 +9,10 @@
         <div class="form-inputs-profpic">
           <p>current profile picture</p>
           <% if current_user.prof_pic.present? %>
-          <%# <img src="<%=@user.pic_url%>
-          <%# " class="prof-pic mb-40"> %>
             <%= cl_image_tag(@user.prof_pic.key, crop: :fill, class: "prof-pic mb-40") %>
-            <%# <%= image_tag(@user.prof_pic, class: "prof-pic mb-40") unless @user.prof_pic.nil? %>
           <% else %>
             <img src="https://res.cloudinary.com/le-wagon-785-vchang/image/upload/v1663937183/production/snacky-assets/haribo-prof_ug0clq.jpg", class="prof-pic mb-40">
-            <%# <img src="https://snacky-assets.s3.eu-west-2.amazonaws.com/haribo-prof.jpeg", class="prof-pic mb-40"> %>
           <% end %>
-
           <%= f.input :image, as: :file,
                           label: false,
                           label_html: { class: 'login-text ' },

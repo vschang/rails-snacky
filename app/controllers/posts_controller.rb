@@ -111,7 +111,7 @@ class PostsController < ApplicationController
     # end
 
     if @post.save
-      redirect_to post_path(@post), notice: "posted 🎉"
+      redirect_to post_path(@post), notice: "review posted 🎉"
     else
       flash[:alert] = "please fill in all fields!"
       render new_post_path, alert: "please fill in all fields!"

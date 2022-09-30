@@ -9,7 +9,7 @@
         <img src="https://res.cloudinary.com/le-wagon-785-vchang/image/upload/v1663937183/production/snacky-assets/haribo-prof_ug0clq.jpg", class="prof-pic edit-pic">
       <% end %>
       <div class="flex-info flex">
-        <p class="small-p">posted by
+        <p class="small-p">reviewed by
         <% if user_signed_in? && @post.user_id == @user.id %>
           <%= link_to profile_path, class:"small-p  bold" do %>
             @<%= @post.user.username%>
@@ -93,7 +93,7 @@
             <% end %>
           <% end %>
         <% end %>
-        <p>likes <%= @post.post_likes.count %></p>
+        <p >likes <%= @post.post_likes.count %></p>
       </div>
 
       <div class="tags-div" data-controller="insert-in-list-tag" data-insert-in-list-tag-position-value="afterend" data-component="tags">

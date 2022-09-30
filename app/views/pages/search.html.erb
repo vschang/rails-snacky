@@ -27,7 +27,7 @@
             <div class="image">
             <%# <% post.images.first do |image|%>
               <img src="<%=post.images.first.url%>" class="search-image"  >
-            <%# <% end %> 
+            <%# <% end %>
             </div>
             <div class="search-content">
               <%= link_to post_path(post.id) do %>
@@ -58,7 +58,7 @@
                 <% end %>
               </div>
               <p> <%= truncate(post.review, :length => 80) %> </p>
-              <p class="small-p mt-10">posted <%= post.created_at.strftime("%B %d, %Y") %></p>
+              <p class="small-p mt-10">reviewed <%= post.created_at.strftime("%B %d, %Y") %></p>
               <p class="small-p mb-20">by
               <% if user_signed_in? && post.user_id == @user.id %>
                 <%= link_to profile_path, class:"small-p  bold" do %>

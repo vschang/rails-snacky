@@ -38,7 +38,7 @@
       </div>
 
       <div class="dropdown">
-        <button class="dropdown-btn"><i class="fa-solid fa-gear black"></i></button>
+        <button class="dropdown-btn"><i class="fa-solid fa-gear black-gear"></i></button>
         <div class="dropdown-content ">
         <%= link_to "edit profile", 'users/edit', class:'dropdown-edit'%>
         <%= link_to "logout", '/log_out', class:'dropdown-edit'%>
@@ -147,7 +147,7 @@
             <p><strong>brand: </strong><%= post.brand %></p>
             <p><strong>country: </strong><%= post.country_name %></p>
           </div>
-          <p class="small-p mt-10 mb-10">posted <%= post.created_at.strftime("%B %d, %Y") %></p>
+          <p class="small-p mt-10 mb-10">reviewed <%= post.created_at.strftime("%B %d, %Y") %></p>
           <div class="likes-div">
             <div class="likes-n-comments">
               <p><i class="fa-solid fa-heart red"></i> <%= post.post_likes.count %></p>

@@ -96,7 +96,7 @@
     font-weight: 700;
     background-color: $green;
     border: solid black 1px;
-    border-radius: 20px;
+    border-radius: 25px;
     box-shadow: 5px 5px black;
     padding: 10px 15px;
     margin-right: 10px;
@@ -154,7 +154,7 @@
     box-shadow: none;
     transform: translate(0, 0.2rem);
   }
- 
+
   .comment-delete-btn:hover{
     opacity: 50%;
   }
