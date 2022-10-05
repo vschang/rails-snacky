@@ -106,7 +106,6 @@ GEM
       aws_cf_signer
       rest-client (>= 2.0.0)
     concurrent-ruby (1.1.10)
-    content_disposition (1.0.0)
     countries (4.2.3)
       i18n_data (~> 0.16.0)
       sixarm_ruby_unaccent (~> 1.1)
@@ -130,8 +129,6 @@ GEM
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
-    down (5.3.1)
-      addressable (~> 2.8)
     erubi (1.10.0)
     execjs (2.8.1)
     faker (2.22.0)
@@ -280,9 +277,6 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    shrine (3.4.0)
-      content_disposition (~> 1.0)
-      down (~> 5.1)
     simple_po_parser (1.1.6)
     sixarm_ruby_unaccent (1.2.0)
     sort_alphabetical (1.1.0)
@@ -360,7 +354,6 @@ DEPENDENCIES
   rails (~> 7.0.3)
   sassc-rails
   selenium-webdriver
-  shrine (~> 3.0)
   simple_form!
   sprockets-rails
   stimulus-rails
