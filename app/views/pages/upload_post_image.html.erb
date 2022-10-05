@@ -1,0 +1,21 @@
+<%= render 'shared/navbar' %>
+<div class="border">
+  <div class="edit-pic-container">
+    <%= simple_form_for @post, data: { turbo: false } do |f| %>
+        <%= f.input :images, as: :file, required: true, label: "upload pics", label_html: { class: 'form-text upload-text' }, input_html: { class: 'title-input upload', multiple: true }, id: "file-upload-button" %>
+        <div class="post-div">
+          <%= f.submit "next", class:'post-btn', style:"margin-top: 20px;"%>
+        </div>
+    <% end %>
+
+    <%= form_with model: @post do |form| %>
+        <%= form.label :images, "add more pics", class: "form-text" %>
+
+      <div class="flex-start">
+        <%= form.file_field :images, multiple: true, input_html: { class: 'title-input upload', multiple: true }, id: "file-upload-button" %>
+
+        <%= form.submit 'add', class: "like-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>

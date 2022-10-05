@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :faq, :search, :profile ]
+  skip_before_action :authenticate_user!, only: [ :home, :faq, :search ]
 
   def home
   end
@@ -22,8 +22,11 @@ class PagesController < ApplicationController
   def profile
     @user = current_user
     # posts need to be ordered in reverse order
+    # @posts = [] if @posts.nil?
 
     @posts = @user.posts.sort_by {|posts| posts.created_at}.reverse
+
+
     @total = @posts.count
     @geocoded_posts = @user.posts.geocoded
     @markers = @posts.map do |post|
@@ -48,6 +51,7 @@ class PagesController < ApplicationController
 
   def update_prof_pic
     @user = current_user
+    raise
     if params[:user]
       current_user.prof_pic.attach(io: params[:user]["image"].tempfile, filename: params[:user]["image"].original_filename)
       # current_user.pic_url = "https://snacky-production.s3.eu-west-2.amazonaws.com/" + current_user.prof_pic.key
@@ -60,6 +64,10 @@ class PagesController < ApplicationController
         redirect_to edit_prof_pic_path
       end
     end
+  end
+
+  def upload_post_image
+    @post = Post.new
   end
 
   def destroy_sesh

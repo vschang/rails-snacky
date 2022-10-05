@@ -60,6 +60,12 @@
   .text-date{
     text-align: center;
   }
+  .first-post{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 @media (min-width: 768px) {
   .welcome-profile{
@@ -73,13 +79,14 @@
   }
   .profile-info{
     display:flex;
-    flex-direction:column;
+    // flex-direction:column;
     border-bottom: solid black 1px;
     width: 80vw;
     margin: 0 auto;
     padding-top: 20px;
     padding-bottom: 30px;
     margin-bottom:20px;
+    justify-content: space-between;
   }
 
   .profile-info-2{
@@ -114,6 +121,12 @@
   .text-date{
     text-align: right;
   }
+  .first-post{
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 
@@ -123,6 +136,7 @@
   width: 100px;
   border-radius: 50%;
   border: solid black 1px;
+  align-self: center;
 }
 
 
@@ -202,12 +216,7 @@
   opacity:75%;
 }
 
-.first-post{
-  height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .profile-text{
   padding: 0px 40px 0px 40px;

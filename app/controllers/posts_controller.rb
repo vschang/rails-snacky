@@ -1,5 +1,4 @@
 require 'carrierwave/orm/activerecord'
-
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
@@ -104,7 +103,7 @@ class PostsController < ApplicationController
     # @post.image = params[:file]
 
     # @post.image_url = []
-    @post.save!
+    raise
 
     # @post.images.each do |img, key|
     #   @post.image_url << `https://snacky-production.s3.eu-west-2.amazonaws.com/ + #{@post.img.key}`
@@ -121,6 +120,12 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @user = @post.user_id
+
+    if @user != current_user
+      redirect_to post_path(@post), alert: "not your post!"
+
+    end
   end
 
   def update

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show]
+
   def show
     @user = User.find(params[:id])
     @current_user = current_user
@@ -19,11 +21,10 @@ class UsersController < ApplicationController
     end
   end
 
-
   def edit
   end
 
   def user_params
-    params.require(:user).permit(:user_id, :name, :email, :password, :password_confirmation, :prof_pic)
+    params.require(:user).permit(:user_id, :first_name, :last_name, :email, :password, :password_confirmation, :prof_pic)
   end
 end

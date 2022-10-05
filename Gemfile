@@ -85,7 +85,6 @@ gem "net-http"
 
 #another gem to convert heic to jpeg also resize images
 gem "mini_magick"
-
 #
 # gem 'fog-aws'
 

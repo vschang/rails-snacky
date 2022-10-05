@@ -6,9 +6,12 @@ class ApplicationController < ActionController::Base
     stored_location_for(resource) || posts_path
   end
 
+  protected
+
   def configure_permitted_parameters
+    attributes = %i[first_name last_name username prof_pic email password password_confirmation]
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :username, :prof_pic])
+    devise_parameter_sanitizer.permit(:sign_up, keys: attributes)
     devise_parameter_sanitizer.permit(:update, keys: [:username])
   end
 end

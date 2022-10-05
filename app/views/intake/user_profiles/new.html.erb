@@ -1,0 +1,58 @@
+
+<div class="home-container">
+
+  <div class="home-btn-1  flex-1">
+    <button class="login" data-controller="navbar">
+     <%= link_to "log in", "/users/sign_in", class: "nav-link" %>
+    </button>
+    <button class="welcome-btn" data-controller="navbar">
+     <%= link_to "welcome!", "/", class: "nav-link" %>
+    </button>
+  </div>
+
+  <div class="flex-13 sign-in-container pt-20">
+    <div class="sign-up-snacky-title">
+      <h1 class="snacky ">Snacky</h1>
+      <h2 class="sign-in-text ">sign up</h2>
+    </div>
+
+    <div class="sign-up-form">
+    <%= simple_form_for(@user_profile,  url: intake_user_profiles_path, data: { turbo: :false }) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs-signup">
+        <div class="first-last-name">
+          <%= f.input :first_name,
+                      placeholder: 'pillsbury', class: 'label-text',
+                      label: "first name",
+                      required: true,
+                      autofocus: true,
+                      input_html: { value: @first_name, class: 'login-input-name' },
+                      label_html: { class: 'label-text' } %>
+          <%= f.input :last_name,
+                      placeholder: 'doughboy', class: 'label-text',
+                      label: "last name",
+                      required: true,
+                      autofocus: true,
+                      input_html: { value: @last_name, class: 'login-input-name' },
+                      label_html: { class: 'label-text' } %>
+        </div>
+      <div class="signup-form-submit-btn">
+        <%= f.button :submit, "next" , class:'next-btn' %>
+      </div>
+      </div>
+    <% end %>
+   </div>
+
+  </div>
+
+  <div class="home-btn-2 faq-signup flex-1">
+    <button class="signup" data-controller="navbar">
+      <%= link_to "sign up", "/intake/user_profiles/new", class: "nav-link" %>
+    </button>
+    <button class="faq" data-controller="navbar">
+      <%= link_to "FAQ", "/faq", class: "nav-link" %>
+    </button>
+  </div>
+</div>
+
+<%# <%= render "devise/shared/links" %>

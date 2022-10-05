@@ -13,7 +13,6 @@ class Post < ApplicationRecord
               file_content_type: { allow: ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/heic'] }
 
 
-
   def country_name
     ISO3166::Country[country]
   end

@@ -21,11 +21,12 @@ en:
     #       email: 'E-mail.'
     # hints:
     #   defaults:
-    #     username: 'User name to sign in.'
-    #     password: 'No special characters, please.'
+        # username: 'User name to sign in.'
+        # password: 'No special characters, please.'
     # include_blanks:
     #   defaults:
     #     age: 'Rather not say'
     # prompts:
     #   defaults:
     #     age: 'Select your age'
+    #

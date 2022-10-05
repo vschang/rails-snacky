@@ -106,6 +106,7 @@
   .post-btn:hover, .update-btn:hover, .first-btn:hover{
     box-shadow: none;
     transform: translate(0, 0.2rem);
+    font-weight: 200;
   }
 
   .update-btn{
@@ -150,7 +151,7 @@
   .tag-delete-btn:hover{
     opacity: 50%;
   }
-  .like-btn:hover, .edit-btn:hover, .photo-btn:hover{
+  .like-btn:hover, .edit-btn:hover, .photo-btn:hover, .next-btn:hover{
     box-shadow: none;
     transform: translate(0, 0.2rem);
   }
@@ -202,6 +203,19 @@
   border-radius: 30px;
   box-shadow: 2.5px 2.5px black;
   padding: 4px 8px;
+  color: black;
+  -webkit-appearance: none;
+}
+
+.next-btn {
+  font-size: 18px;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 300;
+  background-color: #FFCAED;
+  border: solid black 1px;
+  border-radius: 30px;
+  box-shadow: 2.5px 2.5px black;
+  padding: 5px 10px;
   color: black;
   -webkit-appearance: none;
 }

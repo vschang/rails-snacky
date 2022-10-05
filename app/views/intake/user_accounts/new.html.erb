@@ -1,0 +1,59 @@
+
+<div class="home-container">
+  <div class="home-btn-1  flex-1">
+    <button class="login" data-controller="navbar">
+     <%= link_to "log in", "/users/sign_in", class: "nav-link" %>
+    </button>
+    <button class="welcome-btn" data-controller="navbar">
+     <%= link_to "welcome!", "/", class: "nav-link" %>
+    </button>
+  </div>
+
+  <div class="flex-13 sign-in-container pt-20">
+    <div class="sign-up-snacky-title">
+      <h1 class="snacky ">Snacky</h1>
+      <h2 class="sign-in-text ">sign up</h2>
+    </div>
+    <div class="sign-up-form">
+      <%= simple_form_for(@user_account, url: intake_user_accounts_path, data: { turbo: :false }) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs-signup">
+          <%= f.input :email,
+                      label: "email",
+                      placeholder: 'snacky@email.com', class: 'label-text',
+                      required: true,
+                      autofocus: true,
+                      input_html: { value: @password, class: 'login-input' },
+                      label_html: { class: 'label-text' } %>
+          <%= f.input :password,
+                      label: "password",
+                      placeholder: '••••••', class: 'label-text',
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { value: @password, class: 'login-input' },
+                      label_html: { class: 'label-text' },
+                      hint_html: { class: 'hint-2' } %>
+          <%= f.input :password_confirmation,
+                      label: "confirm your password",
+                      placeholder: '••••••', class: 'label-text',
+                      required: true,
+                      input_html: { autocomplete: "new-password", class: 'login-input ' },
+                      label_html: { class: 'label-text' } %>
+        </div>
+        <div class="signup-form-submit-btn">
+          <%= f.button :submit, "next" , class:'next-btn' %>
+        </div>
+      <% end %>
+    </div>
+      </div>
+
+  <div class="home-btn-2 faq-signup flex-1">
+    <button class="signup" data-controller="navbar">
+      <%= link_to "sign up", "/intake/user_profiles/new", class: "nav-link" %>
+    </button>
+    <button class="faq" data-controller="navbar">
+      <%= link_to "FAQ", "/faq", class: "nav-link" %>
+    </button>
+  </div>
+</div>
+<%# <%= render "devise/shared/links" %>

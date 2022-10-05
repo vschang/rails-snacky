@@ -30,4 +30,24 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        user_profile:
+          attributes:
+            first_name:
+              blank: "is required"
+            last_name:
+              blank: "is required"
+        user_pic:
+          attributes:
+            prof_pic:
+              invalid: "format is invalid"
+            username:
+              taken: "is taken"
+        user_account:
+          attributes:
+            email:
+              blank: "is required"
+              invalid: "is invalid"
+              taken: "already has an account"

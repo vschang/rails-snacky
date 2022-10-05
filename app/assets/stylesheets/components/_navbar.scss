@@ -28,7 +28,7 @@
     height: 7vh;
     width:100%;
     margin: 9px;
-    z-index: 9;
+    z-index: 10;
   }
 
   .search-profile-mobile{
@@ -261,7 +261,6 @@
 
 .input{
   font-family: 'inconsolata', monospace;
-  padding: 10px 0px;
 }
 .avatar-nav{
   display:flex;

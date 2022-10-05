@@ -1,0 +1,54 @@
+
+<div class="home-container">
+  <div class="home-btn-1  flex-1">
+    <button class="login" data-controller="navbar">
+     <%= link_to "log in", "/users/sign_in", class: "nav-link" %>
+    </button>
+    <button class="welcome-btn" data-controller="navbar">
+     <%= link_to "welcome!", "/", class: "nav-link" %>
+    </button>
+  </div>
+
+  <div class="flex-13 sign-in-container pt-20">
+    <div class="sign-up-snacky-title">
+      <h1 class="snacky ">Snacky</h1>
+      <h2 class="sign-in-text ">sign up</h2>
+    </div>
+    <div class="sign-up-form">
+    <%= simple_form_for(@user_pic, url: intake_user_pics_path, data: { turbo: :false }) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs-signup">
+        <%= f.input :prof_pic, as: :file,
+                    required: true,
+                    label: "upload a profile pic:",
+                    label_html: { class: 'form-text label-text ' },
+                    input_html: { value: @username, class: 'title-input upload' },
+                    id: "file-upload-button" %>
+        <%= f.input :username,
+                    label: "username",
+                    placeholder: '@snacky99', class: 'label-text',
+                    required: true,
+                    autofocus: true,
+                    input_html: { value: @prof_pic, class: 'login-input' },
+                    label_html: { class: 'label-text' } %>
+      </div>
+      <div class="signup-form-submit-btn">
+        <%= f.button :submit, "done!"  , class:'next-btn' %>
+      </div>
+    <% end %>
+      </div>
+    </div>
+
+
+  <div class="home-btn-2 faq-signup flex-1">
+    <button class="signup" data-controller="navbar">
+      <%= link_to "sign up", "/intake/user_profiles/new", class: "nav-link" %>
+    </button>
+    <button class="faq" data-controller="navbar">
+      <%= link_to "FAQ", "/faq", class: "nav-link" %>
+    </button>
+  </div>
+</div>
+
+
+<%# <%= render "devise/shared/links" %>
