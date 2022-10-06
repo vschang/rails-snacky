@@ -1,7 +1,118 @@
 <%= render 'shared/navbar' %>
 <div class="border-new-post">
-  <div class="form-container">
-    <h2 class="welcome-profile center make-post">review a snack</h2>
-    <%= render "form", post: @post  %>
+  <h2 class="welcome-profile center make-post">review a snack</h2>
+  <%# <%= render "form", post: @post  %>
+  <%= simple_form_for @post, data: { turbo: false } do |f| %>
+  <div class="form-container" data-controller="multistep-form">
+
+    <div class="post-step" data-multistep-form-target="step">
+      <div class="post-step-div">
+        <div class="upload-pic-div">
+          <%= f.input :images, as: :file,
+                      required: true, label: "upload pics",
+                      label_html: { class: 'form-text upload-text' },
+                      input_html: { class: 'title-input upload', multiple: true },
+                      id: "file-upload-button" %>
+        </div>
+        <div class="btns-bar-div">
+          <div class="step-btn-next">
+            <button class="next-btn" type="button" data-action="click->multistep-form#next">next</button>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-bar-quarter"></div>
+            <p class="p-14">1/4</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-step" data-multistep-form-target="step">
+      <div class="post-step-div">
+        <div class="name-brand-div">
+          <%= f.input :title,
+                      required: true,
+                      label: "snack name",
+                      placeholder: 'Flaming hot cheetoes 🔥', class: 'label-text',
+                      label_html: { class: 'form-text' },
+                      input_html: { class: 'title-input title' } %>
+          <%= f.input :brand,
+                      required: true,
+                      label: "brand",
+                      placeholder: 'Lay\'s', class: 'label-text',
+                      label_html: { class: 'form-text ' },
+                      input_html: { class: 'title-input brand' } %>
+        </div>
+        <div class="btns-bar-div">
+          <div class="step-btns">
+            <button class="next-btn" type="button" data-action="click->multistep-form#back">back</button>
+            <button class="next-btn" type="button" data-action="click->multistep-form#next">next</button>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-bar-half"></div>
+            <p class="p-14">1/2</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-step" data-multistep-form-target="step">
+      <div class="post-step-div">
+        <div class="stars-review-div">
+          <%= f.input :rating,
+                      collection: (1..10).to_a,
+                      label: "stars 🤩",
+                      required:true,
+                      wrapper_html: {data: {controller: "star-rating"}},
+                      label_html: { class: 'form-text' },
+                      input_html: { class: 'title-input stars' } %>
+          <%= f.input :review,
+                      required: true,
+                      label: "your honest review 👀",
+                      placeholder: 'think flavor, appearance, packaging, texture, smell, overall experience, etc.', class: 'label-text',
+                      label_html: { class: 'form-text' },
+                      input_html: { class: 'title-input review mb-0' } %>
+        </div>
+        <div class="btns-bar-div">
+          <div class="step-btns">
+            <button class="next-btn" type="button" data-action="click->multistep-form#back">back</button>
+            <button class="next-btn" type="button" data-action="click->multistep-form#next">next</button>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-bar-three-quarters"></div>
+            <p class="p-14">3/4</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-step" data-multistep-form-target="step">
+      <div class="post-step-div">
+        <div class="country-location-div">
+          <%= f.input :country,
+            required: true,
+            label: "country of origin 🌎",
+            label_html: { class: 'form-text' },
+            input_html: { class: 'title-input country-input country' }%>
+          <%= f.input :address,
+              label: "where did you find it? 🔍", label_html: { class: 'form-text' },
+              input_html: {data: {address_autocomplete_target: "address"}, class:"display-none address-wrapper"},
+              wrapper_html: {data: {controller: "address-autocomplete",
+              address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}},
+              required: true, class:"address-wrapper" %>
+        </div>
+        <div class="btns-bar-div">
+          <div class="step-btns">
+            <button class="next-btn" type="button" data-action="click->multistep-form#back">back</button>
+            <%= f.submit "post!", class:'post-btn'%>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-bar-full"></div>
+            <p class="p-14">4/4</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+  <% end %>
 </div>

@@ -5,6 +5,7 @@
     border: solid black 1px;
     padding: 7px 15px;
     text-align: center;
+    margin: 5px;
   }
 
   .answer {
@@ -12,8 +13,9 @@
     border-radius: 30px;
     border: solid black 1px;
     width: 65%;
-    padding: 10px 20px;
+    padding: 10px 10px;
     text-align: center;
+    margin: 5px;
   }
 
   .answer-flex{
@@ -39,17 +41,19 @@
     border-radius: 40px;
     border: solid black 1px;
     width: 30%;
-    padding: 0px 30px;
+    padding: 0px;
     text-align:center;
+    margin: 5px;
   }
 
   .answer{
-    background: $green;
-    border-radius: 40px;
+    background: #B4FD3E;
+    border-radius: 64px;
     border: solid black 1px;
     width: 50%;
-    padding: 0px 35px;
-    text-align:center;
+    padding: 0px 20px;
+    text-align: center;
+    margin: 5px;
   }
   .FAQ-div{
     display:flex;

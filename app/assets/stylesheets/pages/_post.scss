@@ -199,7 +199,7 @@
   .image-div{
     display:flex;
     align-items:center;
-    // width: 30vw;
+    width: 100%;
     justify-content: center;
   }
 }
@@ -235,10 +235,9 @@
   }
 
   .review-text {
-    /* background-color: white; */
-    /* border: solid black 0.75px; */
+
     padding: 5px 15px 5px 0px;
-    width: 37vw;
+    width: 100%;
   }
 
   .stars{
@@ -364,7 +363,7 @@
     flex-direction: column;
     justify-content: center;
     width: 34vw;
-    margin-left:20px;
+    margin-left:30px;
     // text-align:center;
   }
   .post-title:hover{
@@ -375,7 +374,7 @@
   .image-div{
     display:flex;
     align-items:center;
-    width: 30vw;
+    // width: 30vw;
     justify-content: flex-start;
 
   }
@@ -447,7 +446,9 @@ h3{
   // text-decoration: underline;
 }
 
-
+.p-14{
+  font-size: 14px;
+}
 
 .small-p{
   font-size: 12px;

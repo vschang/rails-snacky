@@ -62,6 +62,7 @@
   margin-bottom:20px;
 }
 }
+
 .mapboxgl-ctrl-geocoder {
   border-radius: 0px;
   border: solid black 0.5px;
@@ -152,7 +153,17 @@
     text-decoration: none;
     font-size: 12px;
   }
+  .mapbox-ctrl-geocoder{
+    width: 100% !important;
+    max-width:100% !important;
+  }
 }
 .map-container-profile{
   z-index: 30;
+}
+
+
+.mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
+  width: 100% !important;
+  max-width:100% !important;
 }

@@ -130,7 +130,7 @@
   }
 
   .faq-container{
-    padding: 140px 15px 15px 15px;
+    padding: 40px 15px 15px 15px;
     overflow-y: scroll;
   }
 
@@ -202,12 +202,6 @@
   .haribo-bear{
     height: 150px;
   }
-
-  .haribo-bear:hover{
-    // transform: scale(1.1);
-    transform: translateX(10px);
-  }
-
   .mt-60{
 
   }
@@ -408,11 +402,11 @@
     height: 150px;
   }
 
-  .haribo-bear:hover{
-    // transform: scale(1.1);
-    transform: translateX(10px);
-  }
   .mt-60{
     margin-top:60px;
   }
+}
+
+.haribo-bear:hover{
+  transform: translateX(10px);
 }

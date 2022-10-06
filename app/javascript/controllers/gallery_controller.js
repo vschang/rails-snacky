@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="gallery
+// Connects to data-controller="gallery"
 
 export default class extends Controller {
   static targets = ["image"];
@@ -11,6 +11,8 @@ export default class extends Controller {
 
   next() {
     const images = document.getElementsByClassName('post-image')
+    // console.log(this.element)
+
     if (this.indexValue > (images.length-2)) {
       this.indexValue = 0
     } else {
