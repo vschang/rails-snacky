@@ -103,7 +103,6 @@ class PostsController < ApplicationController
     # @post.image = params[:file]
 
     # @post.image_url = []
-    raise
 
     # @post.images.each do |img, key|
     #   @post.image_url << `https://snacky-production.s3.eu-west-2.amazonaws.com/ + #{@post.img.key}`

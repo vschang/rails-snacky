@@ -51,7 +51,6 @@ class PagesController < ApplicationController
 
   def update_prof_pic
     @user = current_user
-    raise
     if params[:user]
       current_user.prof_pic.attach(io: params[:user]["image"].tempfile, filename: params[:user]["image"].original_filename)
       # current_user.pic_url = "https://snacky-production.s3.eu-west-2.amazonaws.com/" + current_user.prof_pic.key

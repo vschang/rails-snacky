@@ -8,7 +8,7 @@
           placeholder: "search by name or brand",
           style:"font-family: 'inconsolata', monospace; font-weight: 300; font-size:18px; color: black; background-color: #ffcaed; border: black solid 0.5px; border-radius: 0px; margin-right:10px;"
       %>
-      <%= submit_tag "go!", class: "go-btn" %>
+      <%= submit_tag "go!", class: "next-btn" %>
     <% end %>
     <div class="search-results">
       <% if params[:query] && @posts.length == 0 %>
@@ -31,7 +31,7 @@
             </div>
             <div class="search-content">
               <%= link_to post_path(post.id) do %>
-                <h3 class="post-title"><%= post.title %></h3>
+                <h3 class="post-title mt-0"><%= post.title %></h3>
               <% end %>
               <div class="stars">
                 <% case post.rating %>
