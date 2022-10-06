@@ -14,30 +14,43 @@
       <h1 class="snacky ">Snacky</h1>
       <h2 class="sign-in-text ">sign up</h2>
     </div>
-    <div class="sign-up-form">
-    <%= simple_form_for(@user_pic, url: intake_user_pics_path, data: { turbo: :false }) do |f| %>
-      <%= f.error_notification %>
-      <div class="form-inputs-signup">
-        <%= f.input :prof_pic, as: :file,
-                    required: true,
-                    label: "upload a profile pic:",
-                    label_html: { class: 'form-text label-text ' },
-                    input_html: { value: @username, class: 'title-input upload' },
-                    id: "file-upload-button" %>
-        <%= f.input :username,
-                    label: "username",
-                    placeholder: '@snacky99', class: 'label-text',
-                    required: true,
-                    autofocus: true,
-                    input_html: { value: @prof_pic, class: 'login-input' },
-                    label_html: { class: 'label-text' } %>
-      </div>
-      <div class="signup-form-submit-btn">
-        <%= f.button :submit, "done!"  , class:'next-btn' %>
-      </div>
-    <% end %>
+    <div class="sign-up-form" >
+      <%= simple_form_for(@user_pic, url: intake_user_pics_path,
+                          data: {
+                            turbo: :false,
+                            controller: "pic-preview"
+                          }) do |f| %>
+        <div class="preview-prof">
+          <img id="preview" class="prof-pic" width="100" height="100" data-pic-preview-target="preview"/>
+        </div>
+        <%= f.error_notification %>
+        <div class="form-inputs-signup">
+          <%= f.input :prof_pic, as: :file,
+                      required: true,
+                      label: "upload a profile pic 🤩 (or do it later)",
+                      label_html: { class: 'form-text label-text ' },
+                      input_html: { value: @username,
+                                    class: 'title-input upload',
+                                    "data-action": "change->pic-preview#display"},
+                      id: "file-upload-button"
+                      %>
+          <%= f.input :username,
+                      label: "username",
+                      placeholder: '@snacky99', class: 'label-text',
+                      required: true,
+                      autofocus: true,
+                      input_html: { value: @prof_pic, class: 'login-input' },
+                      label_html: { class: 'label-text' } %>
+        </div>
+        <div class="signup-form-submit-btn">
+          <%= f.button :submit, "done!"  , class:'next-btn' %>
+        </div>
+      <% end %>
       </div>
     </div>
+
+    <%# <input type="file"
+    onchange="document.getElementById('preview').src = window.URL.createObjectURL(this.files[0])"> %>
 
 
   <div class="home-btn-2 faq-signup flex-1">

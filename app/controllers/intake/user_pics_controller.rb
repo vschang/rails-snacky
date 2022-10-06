@@ -25,8 +25,10 @@ module Intake
 
         # creating a User record in the database.
         @user = User.new(full_params)
+        if params["intake_user_pic"]["prof_pic"]
+          @user.prof_pic.attach(io: params["intake_user_pic"]["prof_pic"].tempfile, filename: params["intake_user_pic"]["prof_pic"].original_filename)
+        end
 
-        @user.prof_pic.attach(io: params["intake_user_pic"]["prof_pic"].tempfile, filename: params["intake_user_pic"]["prof_pic"].original_filename)
         if @user.save
           # Upon successful completion of the form we need to clean up the session.
           session.delete('user_profile')

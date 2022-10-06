@@ -96,7 +96,7 @@
         <p >likes <%= @post.post_likes.count %></p>
       </div>
 
-      <div class="tags-div" data-controller="insert-in-list-tag" data-insert-in-list-tag-position-value="afterend" data-component="tags">
+      <div class="tags-div" data-controller="insert-in-list-tag" data-insert-in-list-tag-position-value="afterend" >
         <%# <% if user_signed_in? %>
         <div class="tags-form mt-10">
           <% if @post.user_id == current_user.id %>

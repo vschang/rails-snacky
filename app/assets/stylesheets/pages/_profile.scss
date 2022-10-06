@@ -79,7 +79,7 @@
   }
   .profile-info{
     display:flex;
-    // flex-direction:column;
+    flex-direction:column;
     border-bottom: solid black 0.5px;
     width: 80vw;
     margin: 0 auto;
@@ -137,6 +137,7 @@
   border-radius: 50%;
   border: solid black 1px;
   align-self: center;
+  background: cornsilk;
 }
 
 
