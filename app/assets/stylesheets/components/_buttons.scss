@@ -142,7 +142,7 @@
     transition-duration: 0.4s;
   }
 
-  .red:hover{
+  .red:hover, .comment:hover{
     text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
                 0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
     opacity: 75%;

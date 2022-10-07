@@ -84,11 +84,11 @@
       <div class="likes-container">
         <% if user_signed_in? %>
           <% if @liked_post %>
-            <%= button_to post_post_likes_path(@post), method: :post, class: "heart-btn" do %>
+            <%= button_to post_post_likes_path(@post), params:{page: "show"}, method: :post, class: "heart-btn" do %>
               <i class="fa-solid fa-heart red"></i>
             <% end %>
           <% else %>
-            <%= button_to post_post_likes_path(@post), method: :post, class: "heart-btn" do %>
+            <%= button_to post_post_likes_path(@post), params:{page: "show"}, method: :post, class: "heart-btn" do %>
               <i class="fa-solid fa-heart empty-heart"></i>
             <% end %>
           <% end %>

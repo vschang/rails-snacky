@@ -15,9 +15,13 @@
       <h2 class="sign-in-text ">sign up</h2>
     </div>
     <div class="sign-up-form">
-      <%= simple_form_for(@user_account, url: intake_user_accounts_path, data: { turbo: :false }) do |f| %>
+      <%= simple_form_for(@user_account,
+                        url: intake_user_accounts_path,
+                        data: { turbo: :false },
+                        html: { class: "name-form"
+                        }) do |f| %>
         <%= f.error_notification %>
-        <div class="form-inputs-signup">
+        <div class="form-inputs-signup-email">
           <%= f.input :email,
                       label: "email",
                       placeholder: 'snacky@email.com', class: 'label-text',
@@ -40,8 +44,14 @@
                       input_html: { autocomplete: "new-password", class: 'login-input ' },
                       label_html: { class: 'label-text' } %>
         </div>
-        <div class="signup-form-submit-btn">
-          <%= f.button :submit, "next" , class:'next-btn' %>
+        <div class="btns-bar-div">
+          <div class="signup-form-submit-btn">
+            <%= f.button :submit, "next" , class:'next-btn' %>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-bar-two-thirds"></div>
+            <p class="p-14">2/3</p>
+          </div>
         </div>
       <% end %>
     </div>

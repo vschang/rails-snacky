@@ -166,14 +166,17 @@
               <div class="likes-n-comments">
 
                 <% if user_signed_in? %>
-                  <%= button_to post_post_likes_path(post), method: :post, class: "heart-btn" do %>
+                  <%= button_to post_post_likes_path(post), params:{page: "index"}, method: :post, class: "heart-btn" do %>
                     <p class="black"><i class="fa-solid fa-heart red"></i><%= post.post_likes.count %></p>
+                  <% end %>
+                  <%= button_to post_post_comments_path(post), method: :post, class: "heart-btn" do %>
+                    <p><i class="fa-solid fa-comment-dots comment"></i> <%= post.post_comments.count %></p>
                   <% end %>
                 <% else%>
                   <p class="black"><i class="fa-solid fa-heart red"></i> <%= post.post_likes.count %></p>
+                  <p><i class="fa-solid fa-comment-dots comment"></i> <%= post.post_comments.count %></p>
                 <% end %>
 
-                <p><i class="fa-solid fa-comment-dots comment"></i> <%= post.post_comments.count %></p>
               </div>
               <div class="tags-container">
                 <% post.post_tags.each do |tag| %>

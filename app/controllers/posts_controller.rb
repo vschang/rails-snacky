@@ -121,9 +121,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = @post.user_id
 
-    if @user != current_user
+    if @user != current_user.id
       redirect_to post_path(@post), alert: "not your post!"
-
     end
   end
 

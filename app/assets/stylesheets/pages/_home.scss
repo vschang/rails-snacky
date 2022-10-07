@@ -17,6 +17,10 @@ body{
   width: 8px;
 }
 
+::-webkit-scrollbar-corner{
+  color: $green;
+}
+
 
 *::-webkit-scrollbar-thumb {
   background-color: $green;

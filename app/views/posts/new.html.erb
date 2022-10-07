@@ -2,18 +2,30 @@
 <div class="border-new-post">
   <h2 class="welcome-profile center make-post">review a snack</h2>
   <%# <%= render "form", post: @post  %>
-  <%= simple_form_for @post, data: { turbo: false } do |f| %>
+  <%= simple_form_for(@post,
+                      data: {
+                        turbo: false,
+                        controller: "pic-preview"
+                        }) do |f| %>
   <div class="form-container" data-controller="multistep-form">
-
     <div class="post-step" data-multistep-form-target="step">
       <div class="post-step-div">
         <div class="upload-pic-div">
           <%= f.input :images, as: :file,
                       required: true, label: "upload pics",
                       label_html: { class: 'form-text upload-text' },
-                      input_html: { class: 'title-input upload', multiple: true },
+                      input_html: { class: 'title-input upload',
+                                    multiple: true,
+                                    "data-pic-preview-target": "file",
+                                    "data-action": "change->pic-preview#displayPostPic" },
                       id: "file-upload-button" %>
         </div>
+
+        <div id="preview-pics">
+    
+          <%# <img id="preview" class="edit-image" data-pic-preview-target="preview-post"/> %>
+        </div>
+
         <div class="btns-bar-div">
           <div class="step-btn-next">
             <button class="next-btn" type="button" data-action="click->multistep-form#next">next</button>

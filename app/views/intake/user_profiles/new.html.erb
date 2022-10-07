@@ -17,7 +17,11 @@
     </div>
 
     <div class="sign-up-form">
-    <%= simple_form_for(@user_profile,  url: intake_user_profiles_path, data: { turbo: :false }) do |f| %>
+    <%= simple_form_for(@user_profile,
+                        url: intake_user_profiles_path,
+                        data: { turbo: :false },
+                        html: { class: "name-form" }
+                        ) do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs-signup">
         <div class="first-last-name">
@@ -36,9 +40,15 @@
                       input_html: { value: @last_name, class: 'login-input-name' },
                       label_html: { class: 'label-text' } %>
         </div>
-      <div class="signup-form-submit-btn">
-        <%= f.button :submit, "next" , class:'next-btn' %>
-      </div>
+        <div class="btns-bar-div">
+          <div class="signup-form-submit-btn">
+            <%= f.button :submit, "next" , class:'next-btn' %>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-bar-third"></div>
+            <p class="p-14">1/3</p>
+          </div>
+        </div>
       </div>
     <% end %>
    </div>
