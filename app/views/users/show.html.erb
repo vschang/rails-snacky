@@ -1,6 +1,6 @@
 <%= render 'shared/navbar' %>
 <div class="border">
-  <div class="profile-info">
+  <div class="user-profile-info">
     <% if @user.prof_pic.present? %>
       <%= cl_image_tag @user.prof_pic.key, class:"prof-pic edit-pic" %>
       <% else %>
@@ -46,8 +46,12 @@
         <div class="image-div" data-controller="gallery4">
         <% if post.images.count > 1 %>
         <button type="button"
-                  data-action="click->gallery4#prev"
-                  class="photo-btn">
+                data-action="click->gallery4#prev"
+                class="photo-btn">
+          <i class="fa-solid fa-caret-left"></i>
+        </button>
+        <% else %>
+        <button class="photo-btn hidden">
           <i class="fa-solid fa-caret-left"></i>
         </button>
         <% end %>
@@ -58,6 +62,13 @@
             <img src="<%=image.url%>" class="post-image" data-gallery4-target="image" >
           <% end %>
           </div>
+          <% if post.images.count > 1 %>
+            <div class="image-dots">
+              <% post.images.each do |image|%>
+                <span class="dot dot-active" data-gallery4-target="dot"></span>
+              <% end %>
+            </div>
+          <% end %>
         </div>
 
         <% if post.images.count > 1 %>
@@ -65,6 +76,10 @@
                 data-action="click->gallery4#next"
                 class="photo-btn">
           <i class="fa-solid fa-caret-right"></i>
+        </button>
+        <% else %>
+        <button class="photo-btn hidden">
+          <i class="fa-solid fa-caret-left"></i>
         </button>
         <% end %>
       </div>

@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="multistep-form"
 export default class extends Controller {
   static targets = [ "step" ]
-  static values = {index: Number};
+  static values = {index: Number, page: String};
 
   connect() {
     console.log('form contorller connected')
@@ -17,8 +17,6 @@ export default class extends Controller {
     } else {
       this.indexValue++
     }
-
-    console.log(this.indexValue)
   }
 
   back = () => {
@@ -38,7 +36,7 @@ export default class extends Controller {
 
   showCurrentStep() {
     this.stepTargets.forEach((element, index) => (
-      element.hidden = index != this.indexValue
+    element.hidden = index != this.indexValue
     ))
   }
 }

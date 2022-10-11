@@ -4,7 +4,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
 
   variable = "something"
-  static targets = ["image"];
+  static targets = ["image", "dot"];
   static values = {index: Number};
   connect() {
     console.log('gallery connected~')
@@ -39,5 +39,14 @@ export default class extends Controller {
     this.imageTargets.forEach((element, index) => (
       element.hidden = index != this.indexValue
     ))
+    
+    if (this.dotTargets.length === 0 ) {
+      console.log("no dots")
+    } else {
+      for (let i = 0; i < this.dotTargets.length; i++) {
+        this.dotTargets[i].className = this.dotTargets[i].className.replace("dot-active", "");
+      }
+      this.dotTargets[this.indexValue].className += "dot-active";
+    }
   }
 }

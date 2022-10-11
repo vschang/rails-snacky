@@ -95,6 +95,10 @@
                   class="photo-btn">
           <i class="fa-solid fa-caret-left"></i>
         </button>
+        <% else %>
+        <button class="photo-btn hidden">
+          <i class="fa-solid fa-caret-left"></i>
+        </button>
         <% end %>
 
         <div class="image">
@@ -103,6 +107,13 @@
             <img src="<%=image.url%>" class="post-image" data-gallery3-target="image" >
           <% end %>
           </div>
+          <% if post.images.count > 1 %>
+            <div class="image-dots">
+              <% post.images.each do |image|%>
+                <span class="dot dot-active" data-gallery3-target="dot"></span>
+              <% end %>
+            </div>
+          <% end %>
         </div>
 
         <% if post.images.count > 1 %>
@@ -110,6 +121,10 @@
                 data-action="click->gallery3#next"
                 class="photo-btn">
           <i class="fa-solid fa-caret-right"></i>
+        </button>
+        <% else %>
+        <button class="photo-btn hidden">
+          <i class="fa-solid fa-caret-left"></i>
         </button>
         <% end %>
       </div>

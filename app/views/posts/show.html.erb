@@ -34,7 +34,14 @@
         <% end %>
         <div class="image">
           <% @post.images.each do |image|%>
-            <img src="<%=image.url%>" class="post-image" data-gallery-target="image" >
+            <img src="<%=image.url%>" class="post-image" data-gallery-target="image">
+          <% end %>
+          <% if @post.images.count > 1 %>
+            <div class="image-dots">
+              <% @post.images.each do |image|%>
+                <span class="dot dot-active" data-gallery-target="dot"></span>
+              <% end %>
+            </div>
           <% end %>
         </div>
         <% if @post.images.count > 1 %>

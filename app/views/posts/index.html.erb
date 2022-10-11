@@ -94,15 +94,25 @@
                 class="photo-btn">
          <i class="fa-solid fa-caret-left"></i>
         </button>
+        <% else %>
+        <button class="photo-btn hidden">
+         <i class="fa-solid fa-caret-left"></i>
+        </button>
       <% end %>
 
       <div class="image">
         <div class="slideshow-div">
         <% post.images.each do |image|%>
             <img src="<%=image.url%>" class="post-image" data-gallery2-target="image" >
-            <%# <%= image_tag(image.url) => %>
         <% end %>
         </div>
+        <% if post.images.count > 1 %>
+          <div class="image-dots">
+            <% post.images.each do |image|%>
+              <span class="dot dot-active" data-gallery2-target="dot"></span>
+            <% end %>
+          </div>
+        <% end %>
       </div>
 
       <% if post.images.count > 1 %>
@@ -110,6 +120,10 @@
                 data-action="click->gallery2#next"
                 class="photo-btn">
           <i class="fa-solid fa-caret-right"></i>
+        </button>
+      <% else %>
+        <button class="photo-btn hidden">
+          <i class="fa-solid fa-caret-left"></i>
         </button>
       <% end %>
       </div>
@@ -170,7 +184,7 @@
                     <p class="black"><i class="fa-solid fa-heart red"></i><%= post.post_likes.count %></p>
                   <% end %>
                   <%= button_to post_post_comments_path(post), method: :post, class: "heart-btn" do %>
-                    <p><i class="fa-solid fa-comment-dots comment"></i> <%= post.post_comments.count %></p>
+                    <p class="black"><i class="fa-solid fa-comment-dots comment"></i> <%= post.post_comments.count %></p>
                   <% end %>
                 <% else%>
                   <p class="black"><i class="fa-solid fa-heart red"></i> <%= post.post_likes.count %></p>

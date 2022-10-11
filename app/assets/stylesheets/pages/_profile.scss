@@ -10,7 +10,7 @@
     margin-top: 10px;
   }
 
-  .profile-info{
+  .profile-info, .user-profile-info{
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -78,6 +78,17 @@
     margin-top: 0px;
     text-decoration:none;
   }
+  .user-profile-info{
+    display:flex;
+    border-bottom: solid black 0.5px;
+    width: 80vw;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom:20px;
+    justify-content: space-between;
+  }
+
   .profile-info{
     display:flex;
     flex-direction:column;
@@ -105,7 +116,8 @@
     font-weight: 300;
   }
   .dropdown-edit{
-    font-size: 22px;
+    font-size: 16px;
+    font-weight: 700;
     padding:10px
   }
   .likes-text{
@@ -175,7 +187,7 @@
   background: none;
   border: none;
   font-family: 'Inconsolata', monospace;
-  font-size: 22px;
+  font-size: 18px;
   position: static;
 }
 
