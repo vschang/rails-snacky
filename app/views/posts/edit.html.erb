@@ -1,45 +1,46 @@
 <%= render 'shared/navbar' %>
-<div class="border">
+<div class="edit-border">
   <div class="form-container-edit">
+
     <h2 class="welcome-profile center make-post">edit your review</h2>
     <div class="form-container" data-controller="multistep-form-2" data-multistep-form-2-page-value="edit">
 
       <div class="post-step" data-multistep-form-2-target="step">
         <div class="post-step-div">
-          <div class="upload-pic-div">
-          <%= form_with model: @post do |form| %>
-              <%= form.label :images, "add more pics", class: "form-text" %>
-            <div class="flex-start">
-              <%= form.file_field :images, multiple: true, input_html: { class: 'title-input upload', multiple: true }, id: "file-upload-button" %>
-              <%= form.submit 'add', class: "like-btn" %>
-            </div>
-          <% end %>
-          <div class="edit-img-all">
-            <% @post.images.each_with_index do |image, index| %>
-              <div class="edit-img-container">
-                <img src="<%=image.url%>" class="edit-image">
-                <%= form_with url: remove_image_path, method: :post do |form| %>
-                  <%= form.hidden_field :image_index, value: index %>
-                  <%= form.hidden_field :post_id, value: @post.id %>
-                  <%= button_tag type: 'submit', class: "like-btn pos-abs" do %>
-                    <i class="fa-solid fa-xmark"></i>
-                  <% end %>
-                <% end %>
+          <div class="upload-pic-div-edit">
+            <%= form_with model: @post do |form| %>
+                <%= form.label :images, "add more pics", class: "form-text" %>
+              <div class="flex-start">
+                <%= form.file_field :images, multiple: true, input_html: { class: 'title-input upload', multiple: true }, id: "file-upload-button" %>
+                <%= form.submit 'add', class: "like-btn" %>
               </div>
             <% end %>
+            <div class="edit-img-all">
+              <% @post.images.each_with_index do |image, index| %>
+                <div class="edit-img-container">
+                  <img src="<%=image.url%>" class="edit-image">
+                  <%= form_with url: remove_image_path, method: :post do |form| %>
+                    <%= form.hidden_field :image_index, value: index %>
+                    <%= form.hidden_field :post_id, value: @post.id %>
+                    <%= button_tag type: 'submit', class: "like-btn pos-abs" do %>
+                      <i class="fa-solid fa-xmark"></i>
+                    <% end %>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="btns-bar-div">
+            <div class="step-btn-next">
+              <button class="next-btn" type="button" data-action="click->multistep-form-2#next:self">next</button>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar-quarter"></div>
+              <p class="p-14">1/4</p>
+            </div>
           </div>
         </div>
-        <%# <div class="btns-bar-div">
-          <div class="step-btn-next">
-            <button class="next-btn" type="button" data-action="click->multistep-form-2#next">next</button>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-bar-quarter"></div>
-            <p class="p-14">1/4</p>
-          </div>
-        </div> %>
       </div>
-
       <%= simple_form_for @post, data: { turbo: false } do |f| %>
       <div class="post-step" data-multistep-form-2-target="step">
         <div class="post-step-div">
@@ -47,16 +48,16 @@
             <%= f.input :title, required: true, label: "snack name", label_html: { class: 'form-text' }, input_html: { class: 'title-input title' } %>
             <%= f.input :brand, required: true, label: "brand", label_html: { class: 'form-text ' }, input_html: { class: 'title-input brand ' } %>
           </div>
-          <%# <div class="btns-bar-div">
+          <div class="btns-bar-div">
             <div class="step-btns">
-              <button class="next-btn" type="button" data-action="click->multistep-form-2#back">back</button>
-              <button class="next-btn" type="button" data-action="click->multistep-form-2#next">next</button>
+              <button class="next-btn" type="button" data-action="click->multistep-form-2#back:self">back</button>
+              <button class="next-btn" type="button" data-action="click->multistep-form-2#next:self">next</button>
             </div>
             <div class="progress-bar">
               <div class="progress-bar-half"></div>
               <p class="p-14">1/2</p>
             </div>
-          </div> %>
+          </div>
         </div>
       </div>
       <div class="post-step" data-multistep-form-2-target="step">
@@ -69,19 +70,18 @@
             input_html: { class: 'title-input stars' } %>
             <%= f.input :review, required: true, label: "your honest review 👀", label_html: { class: 'form-text' }, input_html: { class: 'title-input review mb-0 ' }, hint: "think flavor, appearance, packaging, texture, smell, overall experience, etc.", hint_html: {class:"hint"} %>
           </div>
-          <%# <div class="btns-bar-div">
+          <div class="btns-bar-div">
             <div class="step-btns">
-              <button class="next-btn" type="button" data-action="click->multistep-form-2#back">back</button>
-              <button class="next-btn" type="button" data-action="click->multistep-form-2#next">next</button>
+              <button class="next-btn" type="button" data-action="click->multistep-form-2#back:self">back</button>
+              <button class="next-btn" type="button" data-action="click->multistep-form-2#next:self">next</button>
             </div>
             <div class="progress-bar">
               <div class="progress-bar-three-quarters"></div>
               <p class="p-14">3/4</p>
             </div>
-          </div> %>
+          </div>
         </div>
       </div>
-
       <div class="post-step" data-multistep-form-2-target="step">
         <div class="post-step-div">
           <div class="country-location-div">
@@ -93,23 +93,23 @@
                 address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}},
                 required: true, class:"address-wrapper" %>
           </div>
-          <%# <div class="btns-bar-div">
-              <div class="step-btns">
-                <button class="next-btn" type="button" data-action="click->multistep-form-2#back">back</button> %>
-                <%= f.submit "done!", class:'post-btn'%>
-              <%# </div>
-              <div class="progress-bar">
-                <div class="progress-bar-full"></div>
-                <p class="p-14">4/4</p>
-              </div>
-            </div> %>
-          <%# </div> %>
+          <div class="btns-bar-div">
+            <div class="step-btns">
+              <button class="next-btn" type="button" data-action="click->multistep-form-2#back:self">back</button>
+              <%= f.submit "done!", class:'post-btn'%>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar-full"></div>
+              <p class="p-14">4/4</p>
+            </div>
+          </div>
         </div>
-      <% end %>
-
-    </div>
-    <%= link_to :back, class:"back-btn" do %>
-      <i class="fa-solid fa-hand-point-left back-hand"></i>
+      </div>
     <% end %>
+    <%= link_to :back do %>
+      <i class="fa-solid fa-hand-point-left back-hand-edit"></i>
+    <% end %>
+    </div>
+
   </div>
 </div>

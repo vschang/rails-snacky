@@ -47,8 +47,8 @@
   }
 
   .comment-box{
-    width: 95%;
-    margin: 20px 20px 20px 0px;
+    width: 102%;
+    margin: 20px 0px;
   }
   .snacky-faq{
     display:flex;
@@ -165,7 +165,7 @@
     justify-content: center;
   }
     textarea{
-      height: 200%;
+      height: 160%;
     }
     .btns-bar-div{
       display:flex;
@@ -185,9 +185,11 @@
       margin: 10px;
     }
 
-    .upload-pic-div{
+    .upload-pic-div, .upload-pic-div-edit{
       display:flex;
       flex-direction:column;
+      overflow-y: scroll;
+      overflow-x: hidden;
     }
     .name-brand-div, .stars-review-div, .country-location-div{
       display:flex;
@@ -401,6 +403,12 @@
     display: flex;
     flex-direction: column;
   }
+  .upload-pic-div-edit {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
   .form-text{
     font-family: "Inconsolata", monospace;
     font-size: 18px;
@@ -455,6 +463,13 @@
     border: solid black 0.5px;
     margin-bottom: 15px;
     margin-top: 5px;
+  }
+
+  .mb-3.password.optional.user_password, .mb-3.email.optional.user_email{
+    width:60%;
+  }
+  #post_comment_content{
+    width:101%;
   }
 }
 
