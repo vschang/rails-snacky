@@ -95,7 +95,7 @@
     font-family: 'Inconsolata', monospace;
   }
   .mt-60{
-    // margin-top: 100px;
+    margin-top: 60px;
   }
   .login-text {
     font-family: "Inconsolata", monospace;
@@ -281,6 +281,7 @@
   }
 
   .form-control{
+    border-radius: 5px;
     font-family: 'Inconsolata';
     padding: 8px;
     width: 100%;
@@ -307,9 +308,7 @@
     display:flex;
     justify-content: center;
   }
-  .title{
-    width:100%;
-  }
+
   .review{
     width:100%;
     height: 120%;
@@ -748,4 +747,8 @@ textarea{box-sizing:border-box}
   font-family: 'Geneva';
   font-size: 10px;
   color: #fa73cc;
+}
+
+.title{
+  width:100%;
 }

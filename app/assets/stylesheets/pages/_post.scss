@@ -19,8 +19,9 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 20px 0px 20px 0px;
   }
+
+
 
   .post-container{
     display: flex;
@@ -29,10 +30,9 @@
     justify-content: space-between;
     width: 85vw;
     margin: 0 auto;
-    // border-bottom: solid black 0.5px;
-    padding-bottom: 20px;
     margin-top: 10px;
     padding: 30px 10px 30px 10px;
+    position:relative;
   }
 
   .pt-0{
@@ -66,9 +66,7 @@
     justify-content: space-between;
     padding: 20px 20px;
     margin-top: 20px;
-    margin-bottom: 40px;
     width: 85vw;
-    border-top: solid 0.5px black;
   }
 
   .comments-container {
@@ -244,8 +242,8 @@
     justify-content: space-between;
     width: 65vw;
     margin: 0 auto;
-    // border-bottom: solid black 0.5px;
     padding-bottom: 20px;
+    position:relative;
   }
 
   .review-text {
@@ -623,4 +621,53 @@
 .image-dots{
   display:flex;
   justify-content: center;
+}
+
+.post-settings{
+  display:flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.delete-back-modal-background{
+  position:absolute;
+  height:100%;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background: #c49cb782;
+  backdrop-filter: blur(5px);
+  visibility: hidden;
+}
+
+.delete-back-modal{
+  position:absolute;
+  top: 150px;
+  padding: 20px;
+  background: #FFCAED;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  left: 25%;
+  right: 25%;
+  border: solid black 1px;
+}
+
+.delete-option{
+  font-family: 'inconsolata';
+  text-decoration: none;
+  font-size: 20px;
+  color: red;
+  font-weight: 300;
+  background:none;
+  border:none;
+  padding: 30px 20px;
+  width:100%;
+}
+
+.edit-option{
+  text-align:center;
+  padding: 30px 20px;
 }

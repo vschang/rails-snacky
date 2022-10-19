@@ -37,13 +37,26 @@
         <p class="text-date">Snacky contributer since <%=@user.created_at.strftime("%B %d, %Y") %></p>
       </div>
 
-      <div class="dropdown">
-        <button class="dropdown-btn"><i class="fa-solid fa-gear black-gear"></i></button>
-        <div class="dropdown-content ">
-        <%= link_to "edit profile", 'users/edit', class:'dropdown-edit'%>
-        <%= link_to "logout", '/log_out', class:'dropdown-edit'%>
+      <div class="settings-div" data-controller="settings-profile">
+        <button class="dropdown-btn" data-action="click->settings-profile#open">
+          <i class="fa-solid fa-gear black-gear"></i>
+        </button>
+        <div class="delete-back-modal-background" id="settings-background">
+          <div class="delete-back-modal">
+            <div class="flex-end">
+              <button type="button"
+                      class="like-btn"
+                      data-action="click->settings-profile#close">
+                      <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+          <%= link_to "change pic", '/edit_prof_pic', class:'edit-option'%>
+          <%= link_to "edit profile", 'users/edit', class:'edit-option'%>
+          <%= link_to "logout", '/log_out', class:'edit-option'%>
+          </div>
         </div>
       </div>
+
     </div>
     <% if @markers.count > 0 %>
     <div class="modal-opened" data-controller="modal">

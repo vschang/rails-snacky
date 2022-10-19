@@ -23,6 +23,27 @@
       </div>
     </div>
 
+    <% if @post.user_id == current_user.id %>
+    <div data-controller="settings" class="title">
+      <div class="post-settings" data-action="click->settings#open">
+        <i class="fa-solid fa-ellipsis ellipses"></i>
+      </div>
+      <div class="delete-back-modal-background">
+        <div class="delete-back-modal">
+          <div class="flex-end">
+            <button type="button"
+                    class="like-btn"
+                    data-action="click->settings#close">
+                    <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <%= link_to 'edit', edit_post_path(@post), method: :patch, class:"edit-option" %>
+          <%= button_to 'delete', post_path(@post), method: :delete, data: { confirm: 'you sure 😢?' }, class:"delete-option"%>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
     <div class="image-text-container">
       <div class="image-div" data-controller="gallery">
         <% if @post.images.count > 1 %>
@@ -140,28 +161,14 @@
       </div>
     </div>
   <% end %>
+
     <div class="delete-back">
       <%= link_to :back, class:"back-btn" do %>
         <i class="fa-solid fa-hand-point-left back-hand"></i>
         <% end %>
-      <% if @post.user_id == current_user.id %>
-        <%= link_to 'edit', edit_post_path(@post), method: :patch, class:"edit-btn" %>
-        <%= button_to 'delete', post_path(@post), method: :delete, data: { confirm: 'you sure 😢?' }, class:"show-btn delete" %>
-      <% end %>
+    </div>
     </div>
   </div>
+
+
 </div>
-
-<!--
-<div data-controller="insert-in-list">
-
-  <div data-insert-in-list-target="items">
-    <% @post.post_comments.each do |comment| %>
-      <%= render "post_comments/post_comment", post_comment: comment  %>
-
-    <% end %>
-  </div>
-
-  <%= render "post_comments/form", post_comment: @post_comment, post: @post  %>
-</div>
--->
