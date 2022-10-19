@@ -130,7 +130,7 @@
         <%= render "post_comments/form", post_comment: @post_comment, post: @post  %>
       </div>
     </div>
-
+  <% if @post.address? %>
     <div class="map-container-show">
       <div class="" style="width: 100%; height: 100%; border: solid black 0.75px; z-index: 0"
         data-controller="map"
@@ -139,6 +139,7 @@
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
+  <% end %>
     <div class="delete-back">
       <%= link_to :back, class:"back-btn" do %>
         <i class="fa-solid fa-hand-point-left back-hand"></i>
