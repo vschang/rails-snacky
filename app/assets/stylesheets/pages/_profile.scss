@@ -178,12 +178,6 @@
 }
 
 
-.dropdown{
-  position: relative;
-  display: inline-block;
-  align-self:center;
-}
-
 .dropdown-btn{
   background: none;
   border: none;
@@ -191,41 +185,11 @@
   font-size: 18px;
   position: static;
 }
-
-
-.dropdown-content{
-  display:none;
-  position: absolute;
-  flex-direction: column;
-  background: $orange;
-  padding: 10px;
+.dropdown-btn:hover{
+  transform: rotate(90deg);
+  transition-duration: 500ms;
 }
 
-.dropdown-content:hover{
-  display:flex;
-  flex-direction: column;
-  background: $orange;
-  padding: 10px;
-}
-
-.dropdown-content a:hover {
-  display:flex;
-  flex-direction: column;
-  padding: 10px;
-  background-color: $pink;
-  text-decoration: underline;
-}
-
-.dropdown:hover .dropdown-content {
-  display:flex;
-  flex-direction: column;
-  background: $orange;
-  padding: 10px;
-}
-
-.dropdown:hover .dropdown-btn {
-  text-decoration: underline;
-}
 
 .profile-pic-link:hover{
   opacity:75%;

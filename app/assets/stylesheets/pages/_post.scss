@@ -209,10 +209,27 @@
     align-items:center;
     width: 100%;
     justify-content: center;
+    padding-top: 20px;
   }
   .p-14{
     font-size: 14px;
     margin-bottom: 0px;
+  }
+  .delete-option{
+    font-family: 'inconsolata';
+    text-decoration: none;
+    font-size: 20px;
+    color: red;
+    font-weight: 300;
+    background:none;
+    border:none;
+    padding: 30px 20px;
+    width:100%;
+  }
+  .post-settings{
+    display:flex;
+    justify-content: flex-end;
+    padding: 20px;
   }
 }
 
@@ -394,6 +411,28 @@
   }
   .p-14{
     font-size: 14px;
+  }
+  .delete-option{
+    font-family: 'inconsolata';
+    // text-decoration: none;
+    font-size: 24px;
+    color: red;
+    font-weight: 300;
+    background:none;
+    border:none;
+    padding: 30px 20px;
+    width:100%;
+  }
+  .delete-option:hover{
+    text-decoration: underline wavy;
+    text-decoration-color: red;
+    text-decoration-thickness: 1.8px;
+  }
+
+  .post-settings{
+    display:flex;
+    justify-content: flex-end;
+    padding: 5px;
   }
 }
 
@@ -623,11 +662,6 @@
   justify-content: center;
 }
 
-.post-settings{
-  display:flex;
-  justify-content: flex-end;
-  padding: 20px;
-}
 
 .delete-back-modal-background{
   position:absolute;
@@ -650,24 +684,19 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  left: 25%;
-  right: 25%;
+  left: 20%;
+  right: 20%;
   border: solid black 1px;
 }
 
-.delete-option{
-  font-family: 'inconsolata';
-  text-decoration: none;
-  font-size: 20px;
-  color: red;
-  font-weight: 300;
-  background:none;
-  border:none;
-  padding: 30px 20px;
-  width:100%;
-}
+
 
 .edit-option{
   text-align:center;
   padding: 30px 20px;
+}
+
+.edit-option:hover{
+  text-decoration: underline wavy;
+  text-decoration-thickness: 1.8px;
 }
