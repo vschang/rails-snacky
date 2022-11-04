@@ -88,6 +88,24 @@ class PostsController < ApplicationController
       }]
     @post_comment = PostComment.new
     @current_user_id = current_user.id
+    @post_comments = PostComment.all
+
+    @post_comment_time = []
+    time_now = Time.now
+    @post_comments.each do |comment|
+      time_diff = time_now - comment.created_at
+      if time_diff < 60.0
+        @post_comment_time << "now"
+      elsif time_diff < 3600.0
+        @post_comment_time << "#{(time_diff / 1.minute).to_i.round}m"
+      elsif time_diff > 3600.0 && time_diff < 86400.0
+        @post_comment_time << "#{(time_diff / 1.hour).to_i.round}h"
+      elsif time_diff > 86400.0 && time_diff < 604800.0
+        @post_comment_time << "#{(time_diff / 1.day).to_i.round}d"
+      else
+        @post_comment_time << "#{(time_diff / 1.week).to_i.round}w"
+      end
+    end
   end
 
   def new
@@ -98,15 +116,6 @@ class PostsController < ApplicationController
     @user = current_user
     @post = Post.new(post_params)
     @post.user_id = @user.id
-    # @post.image_url = "https://snacky-production.s3.eu-west-2.amazonaws.com/" + @post.image.key
-
-    # @post.image = params[:file]
-
-    # @post.image_url = []
-
-    # @post.images.each do |img, key|
-    #   @post.image_url << `https://snacky-production.s3.eu-west-2.amazonaws.com/ + #{@post.img.key}`
-    # end
 
     if @post.save
       redirect_to post_path(@post), notice: "review posted 🎉"
