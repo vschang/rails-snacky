@@ -4,13 +4,8 @@ class PostCommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @post_comment = PostComment.new(post_comment_params)
     @post_comment.user = current_user
+    @current_user_id = current_user.id
     @post_comment.post = @post
-    
-    # if @post_comment.save
-    #   redirect_to post_path(@post)
-    # else
-    #   redirect_to post_path(@post)
-    # end
 
     respond_to do |format|
       if @post_comment.save

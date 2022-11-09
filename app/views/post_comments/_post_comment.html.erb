@@ -14,7 +14,7 @@
       </div>
     <%# <% end%>
 
-    <% if post_comment.user_id == current_user.id %>
+    <% if post_comment.user_id == @current_user_id %>
       <div class="content-div" >
         <%= button_to post_post_comment_path(@post, post_comment.id), method: :delete, class:"comment-delete-btn" do %>
           <i class="fa-solid fa-xmark" data-action="click->delete-comment#delete"></i>

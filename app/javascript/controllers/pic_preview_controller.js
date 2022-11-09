@@ -9,19 +9,12 @@ export default class extends Controller {
   }
 
   display = () => {
-    // let preview = document.getElementById('preview').src
     let file = this.element.children[2].children[0].children[1].files[0]
     document.getElementById('preview').src = window.URL.createObjectURL(file)
   }
 
   displayPostPic = () => {
     let files = this.fileTarget.files
-
-    // for (let i = 0; i < files.length; i++) {
-    //   var img = document.createElement('img')
-    //   img.src = window.URL.createObjectURL(files[i]);
-    //   document.getElementById('preview-pics').appendChild(img)
-    // }
 
     for (let i = 0; i < files.length; i++) {
       document.getElementById('preview-pics').innerHTML += `<img src="${window.URL.createObjectURL(files[i])}" class="preview-image">`

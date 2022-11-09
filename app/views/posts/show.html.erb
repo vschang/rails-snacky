@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <% if @post.user_id == current_user.id %>
+    <% if @post.user_id == @current_user_id  %>
     <div data-controller="settings" class="title">
       <div class="post-settings" data-action="click->settings#open">
         <i class="fa-solid fa-ellipsis ellipses"></i>
@@ -75,30 +75,7 @@
       </div>
       <div class="post-text">
         <h3 class="post-title text-center mt-0"><%= @post.title %></h3>
-        <div class="stars">
-          <% case @post.rating %>
-          <% when 1 %>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 2%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 3%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 4%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 5%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 6%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 7%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 8%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 9%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 10%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i>
-          <% end %>
-        </div>
+        <%= render 'shared/stars', post: @post %>
         <div class="review-text">
           <p><strong>review: </strong><%= @post.review %></p>
           <p><strong>brand: </strong><%= @post.brand %></p>
@@ -120,18 +97,18 @@
               <i class="fa-solid fa-heart empty-heart"></i>
             <% end %>
           <% end %>
+        <% else %>
+          <i class="fa-solid fa-heart red"></i>
         <% end %>
         <p >likes <%= @post.post_likes.count %></p>
       </div>
 
       <div class="tags-div" data-controller="insert-in-list-tag" data-insert-in-list-tag-position-value="afterend" >
-        <%# <% if user_signed_in? %>
         <div class="tags-form mt-10">
-          <% if @post.user_id == current_user.id %>
+          <% if @post.user_id == @current_user_id %>
             <%= render "post_tags/form", post_tag: @post_tag, post: @post  %>
           <% end %>
         </div>
-        <%# <% end %>
         <div class="tags-container" data-insert-in-list-tag-target="tags">
           <% @post.post_tags.each do |tag| %>
             <%= render "post_tags/post_tag", post_tag: tag %>
@@ -147,9 +124,13 @@
           <%= render "post_comments/post_comment", post_comment: comment, post: @post, user: @user, index: index  %>
         <% end %>
       </div>
-      <div class='comment-box'>
-        <%= render "post_comments/form", post_comment: @post_comment, post: @post  %>
-      </div>
+      <% if user_signed_in? %>
+        <div class='comment-box'>
+          <%= render "post_comments/form", post_comment: @post_comment, post: @post  %>
+        </div>
+      <% else%>
+        <p class="leave-a-comment">sign in to leave a comment! 🙊</p>
+      <% end %>
     </div>
   <% if @post.address? %>
     <div class="map-container-show">

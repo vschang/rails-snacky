@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     resources :post_comments, only: %i[new create index destroy]
     resources :post_tags, only: %i[new create index destroy]
   end
+
+  resources :saved_posts, only: %i[create]
+
   resources :post_likes, only: [:destory]
 
   namespace :intake do

@@ -133,33 +133,10 @@
             <%= link_to post_path(post.id) do %>
               <h3 class="post-title text-center mt-0"><%= post.title %></h3>
             <% end %>
-            <% else %>
-              <h3 class="post-title-out text-center mt-0"><%= post.title %></h3>
-            <% end %>
-            <div class="stars">
-              <% case post.rating %>
-              <% when 1 %>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 2%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 3%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 4%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 5%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 6%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 7%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 8%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 9%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 10%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i>
-              <% end %>
-            </div>
+          <% end %>
+
+            <%= render 'shared/stars', post: post %>
+
             <div class="review-text">
               <p><strong>review: </strong><%= truncate(post.review, :length => 250) %></p>
               <p><strong>brand: </strong><%= post.brand %></p>
@@ -180,6 +157,11 @@
               <div class="likes-n-comments">
 
                 <% if user_signed_in? %>
+                  <% if post.user_id != @user.id%>
+                    <%= button_to saved_posts_path(post), method: :post, class: "heart-btn" do %>
+                      <p><i class="fa-solid fa-floppy-disk save-btn"></i></p>
+                    <% end %>
+                  <% end %>
                   <%= button_to post_post_likes_path(post), params:{page: "index"}, method: :post, class: "heart-btn" do %>
                     <p class="black"><i class="fa-solid fa-heart red"></i><%= post.post_likes.count %></p>
                   <% end %>

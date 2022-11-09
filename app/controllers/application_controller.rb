@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
     stored_location_for(resource) || posts_path
   end
 
+  def logged_in?
+    user.present?
+  end
+
   protected
 
   def configure_permitted_parameters

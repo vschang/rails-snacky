@@ -1,18 +1,14 @@
 <%= render 'shared/navbar' %>
-<div class="profile-border">
+<div class="profile-border" data-controller="saved-post-modal">
   <div class="profile-info">
     <div class="profile-info-2">
       <div class="edit-pic">
       <p class="small-p edit-text">edit</p>
         <%= link_to '/edit_prof_pic' do%>
           <% if current_user.prof_pic.present? %>
-            <%# <img src="<%=@user.prof_pic.key%>
-            <%# " class="prof-pic edit-pic"> %>
             <%= cl_image_tag current_user.prof_pic.key, class:"prof-pic edit-pic" %>
-            <%# <%= image_tag(@user.prof_pic, class: "prof-pic edit-pic") %>
             <% else %>
             <img src="https://res.cloudinary.com/le-wagon-785-vchang/image/upload/v1663937183/production/snacky-assets/haribo-prof_ug0clq.jpg", class="prof-pic edit-pic">
-            <%# <img src="https://snacky-assets.s3.eu-west-2.amazonaws.com/haribo-prof.jpeg", class="prof-pic edit-pic"> %>
           <% end %>
         <% end %>
       </div>
@@ -58,6 +54,40 @@
       </div>
 
     </div>
+
+    <div class="settings-div" >
+      <button type="button"
+              data-action="click->saved-post-modal#open"
+              class="like-btn font-18">
+              see my saved posts
+      </button>
+      <div class="delete-back-modal-background" id="saved-background">
+        <div class="delete-back-modal">
+          <div class="flex-end">
+            <button type="button"
+                    class="like-btn"
+                    data-action="click->saved-post-modal#close">
+                    <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div class="saved-posts-div">
+          <h1 class="your-snack-map text-center size-30">saved posts</h1>
+            <% @saved_posts.each do |saved_post| %>
+              <% unless saved_post.post.image.empty? %>
+                <%= link_to post_path(saved_post.post.id), class: 'heart-btn' do %>
+                  <%= image_tag(saved_post.post.image.url, class:"search-image")%>
+                <% end %>
+              <% else %>
+                <%= link_to post_path(saved_post.post.id), class: 'heart-btn' do %>
+                  <%= image_tag("/Users/valeriechang/code/vschang/rails-snacky/app/assets/images/prof.jpg", class:"search-image")%>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <% if @markers.count > 0 %>
     <div class="modal-opened" data-controller="modal">
       <button type="button"
@@ -146,30 +176,7 @@
           <%= link_to post_path(post.id) do %>
           <h3 class="post-title text-center mt-0"><%= post.title %></h3>
           <% end %>
-          <div class="stars">
-            <% case post.rating %>
-              <% when 1 %>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 2%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 3%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 4%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 5%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 6%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 7%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 8%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 9%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i>
-              <% when 10%>
-                <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i>
-              <% end %>
-          </div>
+          <%= render 'shared/stars', post: post %>
           <div class="review-text">
             <p><strong>review: </strong><%= post.review %></p>
             <p><strong>brand: </strong><%= post.brand %></p>
@@ -190,6 +197,5 @@
         </div>
       </div>
       <% end %>
-    <%# <% end %>
   </div>
 </div>

@@ -78,8 +78,13 @@ class PostsController < ApplicationController
   def show
     @user = current_user
     @post = Post.find(params[:id])
+
     @post_likes = PostLike.new
-    @liked_post = PostLike.find_by(post_id: @post.id, user_id: @user.id)
+
+    unless @user.nil?
+      @liked_post = PostLike.find_by(post_id: @post.id, user_id: @user.id)
+    end
+
     @markers = [{
         lat: @post.latitude,
         lng: @post.longitude,
@@ -87,7 +92,11 @@ class PostsController < ApplicationController
         image_url: helpers.asset_url("pink-gummy-removebg-preview.png")
       }]
     @post_comment = PostComment.new
-    @current_user_id = current_user.id
+
+    unless @user.nil?
+      @current_user_id = current_user.id
+    end
+
     @post_comments = PostComment.all
 
     @post_comment_time = []

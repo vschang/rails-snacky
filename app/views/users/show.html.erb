@@ -1,44 +1,62 @@
 <%= render 'shared/navbar' %>
 <div class="border">
   <div class="user-profile-info">
-    <% if @user.prof_pic.present? %>
-      <%= cl_image_tag @user.prof_pic.key, class:"prof-pic edit-pic" %>
-      <% else %>
-      <img src="https://res.cloudinary.com/le-wagon-785-vchang/image/upload/v1663937183/production/snacky-assets/haribo-prof_ug0clq.jpg", class="prof-pic edit-pic">
+    <div class="user-prof-info-2">
+      <% if @user.prof_pic.present? %>
+        <%= cl_image_tag @user.prof_pic.key, class:"prof-pic edit-pic" %>
+        <% else %>
+        <img src="https://res.cloudinary.com/le-wagon-785-vchang/image/upload/v1663937183/production/snacky-assets/haribo-prof_ug0clq.jpg", class="prof-pic edit-pic">
+      <% end %>
+      <div class="profile-text">
+        <% if @posts.count == 0 %>
+        <h3 class="welcome-profile text-center"><%= @user.first_name %>hasn't reviewed any snacks yet! 🧐</h3>
+        <% elsif @posts.count == 1 %>
+        <h3 class="welcome-profile text-center"><%= @user.first_name %> has reviewed 1 snack</h3>
+        <% else %>
+        <h3 class="welcome-profile text-center"><%= @user.first_name %> has reviewed <%= @posts.count%> snacks</h3>
+        <% end %>
+        <% if @post_likes_given == 1 %>
+        <p class="likes-text "><%= @user.first_name %> has given <%= @post_likes_given%> like ❤️</p>
+        <% else %>
+          <p class="likes-text "><%= @user.first_name %> has given <%= @post_likes_given%> likes ❤️</p>
+        <% end %>
+        <% if @post_likes_received == 1 %>
+          <p class="likes-text ">and received <%= @post_likes_received%> like ✨</p>
+        <% else %>
+          <p class="likes-text ">and received <%= @post_likes_received%> likes ✨</p>
+        <% end %>
+        <p class="text-right text-center">Snacky contributer since <%=@user.created_at.strftime("%B %d, %Y") %></p>
+      </div>
+    </div>
+    <% if @markers.count == 0 %>
+    <% else %>
+    <div class="modal-opened" data-controller="modal">
+      <button type="button"
+              class="like-btn font-18"
+              data-action="click->modal#open">
+              👀 see <%= @user.first_name %>'s snack map 🌎
+      </button>
+      <div class="map-overlay visibility-out">
+        <div class="map-container-profile ">
+          <div class="flex-end">
+            <button type="button"
+                    class="like-btn"
+                    data-action="click->modal#close">
+                    <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <h1 class="your-snack-map snack-map-margin text-center"><%= @user.first_name %>'s snack map</h1>
+          <div class="" style="width: 100%; height: 300px; border: 0.5px solid black; z-index:0"
+            data-controller="map"
+            data-map-page-value="profile"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+        </div>
+      </div>
+    </div>
     <% end %>
-    <div class="profile-text">
-      <% if @posts.count == 0 %>
-      <h3 class="welcome-profile text-center"><%= @user.first_name %>hasn't reviewed any snacks yet! 🧐</h3>
-      <% elsif @posts.count == 1 %>
-      <h3 class="welcome-profile text-center"><%= @user.first_name %> has reviewed 1 snack</h3>
-      <% else %>
-      <h3 class="welcome-profile text-center"><%= @user.first_name %> has reviewed <%= @posts.count%> snacks</h3>
-      <% end %>
-      <% if @post_likes_given == 1 %>
-      <p class="likes-text "><%= @user.first_name %> has given <%= @post_likes_given%> like ❤️</p>
-      <% else %>
-        <p class="likes-text "><%= @user.first_name %> has given <%= @post_likes_given%> likes ❤️</p>
-      <% end %>
-      <% if @post_likes_received == 1 %>
-        <p class="likes-text ">and received <%= @post_likes_received%> like ✨</p>
-      <% else %>
-        <p class="likes-text ">and received <%= @post_likes_received%> likes ✨</p>
-      <% end %>
-      <p class="text-right text-center">Snacky contributer since <%=@user.created_at.strftime("%B %d, %Y") %></p>
-    </div>
   </div>
-  <% if @markers.count == 0 %>
-  <% else %>
-  <div class="map-container">
-    <h1 class="your-snack-map snack-map-margin text-center"><%= @user.first_name %>'s snack map</h1>
-    <div class="" style="width: 100%; height: 300px; border: 0.5px solid black; z-index:0"
-      data-controller="map"
-      data-map-page-value="profile"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-  </div>
-  <% end %>
 
   <div class="all-posts">
     <% @posts.each do |post|%>
@@ -87,30 +105,7 @@
           <%= link_to post_path(post.id) do %>
           <h3 class="post-title text-center mt-0"><%= post.title %></h3>
           <% end %>
-          <div class="stars">
-          <% case post.rating %>
-          <% when 1 %>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 2%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 3%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 4%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 5%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 6%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 7%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 8%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 9%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star empty-star"></i>
-          <% when 10%>
-            <i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i><i class="fa-solid fa-star star"></i>
-          <% end %>
-          </div>
+          <%= render 'shared/stars', post: post %>
           <div class="review-text">
             <p><strong>review: </strong><%= post.review %></p>
             <p><strong>brand: </strong><%= post.brand %></p>
