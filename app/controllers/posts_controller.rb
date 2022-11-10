@@ -28,11 +28,9 @@ class PostsController < ApplicationController
           image_url: helpers.asset_url("pink-gummy-removebg-preview.png")
         }
       end
-
     # If there is a filter
     else
       @posts = PostTag.where(tag: params[:filter]).map {|post_tag| post_tag.post}
-
       @markers = @posts.map do |post|
       {
         lat: post.latitude,
@@ -69,10 +67,7 @@ class PostsController < ApplicationController
 
     @posts = Kaminari.paginate_array(@posts).page(page).per(per)
 
-    # @user = current_user
-    # @post = Post.find(params[:post_id])
-    # @post_like = PostLike.new
-    # @liked_post = PostLike.find_by(post_id: @post.id, user_id: @user.id)
+    @found_post = SavedPost.all.find_by(user: @user, post: @post)
   end
 
   def show
@@ -99,22 +94,22 @@ class PostsController < ApplicationController
 
     @post_comments = PostComment.all
 
-    @post_comment_time = []
-    time_now = Time.now
-    @post_comments.each do |comment|
-      time_diff = time_now - comment.created_at
-      if time_diff < 60.0
-        @post_comment_time << "now"
-      elsif time_diff < 3600.0
-        @post_comment_time << "#{(time_diff / 1.minute).to_i.round}m"
-      elsif time_diff > 3600.0 && time_diff < 86400.0
-        @post_comment_time << "#{(time_diff / 1.hour).to_i.round}h"
-      elsif time_diff > 86400.0 && time_diff < 604800.0
-        @post_comment_time << "#{(time_diff / 1.day).to_i.round}d"
-      else
-        @post_comment_time << "#{(time_diff / 1.week).to_i.round}w"
-      end
-    end
+    # @post_comment_time = []
+    # time_now = Time.now
+    # @post_comments.each do |comment|
+    #   time_diff = time_now - comment.created_at
+    #   if time_diff < 60.0
+    #     @post_comment_time << "now"
+    #   elsif time_diff < 3600.0
+    #     @post_comment_time << "#{(time_diff / 1.minute).to_i.round}m"
+    #   elsif time_diff > 3600.0 && time_diff < 86400.0
+    #     @post_comment_time << "#{(time_diff / 1.hour).to_i.round}h"
+    #   elsif time_diff > 86400.0 && time_diff < 604800.0
+    #     @post_comment_time << "#{(time_diff / 1.day).to_i.round}d"
+    #   else
+    #     @post_comment_time << "#{(time_diff / 1.week).to_i.round}w"
+    #   end
+    # end
   end
 
   def new

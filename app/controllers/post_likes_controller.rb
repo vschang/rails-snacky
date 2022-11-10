@@ -8,14 +8,27 @@ class PostLikesController < ApplicationController
 
     @liked_post = PostLike.find_by(post_id: @post.id, user_id: user.id)
 
-
     if @liked_post
       @liked_post.destroy
-      redirect_to post_path(@post)
+      case params["page"]
+      when "show"
+        redirect_to post_path(@post)
+      when "index"
+        redirect_to posts_path(@post_like.post, anchor: "post-#{@post.id}"), notice: "unliked!"
+      end
     else
       @post_like.user = user
       @post_like.post = @post
-      redirect_to post_path(@post) if @post_like.save!
+      case params["page"]
+      when "show"
+        redirect_to post_path(@post) if @post_like.save!
+      when "index"
+        if @post_like.save
+          redirect_to posts_path(@post_like.post, anchor: "post_#{@post.id}"), notice: "liked!"
+        else
+          render "posts/show", alert: "not saved 😔"
+        end
+      end
     end
   end
 

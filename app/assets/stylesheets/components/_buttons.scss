@@ -142,7 +142,7 @@
     transition-duration: 0.4s;
   }
 
-  .red:hover, .comment:hover, .save-btn:hover{
+  .red:hover, .comment:hover, .save-btn:hover, .empty-save:hover{
     text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
                 0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
     opacity: 75%;
@@ -188,7 +188,7 @@
   border: none;
   color: #fa73cc;
   padding: 5px 0px 0px 0px;
-  margin-top: -10px;
+  margin-top: -5px;
 }
 
 .tag-delete-btn{
@@ -251,6 +251,13 @@
   color:$yellow;
   text-shadow: 0.75px 0 #000, -0.75px 0 #000, 0 0.75px #000, 0 -0.75px #000, 2.5px 2px #000, -0.5px -0.5px #000, 2.5px 0.75px #000, -0.25px 0.25px #000;
   padding-right: 20px;
+}
+
+.empty-save{
+  font-size: 22px;
+  color:$pink;
+  text-shadow: 0.75px 0 #000, -0.75px 0 #000, 0 0.75px #000, 0 -0.75px #000, 2.5px 2px #000, -0.5px -0.5px #000, 2.5px 0.75px #000, -0.25px 0.25px #000;
+  padding-left: 20px;
 }
 
 .pt-70{

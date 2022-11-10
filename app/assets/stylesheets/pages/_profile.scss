@@ -11,6 +11,17 @@
     width:95vw;
   }
 
+  .saved-snacks{
+    font-size: 32px;
+    font-family: 'Geneva', sans-serif;
+    color: $yellow;
+    text-shadow: 0.5px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
+                 0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
+    margin-bottom:10px;
+    text-decoration:none;
+    margin-top: 10px;
+  }
+
   .profile-info, .user-profile-info{
     display:flex;
     flex-direction: column;
@@ -71,9 +82,50 @@
     display:flex;
     flex-direction: column;
   }
+
+  .saved-posts-modal {
+    position: absolute;
+    padding: 20px;
+    background: #FFCAED;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    left: 5%;
+    right: 5%;
+    top: 5%;
+    bottom: 5%;
+    overflow-x: hidden;
+    border: solid black 1px;
+  }
+
+  .saved-posts-div {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+
+  .profile-btns-div{
+    display:flex;
+    flex-direction: column;
+  }
+  .snack-map-btn{
+    margin-top:20px;
+  }
+  .prof-pic{
+    object-fit: cover;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: solid black 1px;
+    align-self: center;
+    background: cornsilk;
+  }
 }
 @media (min-width: 768px) {
-  .welcome-profile{
+  .welcome-profile, .saved-snacks{
     font-size: 40px;
     font-family: 'Geneva', sans-serif;
     color: $yellow;
@@ -121,6 +173,13 @@
     // margin: 0 auto;
   }
 
+  .saved-posts-div {
+    overflow-y: scroll;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
   .text-right{
     text-align: right;
     margin-top: 0px;
@@ -151,17 +210,46 @@
     justify-content: center;
     align-items: center;
   }
-}
+  .saved-posts-modal{
+    position: absolute;
+    padding: 20px;
+    background: #FFCAED;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    border: solid black 1px;
+    left: 20%;
+    right: 20%;
+    top: 10%;
+    bottom: 10%;
+  }
 
+  .saved-image{
+    width: 190px;
+    height: 190px;
+    border-radius: 10px;
+    border: solid black 1px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin-top: 10px;
+  }
 
-.prof-pic{
-  object-fit: cover;
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  border: solid black 1px;
-  align-self: center;
-  background: cornsilk;
+  .profile-btns-div{
+    display:flex;
+  }
+
+  .snack-map-btn{
+    margin-left:20px;
+  }
+  .prof-pic{
+    object-fit: cover;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: solid black 1px;
+    align-self: center;
+    background: cornsilk;
+  }
 }
 
 .comment-pic{
@@ -235,4 +323,12 @@
 .leave-a-comment{
   text-align: center;
   padding-top: 20px;
+}
+
+.align-center{
+  align-self:center;
+}
+
+.saved-image:hover{
+  opacity: 50%;
 }

@@ -120,8 +120,8 @@
 
     <div class ="comments-container" data-controller="insert-in-list" data-insert-in-list-position-value="beforeend">
       <div data-insert-in-list-target="items">
-        <% @post.post_comments.each_with_index do |comment, index| %>
-          <%= render "post_comments/post_comment", post_comment: comment, post: @post, user: @user, index: index  %>
+        <% @post.post_comments.each do |comment| %>
+          <%= render "post_comments/post_comment", post_comment: comment, post: @post, user: @user  %>
         <% end %>
       </div>
       <% if user_signed_in? %>

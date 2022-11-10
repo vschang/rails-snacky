@@ -85,7 +85,7 @@
     <% else %>
 
     <% @posts.each do |post|%>
-    <div class="post-container-show">
+    <div class="post-container-show" id="post-<%= post.id %>">
 
       <div class="image-div" data-controller="gallery2">
       <% if post.images.count > 1 %>
@@ -157,16 +157,23 @@
               <div class="likes-n-comments">
 
                 <% if user_signed_in? %>
-                  <% if post.user_id != @user.id%>
-                    <%= button_to saved_posts_path(post), method: :post, class: "heart-btn" do %>
-                      <p><i class="fa-solid fa-floppy-disk save-btn"></i></p>
-                    <% end %>
-                  <% end %>
                   <%= button_to post_post_likes_path(post), params:{page: "index"}, method: :post, class: "heart-btn" do %>
                     <p class="black"><i class="fa-solid fa-heart red"></i><%= post.post_likes.count %></p>
                   <% end %>
                   <%= button_to post_post_comments_path(post), method: :post, class: "heart-btn" do %>
                     <p class="black"><i class="fa-solid fa-comment-dots comment"></i> <%= post.post_comments.count %></p>
+                  <% end %>
+                  <% if post.user_id != @user.id %>
+                  <%# @found_post if/else NOT WORKING %>
+                    <% if @found_post %>
+                      <%= button_to saved_posts_path(post), method: :post, class: "heart-btn" do %>
+                        <p><i class="fa-solid fa-bookmark save-btn"></i></p>
+                      <% end %>
+                    <% else %>
+                      <%= button_to saved_posts_path(post), method: :post, class: "heart-btn" do %>
+                        <p><i class="fa-solid fa-bookmark empty-save"></i></p>
+                      <% end %>
+                    <% end %>
                   <% end %>
                 <% else%>
                   <p class="black"><i class="fa-solid fa-heart red"></i> <%= post.post_likes.count %></p>

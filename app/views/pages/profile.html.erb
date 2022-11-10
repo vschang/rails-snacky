@@ -54,67 +54,62 @@
       </div>
 
     </div>
-
-    <div class="settings-div" >
-      <button type="button"
-              data-action="click->saved-post-modal#open"
-              class="like-btn font-18">
-              see my saved posts
-      </button>
-      <div class="delete-back-modal-background" id="saved-background">
-        <div class="delete-back-modal">
-          <div class="flex-end">
-            <button type="button"
-                    class="like-btn"
-                    data-action="click->saved-post-modal#close">
-                    <i class="fa-solid fa-xmark"></i>
-            </button>
-          </div>
-          <div class="saved-posts-div">
-          <h1 class="your-snack-map text-center size-30">saved posts</h1>
-            <% @saved_posts.each do |saved_post| %>
-              <% unless saved_post.post.image.empty? %>
+    <div class="profile-btns-div">
+      <div class="settings-div align-center">
+        <button type="button"
+                data-action="click->saved-post-modal#open"
+                class="like-btn font-18">
+                🍫 saved snacks
+        </button>
+        <div class="delete-back-modal-background" id="saved-background">
+          <div class="saved-posts-modal">
+            <div class="flex-end">
+              <button type="button"
+                      class="like-btn"
+                      data-action="click->saved-post-modal#close">
+                      <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <h3 class="saved-snacks center">saved snacks</h3>
+            <div class="saved-posts-div">
+              <% @saved_posts.each do |saved_post| %>
                 <%= link_to post_path(saved_post.post.id), class: 'heart-btn' do %>
-                  <%= image_tag(saved_post.post.image.url, class:"search-image")%>
-                <% end %>
-              <% else %>
-                <%= link_to post_path(saved_post.post.id), class: 'heart-btn' do %>
-                  <%= image_tag("/Users/valeriechang/code/vschang/rails-snacky/app/assets/images/prof.jpg", class:"search-image")%>
+                  <img src="<%=saved_post.post.images.first.url%>" class="saved-image">
                 <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <% if @markers.count > 0 %>
-    <div class="modal-opened" data-controller="modal">
-      <button type="button"
-              class="like-btn font-18"
-              data-action="click->modal#open">
-              👀 see my snack map 🌎
-      </button>
-      <div class="map-overlay visibility-out">
-        <div class="map-container-profile ">
-          <div class="flex-end">
-            <button type="button"
-                    class="like-btn"
-                    data-action="click->modal#close">
-                    <i class="fa-solid fa-xmark"></i>
-            </button>
-          </div>
-          <h1 class="your-snack-map text-center size-30">your snack map</h1>
-          <div class="" style="width: 100%; height: 300px;  border: 0.5px solid black; z-index:0"
-            data-controller="map"
-            data-map-page-value="profile"
-            data-map-markers-value="<%= @markers.to_json %>"
-            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      <% if @markers.count > 0 %>
+      <div class="modal-opened snack-map-btn" data-controller="modal">
+        <button type="button"
+                class="like-btn font-18"
+                data-action="click->modal#open">
+                👀 snack map 🌎
+        </button>
+        <div class="map-overlay visibility-out">
+          <div class="map-container-profile ">
+            <div class="flex-end">
+              <button type="button"
+                      class="like-btn"
+                      data-action="click->modal#close">
+                      <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <h1 class="your-snack-map text-center size-30">your snack map</h1>
+            <div class="" style="width: 100%; height: 300px;  border: 0.5px solid black; z-index:0"
+              data-controller="map"
+              data-map-page-value="profile"
+              data-map-markers-value="<%= @markers.to_json %>"
+              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
   </div>
 
 

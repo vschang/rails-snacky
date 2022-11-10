@@ -1,9 +1,35 @@
-.avatar {
-  object-fit: cover;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  border: 0.5px solid black;
+@media (max-width: 768px) {
+  .avatar {
+    object-fit: cover;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 0.5px solid black;
+  }
+  .avatar-post{
+    object-fit: cover;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 0.5px solid black;
+  }
+}
+
+@media (min-width: 768px) {
+  .avatar {
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 0.5px solid black;
+  }
+  .avatar-post{
+    object-fit: cover;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 0.5px solid black;
+  }
 }
 .avatar-large {
   width: 56px;
@@ -20,12 +46,4 @@
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
-}
-.avatar-post{
-  object-fit: cover;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: 0.5px solid black;
-  // flex:1;
 }

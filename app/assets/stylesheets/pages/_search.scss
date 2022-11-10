@@ -14,7 +14,15 @@
     margin-top: 0px;
     width: 50%;
   }
-
+  .search-image, .saved-image{
+    width: 130px;
+    height: 130px;
+    border-radius: 10px;
+    border: solid black 1px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin: 7px;
+  }
 }
 @media (min-width: 769px) {
   .search-result{
@@ -28,19 +36,21 @@
     margin-top: 0px;
     width: 15%;
   }
+  .search-image{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    border: solid black 1px;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
 }
 
 .search-container{
   width: 80vw;
   margin: 0 auto;
   padding-top: 40px;
-}
-
-.search-image{
-  width: 150px;
-  height: 150px;
-  border-radius: 10px;
-  border: solid black 1px;
 }
 
 .search-content{

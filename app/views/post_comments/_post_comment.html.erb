@@ -25,5 +25,5 @@
   <div class="content-div">
     <p class="m-5"><%= post_comment.content %></p>
   </div>
-  <p class="small-p grey-text"><%= @post_comment_time[index] %></p>
+  <p class="small-p grey-text"><%= post_comment.created_at.strftime("%b %d, %Y") %></p>
 </div>
