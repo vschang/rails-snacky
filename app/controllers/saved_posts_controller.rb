@@ -7,15 +7,30 @@ class SavedPostsController < ApplicationController
     @found_post = SavedPost.find_by(user: @user.id, post: @post.id)
 
     if @found_post
-      @found_post.destroy
-      redirect_to posts_path(@saved_post.post, anchor: "post-#{@post.id}"), notice: "unsaved!"
+      case params["page"]
+      when "show"
+        if @found_post.destroy
+          redirect_to post_path(@found_post.post_id), notice: "unsaved!"
+        end
+      when "index"
+        if @found_post.destroy
+          redirect_to posts_path(@found_post.post, anchor: "post-#{@post.id}"), notice: "unsaved!"
+        end
+      end
     else
       @saved_post.user = @user
       @saved_post.post = @post
-      if @saved_post.save
-        redirect_to posts_path(@saved_post.post, anchor: "post-#{@post.id}"), notice: "saved!"
-      else
-        render "posts/show", alert: "not saved 😔"
+      case params["page"]
+      when "show"
+        if @saved_post.save
+          redirect_to post_path(@saved_post.post_id), notice: "saved!"
+        end
+      when "index"
+        if @saved_post.save
+          redirect_to posts_path(@saved_post.post, anchor: "post-#{@post.id}"), notice: "saved!"
+        else
+          render "posts/show", alert: "not saved 😔"
+        end
       end
     end
   end

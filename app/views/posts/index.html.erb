@@ -129,12 +129,9 @@
       </div>
 
           <div class="post-text">
-          <% if user_signed_in? %>
             <%= link_to post_path(post.id) do %>
               <h3 class="post-title text-center mt-0"><%= post.title %></h3>
             <% end %>
-          <% end %>
-
             <%= render 'shared/stars', post: post %>
 
             <div class="review-text">
@@ -160,17 +157,17 @@
                   <%= button_to post_post_likes_path(post), params:{page: "index"}, method: :post, class: "heart-btn" do %>
                     <p class="black"><i class="fa-solid fa-heart red"></i><%= post.post_likes.count %></p>
                   <% end %>
-                  <%= button_to post_post_comments_path(post), method: :post, class: "heart-btn" do %>
+                  <%= link_to post_path(post), method: :post, anchor: "comments-anchor", class: "heart-btn" do %>
                     <p class="black"><i class="fa-solid fa-comment-dots comment"></i> <%= post.post_comments.count %></p>
                   <% end %>
                   <% if post.user_id != @user.id %>
                   <%# @found_post if/else NOT WORKING %>
                     <% if @found_post %>
-                      <%= button_to saved_posts_path(post), method: :post, class: "heart-btn" do %>
+                      <%= button_to saved_posts_path(post), params:{page: "index"}, method: :post, class: "heart-btn" do %>
                         <p><i class="fa-solid fa-bookmark save-btn"></i></p>
                       <% end %>
                     <% else %>
-                      <%= button_to saved_posts_path(post), method: :post, class: "heart-btn" do %>
+                      <%= button_to saved_posts_path(post), params:{page: "index"}, method: :post, class: "heart-btn" do %>
                         <p><i class="fa-solid fa-bookmark empty-save"></i></p>
                       <% end %>
                     <% end %>

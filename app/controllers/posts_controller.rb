@@ -68,6 +68,7 @@ class PostsController < ApplicationController
     @posts = Kaminari.paginate_array(@posts).page(page).per(per)
 
     @found_post = SavedPost.all.find_by(user: @user, post: @post)
+    @liked_post = PostLike.all.find_by(user: @user, post: @post)
   end
 
   def show

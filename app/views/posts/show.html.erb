@@ -100,7 +100,12 @@
         <% else %>
           <i class="fa-solid fa-heart red"></i>
         <% end %>
-        <p >likes <%= @post.post_likes.count %></p>
+        <p><%= @post.post_likes.count %></p>
+        <% if @user && @post.user_id != @user.id %>
+          <%= button_to saved_posts_path(@post), params:{page: "show"}, method: :post, class: "heart-btn" do %>
+            <p><i class="fa-solid fa-bookmark empty-save"></i></p>
+          <% end %>
+        <% end %>
       </div>
 
       <div class="tags-div" data-controller="insert-in-list-tag" data-insert-in-list-tag-position-value="afterend" >
@@ -118,7 +123,7 @@
 
     </div>
 
-    <div class ="comments-container" data-controller="insert-in-list" data-insert-in-list-position-value="beforeend">
+    <div class ="comments-container" data-controller="insert-in-list" data-insert-in-list-position-value="beforeend" id="comments-anchor">
       <div data-insert-in-list-target="items">
         <% @post.post_comments.each do |comment| %>
           <%= render "post_comments/post_comment", post_comment: comment, post: @post, user: @user  %>

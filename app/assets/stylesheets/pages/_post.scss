@@ -228,6 +228,23 @@
     justify-content: flex-end;
     padding: 0px 10px;
   }
+  .likes-comments-container{
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: solid black 0.5px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  .likes-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .m-5{
+    margin: 5px 0px;
+  }
 }
 
 @media (min-width: 769px) {
@@ -274,8 +291,8 @@
   .post-container-show{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 90%;
+    justify-content: space-between;
+    width: 80%;
     margin: 0 auto;
     border-bottom: solid black 0.5px;
     padding-bottom: 20px;
@@ -389,7 +406,7 @@
     justify-content: center;
     width: 34vw;
     margin-left:30px;
-    // text-align:center;
+    padding-right: 50px;
   }
   .post-title:hover{
     // text-shadow: 0.5px 0 black, -0.5px 0 black, 0 0.5px black, 0 -0.5px black, 0.25px 0.25px black, -0.25px -0.25px black, 0.25px -0.25px black, -0.25px 0.25px black;
@@ -399,7 +416,6 @@
   .image-div{
     display:flex;
     align-items:center;
-    // width: 30vw;
     justify-content: flex-start;
 
   }
@@ -429,6 +445,23 @@
     display:flex;
     justify-content: flex-end;
     padding: 5px;
+  }
+
+  .likes-comments-container{
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: solid black 0.5px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  .likes-container{
+    display:flex;
+    align-items: center;
+  }
+  .m-5{
+    margin: 10px 0px;
   }
 }
 
@@ -528,23 +561,11 @@
   margin-bottom: 20px;
 }
 
-
-
-
 .sort-menu{
   display: flex;
   justify-content: flex-end;
   padding: 20px 20px 0px 20px;
   align-items:center;
-}
-
-.likes-comments-container{
-  display:flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  width: 100%;
-  border-bottom: solid black 0.5px;
-  padding-bottom: 30px;
 }
 
 .comment-div{
@@ -583,9 +604,6 @@
   align-self:flex-end;
 }
 
-.m-5{
-  margin: 5px 0px;
-}
 
 .content-div{
   display:flex;
@@ -700,4 +718,11 @@
   text-align: center;
   margin: 10px;
   font-size: 30px;
+}
+
+.comment-pic-div{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
 }

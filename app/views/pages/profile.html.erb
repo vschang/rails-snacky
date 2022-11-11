@@ -72,11 +72,15 @@
             </div>
             <h3 class="saved-snacks center">saved snacks</h3>
             <div class="saved-posts-div">
-              <% @saved_posts.each do |saved_post| %>
-                <%= link_to post_path(saved_post.post.id), class: 'heart-btn' do %>
-                  <img src="<%=saved_post.post.images.first.url%>" class="saved-image">
+              <% if @saved_posts.empty? %>
+                <h3 class="no-snacks">you haven't saved any snacks!</h3>
+              <% else%>
+                <% @saved_posts.each do |saved_post| %>
+                  <%= link_to post_path(saved_post.post.id), class: 'heart-btn' do %>
+                    <img src="<%=saved_post.post.images.first.url%>" class="saved-image">
+                  <% end %>
                 <% end %>
-              <% end %>
+              <% end%>
             </div>
           </div>
         </div>

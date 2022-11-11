@@ -6,13 +6,16 @@
         <%# @<%= post_comment.user.username%>
       <%# <% end %>
     <%# <% else %>
+    <div class="comment-pic-div">
       <div class="comment-prof-pic">
         <%= cl_image_tag post_comment.user.prof_pic.key, class:"comment-pic" %>
-        <%= link_to user_path(post_comment.user_id), class:"small-p  bold" do %>
-          <p class="small-p "><%= post_comment.user.username%></p>
+        <%= link_to user_path(post_comment.user_id), class:"small-p bold" do %>
+          <p class="small-p"><%= post_comment.user.username%></p>
         <% end %>
       </div>
+        <p class="small-p grey-text">on <%= post_comment.created_at.strftime("%b %d, %Y") %></p>
     <%# <% end%>
+    </div>
 
     <% if post_comment.user_id == @current_user_id %>
       <div class="content-div" >
@@ -25,5 +28,4 @@
   <div class="content-div">
     <p class="m-5"><%= post_comment.content %></p>
   </div>
-  <p class="small-p grey-text"><%= post_comment.created_at.strftime("%b %d, %Y") %></p>
 </div>
