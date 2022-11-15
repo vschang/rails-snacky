@@ -130,7 +130,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 60vw;
+    width: 40vw;
     }
     .form-inputs-signup {
       display: flex;
@@ -464,9 +464,10 @@
     margin-top: 5px;
   }
 
-  .mb-3.password.optional.user_password, .mb-3.email.optional.user_email{
+  .mb-3.password.optional.user_password{
     width:60%;
   }
+
   #post_comment_content{
     width:101%;
   }
@@ -751,5 +752,9 @@ textarea{box-sizing:border-box}
 }
 
 .title{
+  width:100%;
+}
+
+.email.optional.user_email{
   width:100%;
 }

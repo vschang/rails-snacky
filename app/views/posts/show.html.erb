@@ -6,7 +6,7 @@
     <% if @post.user.prof_pic.present? %>
         <%= cl_image_tag(@post.user.prof_pic.key, crop: :fill, class: "avatar-post") %>
       <% else %>
-        <img src="https://res.cloudinary.com/le-wagon-785-vchang/image/upload/v1663937183/production/snacky-assets/haribo-prof_ug0clq.jpg", class="prof-pic edit-pic">
+        <img src="https://res.cloudinary.com/le-wagon-785-vchang/image/upload/v1663937183/production/snacky-assets/haribo-prof_ug0clq.jpg", class="avatar-post">
       <% end %>
       <div class="flex-info flex">
         <p class="small-p">reviewed by
