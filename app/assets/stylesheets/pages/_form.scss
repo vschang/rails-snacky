@@ -228,6 +228,11 @@
     border: solid black 0.5px;
     margin-bottom: 15px;
   }
+
+  .email.optional.user_email{
+    width:100%;
+  }
+
 }
 
 @media (min-width: 769px) {
@@ -471,6 +476,10 @@
   #post_comment_content{
     width:101%;
   }
+  .email.optional.user_email{
+    width:60%;
+  }
+
 }
 
 
@@ -752,9 +761,5 @@ textarea{box-sizing:border-box}
 }
 
 .title{
-  width:100%;
-}
-
-.email.optional.user_email{
   width:100%;
 }
