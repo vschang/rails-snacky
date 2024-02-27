@@ -27,6 +27,7 @@ module Intake
         @user = User.new(full_params)
         if params["intake_user_pic"]["prof_pic"]
           @user.prof_pic.attach(io: params["intake_user_pic"]["prof_pic"].tempfile, filename: params["intake_user_pic"]["prof_pic"].original_filename)
+          temp_file.rewind
         end
 
         if @user.save

@@ -55,6 +55,7 @@ class PagesController < ApplicationController
     @user = current_user
     if params[:user]
       current_user.prof_pic.attach(io: params[:user]["image"].tempfile, filename: params[:user]["image"].original_filename)
+      temp_file.rewind
       if current_user.save!
         flash[:notice] = "Profile picture updated"
         redirect_to profile_path
