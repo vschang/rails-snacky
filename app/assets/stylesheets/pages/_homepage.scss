@@ -67,8 +67,10 @@
 
 
   .welcome{
-    font-size: 52px;
-    font-family: 'Geneva', sans-serif;
+    font-size: 48px;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: italic;
     color: $yellow;
     text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
                 0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
@@ -89,7 +91,7 @@
 
   .about{
     background-color: $blue;
-    font-size: 24px;
+    font-size: 20px;
     border: solid black 1px;
     border-radius: 60px;
     padding: 20px 20px;
@@ -139,7 +141,8 @@
   }
 
   .width-100{
-    width: 95%;
+    width: 130%;
+    margin-left:-20px;
   }
 
   .mb-25{
@@ -148,6 +151,7 @@
   .forgot{
     font-size: 14px;
     text-decoration: underline;
+    text-align: center;
   }
 
   .mb-0{
@@ -161,7 +165,6 @@
 
   .sign-in-text{
     font-size: 40px;
-    font-family: 'Geneva', sans-serif;
     color: $yellow;
     text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
                 0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
@@ -271,8 +274,10 @@
   }
 
   .welcome{
-    font-size: 98px;
-    font-family: 'Geneva', sans-serif;
+    font-size: 84px;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: italic;
     color: $yellow;
     text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
                 0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
@@ -288,11 +293,12 @@
                 0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
     margin-top:0px;
     margin-bottom:20px;
+    text-align: right;
   }
 
   .about{
     background-color: $blue;
-    font-size: 30px;
+    font-size: 28px;
     border: solid black 1px;
     border-radius: 82px;
     padding: 21px 34px;
@@ -340,6 +346,7 @@
   .forgot{
     font-size: 14px;
     text-decoration: underline;
+    text-align: center;
   }
 
   .mb-0{
@@ -360,7 +367,6 @@
 
   .sign-in-text{
     font-size: 48px;
-    font-family: 'Geneva', sans-serif;
     color: $yellow;
     text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000,
                 0.5px 0.5px #000, -0.5px -0.5px #000, 0.5px -0.5px #000, -0.5px 0.5px #000;
@@ -407,4 +413,8 @@
 
 .haribo-bear:hover{
   transform: translateX(10px);
+}
+
+p.mb-0.mt-60{
+  text-align: center;
 }

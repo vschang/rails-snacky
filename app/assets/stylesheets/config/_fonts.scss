@@ -5,22 +5,6 @@
 $body-font: 'Inconsolata', 'monospace';
 $headers-font: 'Gluten', 'cursive';
 
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Geneva";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $geneva-font: "Geneva";
-
-@font-face {
-  font-family:'Geneva';
-  src: local('Geneva'),
-  url(./fonts/geneva.ttf) format('truetype');
-}
-
 body {
   font-family: 'Inconsolata', monospace;
   font-family: 'Gluten', cursive;
