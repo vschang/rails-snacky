@@ -2,14 +2,14 @@
 <div class="comment-div" data-controller="delete-comment">
   <div class="username-x">
     <%# <% if user_signed_in? && post_comment.user_id == @user.id %>
-      <%# <%= link_to profile_path, class:"small-p  bold" do%>
+      <%# <%= link_to profile_path, class:"small-p" do%>
         <%# @<%= post_comment.user.username%>
       <%# <% end %>
     <%# <% else %>
     <div class="comment-pic-div">
       <div class="comment-prof-pic">
         <%= cl_image_tag post_comment.user.prof_pic.key, class:"comment-pic" %>
-        <%= link_to user_path(post_comment.user_id), class:"small-p bold" do %>
+        <%= link_to user_path(post_comment.user_id), class:"small-p" do %>
           <p class="small-p"><%= post_comment.user.username%></p>
         <% end %>
       </div>

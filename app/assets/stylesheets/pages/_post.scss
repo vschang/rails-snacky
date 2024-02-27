@@ -140,7 +140,7 @@
     justify-content: center;
 }
   h3{
-    font-family: 'Rubik';
+    font-family: "Silkscreen", sans-serif;
     font-size: 24px;
   }
 
@@ -183,11 +183,12 @@
     display: flex;
     padding: 5px 10px;
     margin-right: 10px;
-    background-color: #ffcaed;
-    border: solid 2px #b4fd3e;
     align-items: center;
     margin: 7px !important;
     border-radius: 5px;
+    background-color: #FFF96F;
+    border: solid 1px black;
+    color: black;
   }
   .post-info{
     display:flex;
@@ -214,9 +215,9 @@
     margin-bottom: 0px;
   }
   .delete-option{
-    font-family: 'inconsolata';
+    font-family: "Silkscreen", sans-serif;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
     color: red;
     font-weight: 300;
     background:none;
@@ -343,7 +344,7 @@
   }
 
   h3{
-    font-family: 'Rubik';
+    font-family: "Silkscreen", sans-serif;
     font-size: 24px;
   }
   .no-posts{
@@ -390,8 +391,9 @@
     display:flex;
     padding: 7px 10px;
     margin: 5px !important;
-    background-color: #ffcaed;
-    border: solid 2px #b4fd3e;
+    background-color: #FFF96F;
+    border: solid 1px black;
+    color: black;
     align-items:center;
     border-radius: 5px;
   }
@@ -427,9 +429,8 @@
     font-size: 14px;
   }
   .delete-option{
-    font-family: 'inconsolata';
-    // text-decoration: none;
-    font-size: 24px;
+    font-family: "Silkscreen", sans-serif;
+    font-size: 18px;
     color: red;
     font-weight: 300;
     background:none;
@@ -633,12 +634,13 @@
 }
 
 .post-title{
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: italic;
   font-size: 24px;
   color: black;
   text-decoration: underline wavy;
   text-decoration-color: yellow;
-  // margin-top:0px;
-  // text-shadow: 0.5px 0 yellow, -0.5px 0 yellow, 0 0.5px yellow, 0 -0.5px yellow, 0.25px 0.25px yellow, -0.25px -0.25px yellow, 0.25px -0.25px yellow, -0.25px 0.25px yellow;
 }
 
 .black{

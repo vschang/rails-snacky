@@ -42,20 +42,23 @@
 
   .snack-map{
     padding:0px;
-    margin: 10px 0px 10px 0px;
     font-size: 42px;
-    font-family: 'Gluten', sans-serif;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: italic;
     color: $yellow;
     text-shadow: 0.5px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
                  0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
     margin-top:0px;
-    margin-bottom:20px;
+    margin-bottom:0px;
   }
 
 .your-snack-map{
   margin: 10px 0px 10px 0px;
-  font-size: 42px;
-  font-family: 'Gluten', sans-serif;
+  font-size: 50px;
+  font-family: "Space Mono", monospace;
+  font-style: italic;
+  font-weight: 700;
   color: $yellow;
   text-shadow: 0.5px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
                0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
@@ -114,23 +117,27 @@
 
   .snack-map{
     padding:0px;
-    margin: 10px 0px 10px 0px;
-    font-size: 50px;
-    font-family: 'Gluten', sans-serif;
+    font-size: 55px;
+    font-family: "Space Mono", monospace;
+    font-style: italic;
+    font-weight: 700;
     color: $yellow;
     text-shadow: 0.5px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
                 0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
-    margin-top:20px;
-    margin-bottom:20px;
+    margin-top:0px;
+    margin-bottom:0px;
+
   }
 
   .your-snack-map{
-    font-size: 50px;
-    font-family: 'Gluten', sans-serif;
+    font-size: 55px;
+    font-family: "Space Mono", monospace;
+    font-style: italic;
+    font-weight: 700;
     color: $yellow;
     text-shadow: 0.5px 0 #000, -0.5px 0 #000, 0 0.5px #000, 0 -0.5px #000,
                 0.25px 0.25px #000, -0.25px -0.25px #000, 0.25px -0.25px #000, -0.25px 0.25px #000;
-    margin: 20px;
+    margin: 10px;
   }
 
   .snack-map-margin{

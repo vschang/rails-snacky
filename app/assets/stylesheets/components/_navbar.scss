@@ -49,11 +49,11 @@
   }
 
   a{
-    font-family: 'inconsolata';
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
     color: black;
-    font-weight: 300;
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
   }
 
   .mobile-div-show {
@@ -182,15 +182,19 @@
     background-color: $green;
     font-size: 24px;
     flex: 1;
+
   }
 
   a{
     text-decoration: none;
     color: black;
-    font-size: 24px;
-    font-family: 'Inconsolata', monospace;
-    font-weight: 300;
+    font-size: 18px;
+    // font-family: 'Inconsolata', monospace;
+    // font-weight: 300;
+    font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
   }
+
   //home and post desktop
   .mobile-div-hide{
     flex: 1;
