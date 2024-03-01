@@ -139,7 +139,12 @@
               <p><strong>brand: </strong><%= post.brand %></p>
               <p><strong>country: </strong><%= post.country_name %></p>
             </div>
-            <p class="small-p mt-10">posted <%= post.created_at.strftime("%B %d, %Y") %></p>
+            <div class="tags-container">
+                <% post.post_tags.each do |tag| %>
+                <p class="tag small-p"><%= tag.tag %></p>
+                <% end %>
+              </div>
+            <p class="small-p">posted <%= post.created_at.strftime("%B %d, %Y") %></p>
             <p class="small-p mb-10">by
             <% if user_signed_in? && post.user_id == @user.id %>
               <%= link_to profile_path, class:"small-p"  do %>
@@ -178,11 +183,7 @@
                 <% end %>
 
               </div>
-              <div class="tags-container">
-                <% post.post_tags.each do |tag| %>
-                <p class="tag small-p"><%= tag.tag %></p>
-                <% end %>
-              </div>
+
             </div>
           </div>
         </div>

@@ -40,7 +40,7 @@
 
   .review-text {
     background-color: #ffcaed;
-    // padding: 5px 15px;
+  padding-bottom:8px
   }
 
   .stars{
@@ -175,13 +175,15 @@
     display:flex;
     width: 100%;
     flex-wrap: wrap;
+    padding-bottom:8px;
   }
   .tag {
     display: flex;
     padding: 5px 10px;
     margin-right: 10px;
     align-items: center;
-    margin: 7px !important;
+    margin-right: 7px !important;
+    margin-bottom: 7px !important;
     border-radius: 5px;
     background-color: #FFF96F;
     border: solid 1px black;
@@ -233,7 +235,7 @@
     justify-content: space-between;
     width: 100%;
     border-bottom: solid black 0.5px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     margin-bottom: 10px;
   }
   .likes-container {
@@ -294,8 +296,8 @@
   }
 
   .review-text {
-
-    padding: 5px 15px 5px 0px;
+    margin-top: -12px;
+    padding: 0px 15px 5px 0px;
     width: 100%;
   }
 
@@ -400,11 +402,13 @@
     display:flex;
     flex-wrap: wrap;
     width: 100%;
+    padding-bottom:5px;
   }
   .tag{
     display:flex;
     padding: 7px 10px;
-    margin: 5px !important;
+    margin-right: 7px !important;
+    margin-bottom: 5px !important;
     background-color: #FFF96F;
     border: solid 1px black;
     color: black;
@@ -416,7 +420,7 @@
     width:100%;
     justify-content:space-between;
     align-items:center;
-    padding-top: 30px;
+    padding-top: 20px;
   }
   .post-text{
     display: flex;
@@ -461,7 +465,6 @@
   .post-settings{
     display:flex;
     justify-content: flex-end;
-    padding: 5px;
   }
 
   .likes-comments-container{
@@ -493,6 +496,9 @@
   }
   .w-80{
     width: 100%;
+  }
+  .tags-form{
+    margin-top:15px !important;
   }
 }
 
@@ -647,8 +653,9 @@
 
 .flex-info{
   display:flex;
-  justify-content: end;
+  justify-content: end !important;
   width:80%;
+
 }
 
 .post-title{

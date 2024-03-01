@@ -9,7 +9,7 @@
         <img src="https://res.cloudinary.com/le-wagon-785-vchang/image/upload/v1663937183/production/snacky-assets/haribo-prof_ug0clq.jpg", class="avatar-post">
       <% end %>
       <div class="flex-info flex">
-        <p class="small-p w-80">reviewed by
+        <p class="small-p">reviewed by
         <% if user_signed_in? && @post.user_id == @user.id %>
           <%= link_to profile_path, class:"small-p" do %>
             @<%= @post.user.username%>

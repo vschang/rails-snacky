@@ -1,4 +1,4 @@
-<div class="tag mt-10 mb-10">
+<div class="tag">
   <p class="small-p mr-5"><%= post_tag.tag %></p>
   <% if current_user && @post.user_id == current_user.id %>
     <%= button_to post_post_tag_path(@post, post_tag.id), method: :delete, class:"tag-delete-btn" do %>
