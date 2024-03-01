@@ -19,9 +19,9 @@
     font-weight: 300;
   }
 
-  .flex{
-    display:block;
-  }
+  // .flex{
+  //   display:block;
+  // }
   .justify-center{
     display:flex;
     justify-content: center;
@@ -73,12 +73,13 @@
     border: solid black 0.5px;
     margin-bottom: 3px;
   }
-  // .title-input::-webkit-file-upload-button {
-  //   visibility: hidden;
-  // }
 
   .title, .review, .brand{
 
+  }
+
+  .ml-neg-20{
+    margin-left:-20px !important;
   }
 
   input::file-selector-button{
@@ -479,9 +480,10 @@
   .email.optional.user_email{
     width:60%;
   }
-
+  .ml-neg-20{
+    margin-left:0px;
+  }
 }
-
 
 .underline{
   text-decoration: underline;
@@ -562,10 +564,6 @@ option{
   font-size: 14px;
   font-weight: 300;
   margin: 0px;
-}
-
-.ml-neg-20{
-  margin-left:-20px;
 }
 
 .mb-0{

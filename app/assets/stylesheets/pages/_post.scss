@@ -6,6 +6,7 @@
     border: 1.5px solid $green;
     background-color: #ffcaed;
     color: black;
+    margin-left:6px;
   }
 
   label{
@@ -44,7 +45,7 @@
 
   .stars{
     display:flex;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     align-self:center;
   }
 
@@ -158,10 +159,6 @@
     margin-right: 10px;
   }
 
-  // .edit-btn {
-  //   font-size: 18px;
-  //   margin-right: -45px;
-  // }
   .delete{
     font-size: 14px;
     font-family: 'Inconsolata', monospace;
@@ -208,7 +205,7 @@
     align-items:center;
     width: 100%;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 0px;
   }
   .p-14{
     font-size: 14px;
@@ -247,6 +244,21 @@
   .m-5{
     margin: 5px 0px;
   }
+  .sort-menu{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px 20px 0px 20px;
+    align-items:center;
+  }
+  .filter-options{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .w-80{
+    width: 80%;
+  }
 }
 
 @media (min-width: 769px) {
@@ -258,6 +270,7 @@
     color: black;
     padding: 5px;
     margin-right: 5px;
+    margin-left:5px;
 }
 
   .image-text-container{
@@ -466,6 +479,20 @@
   .m-5{
     margin: 10px 0px;
   }
+  .sort-menu{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px 0px 20px;
+    align-items:center;
+  }
+  .filter-options{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .w-80{
+    width: 100%;
+  }
 }
 
 
@@ -536,6 +563,7 @@
   text-align: right;
 }
 
+
 .mt-10{
   margin-top: 10px;
 }
@@ -564,13 +592,6 @@
   margin-bottom: 20px;
 }
 
-.sort-menu{
-  display: flex;
-  justify-content: flex-end;
-  padding: 20px 20px 0px 20px;
-  align-items:center;
-}
-
 .comment-div{
   display:flex;
   flex-direction:column;
@@ -587,12 +608,6 @@
   display:flex;
   justify-content:flex-start;
   flex-direction: column-reverse;
-}
-
-.filter-options{
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
 }
 
 .mr-5{
@@ -630,7 +645,8 @@
 }
 
 .flex-info{
-  // flex: 5;
+  display:flex;
+  justify-content: end;
 }
 
 .post-title{
@@ -641,6 +657,7 @@
   color: black;
   text-decoration: underline wavy;
   text-decoration-color: yellow;
+  margin-bottom: 15px;
 }
 
 .black{
